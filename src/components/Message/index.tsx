@@ -1,31 +1,30 @@
 import React from 'react';
-import { StatusType } from '../../data';
 import classnames from 'classnames';
 
 export declare interface MessageProps {
     type?: StatusType;
     className?: string;
     text: React.ReactNode;
-    danger?: boolean;
 }
 
 const Message: React.FC<MessageProps> = (props) => {
-    const {type, className, text, danger} = props;
+    const {type, className, text} = props;
     const classes = classnames('msg', className, {
-        [`msg-${type}`]: type && !danger,
-        'msg-danger': danger
+        [`msg-${type}`]: type,
     })
 
 return (
 <div className={classes}>
+    <span className="msg-content">
     {text}
     {props.children}
+    </span>
     </div>
     )
 }
 
 Message.defaultProps = {
-    danger: false
+    type: "info"
 }
 
 export default Message;

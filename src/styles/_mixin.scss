@@ -1,7 +1,62 @@
-@mixin button-size($padding-y, $padding-x, $font-size, $border-raduis) {
+@mixin button-size($min-size, $padding-y, $padding-x, $font-size, $border-radius) {
   padding: $padding-y $padding-x;
   font-size: $font-size;
-  border-radius: $border-raduis;
+  border-radius: $border-radius;
+  min-height: $min-size;
+  min-width: $min-size;
+}
+
+@mixin btn-circle($min-size) {
+  border-radius: $min-size / 2
+}
+
+@mixin btn-gp-style($border-radius) {
+  &.btn-gp-last {
+    border-left: none;
+    border-radius: 0 $border-radius $border-radius 0;
+    &.btn-dashed {
+      border-left: none;
+    }
+  }
+  &.btn-gp-first {
+    border-right: none;
+    border-radius: $border-radius 0 0 $border-radius;
+    &.btn-dashed {
+      border-right: $btn-border-width dashed;
+    }
+  }
+  &.btn-gp-mid {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    &.btn-dashed {
+      border-right: $btn-border-width dashed;
+    }
+  }
+}
+
+@mixin btn-dashed($border-color, $hover-border: lighten($border-color, 10%)) {
+  color: $border-color;
+  background: none;
+  border-color: $border-color;
+  border-style: dashed;
+  &:hover {
+    color: $border-color;
+    background: none;
+    border-color: $hover-border;
+  }
+  &:focus,
+  &.focus {
+    color: $border-color;
+    background: none;
+    border-color: $hover-border;
+  }
+  &:disabled,
+  &.btn-disabled {
+    color: $border-color;
+    background: none;
+    border-color: $border-color;
+  }
 }
 
 @mixin button-style(
@@ -27,7 +82,7 @@
     border-color: $hover-border;
   }
   &:disabled,
-  &.disabled {
+  &.btn-disabled {
     color: $color;
     background: $background;
     border-color: $border;

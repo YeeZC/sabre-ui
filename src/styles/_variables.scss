@@ -81,7 +81,7 @@ $link-hover-decoration:                   underline !default;
 
 // body
 $body-bg:                   $white !default;
-$body-color:                $gray-9 !default;
+$body-color:                $gray-6 !default;
 $body-text-align:           null !default;
 
 // Spacing
@@ -177,15 +177,18 @@ $btn-padding-x:               .75rem !default;
 $btn-font-family:             $font-family-base !default;
 $btn-font-size:               $font-size-base !default;
 $btn-line-height:             $line-height-base !default;
+$btn-min-height:              2.375rem !default;
 
 //不同大小按钮的 padding 和 font size
 $btn-padding-y-sm:            .25rem !default;
 $btn-padding-x-sm:            .5rem !default;
 $btn-font-size-sm:            $font-size-sm !default;
+$btn-min-height-sm:           2rem !default;
 
 $btn-padding-y-lg:            .5rem !default;
 $btn-padding-x-lg:            1rem !default;
 $btn-font-size-lg:            $font-size-lg !default;
+$btn-min-height-lg:           3rem !default;
 
 // 按钮边框
 $btn-border-width:            $border-width !default;

@@ -1,5 +1,4 @@
-import { type } from "os";
 
-type StatusType = 'info' | 'primary' | 'success' | 'warn';
-type ButtonType = 'default' | 'primary' | 'success' | 'warn' | 'dash' | 'link';
+type StatusType = 'info' | 'success' | 'warn' | 'error';
+type ButtonType = 'default' | 'primary' | 'success' | 'warn' | 'link';
 type SizeType = 'default' | 'small' | 'large';
