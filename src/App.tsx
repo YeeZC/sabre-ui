@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Message from './components/Message';
 import Button, {Group} from "./components/Button";
 import Link from './components/Link';
+import Icon from "./components/Icon";
 function App() {
   return (
     <div className="App">
@@ -14,8 +14,8 @@ function App() {
             console.log('hello')
         }}>T</Button>
           </Group>
-        <Message text="Hello World" type="info"/>
-
+          <Icon type={"alipay"}/>
+          <Icon type={"test"}/>
       </header>
     </div>
   );
