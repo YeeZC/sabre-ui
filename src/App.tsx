@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import Message from './components/Message'
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Message text="Hello World" type="primary"/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
