@@ -10,12 +10,11 @@ function App() {
         <Link to="https://baidu.com">测试</Link>
           <Group>
         <Button type='primary' formType={"submit"}>link</Button>
-        <Button danger onClick={() => {
+        <Button danger dashed onClick={() => {
             console.log('hello')
-        }}>T</Button>
+        }} icon={<Icon type={"bell"} />}>T</Button>
           </Group>
-          <Icon type={"alipay"}/>
-          <Icon type={"test"}/>
+          <Icon type={"alipay"} color={"primary"}/>
       </header>
     </div>
   );

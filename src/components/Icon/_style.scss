@@ -1,21 +1,9 @@
-@keyframes icon-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@each $key, $val in $theme-colors {
+  .icon-#{$key} {
+    color: $val;
   }
 }
 
-.icon {
-  width: 1em; height: 1em;
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
-}
-
-
-.icon-spin:before {
-  display: inline-block;
-  animation: icon-spin infinite 1s linear;
+.icon-auto {
+  color: currentColor;
 }

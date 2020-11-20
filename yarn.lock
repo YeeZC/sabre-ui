@@ -1070,6 +1070,39 @@
     "minimatch" "^3.0.4"
     "strip-json-comments" "^3.1.1"
 
+"@fortawesome/fontawesome-common-types@^0.2.32":
+  "integrity" "sha1-NDZ5XVaE8idCmJv6CPRvUPUW8lk="
+  "resolved" "https://registry.npm.taobao.org/@fortawesome/fontawesome-common-types/download/@fortawesome/fontawesome-common-types-0.2.32.tgz"
+  "version" "0.2.32"
+
+"@fortawesome/fontawesome-svg-core@^1.2.20", "@fortawesome/fontawesome-svg-core@^1.2.32":
+  "integrity" "sha1-2gkr/HJmqidL6GBN5hDXEV+bps8="
+  "resolved" "https://registry.npm.taobao.org/@fortawesome/fontawesome-svg-core/download/@fortawesome/fontawesome-svg-core-1.2.32.tgz"
+  "version" "1.2.32"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.32"
+
+"@fortawesome/free-brands-svg-icons@^5.15.1":
+  "integrity" "sha1-HcBWP0A2Y55T0kuOUy6nilPKIlA="
+  "resolved" "https://registry.npm.taobao.org/@fortawesome/free-brands-svg-icons/download/@fortawesome/free-brands-svg-icons-5.15.1.tgz"
+  "version" "5.15.1"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.32"
+
+"@fortawesome/free-solid-svg-icons@^5.15.1":
+  "integrity" "sha1-4UMmdt3UMQi0EZf+6fhtkQrUWO8="
+  "resolved" "https://registry.npm.taobao.org/@fortawesome/free-solid-svg-icons/download/@fortawesome/free-solid-svg-icons-5.15.1.tgz"
+  "version" "5.15.1"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.32"
+
+"@fortawesome/react-fontawesome@^0.1.12":
+  "integrity" "sha1-+96obotzAyiV5t7R7h27GHSQLRo="
+  "resolved" "https://registry.npm.taobao.org/@fortawesome/react-fontawesome/download/@fortawesome/react-fontawesome-0.1.12.tgz"
+  "version" "0.1.12"
+  dependencies:
+    "prop-types" "^15.7.2"
+
 "@hapi/address@2.x.x":
   "integrity" "sha1-XWftQ/P9QaadS5/3tW58DR0KgeU="
   "resolved" "https://registry.npm.taobao.org/@hapi/address/download/@hapi/address-2.1.4.tgz?cache=0&sync_timestamp=1603524710662&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40hapi%2Faddress%2Fdownload%2F%40hapi%2Faddress-2.1.4.tgz"
@@ -9591,7 +9624,7 @@
   optionalDependencies:
     "fsevents" "^2.1.3"
 
-"react@^17.0.1":
+"react@^17.0.1", "react@>=16.x":
   "integrity" "sha1-bgYAQWvVdXTj+G2S7bo9kAhyYSc="
   "resolved" "https://registry.npm.taobao.org/react/download/react-17.0.1.tgz?cache=0&sync_timestamp=1603367627799&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact%2Fdownload%2Freact-17.0.1.tgz"
   "version" "17.0.1"
