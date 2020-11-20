@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import { ButtonType, SizeType } from '../../data';
+import React, {MutableRefObject} from 'react';
+import {ButtonType, SizeType} from '../../data';
 import classnames from 'classnames';
 
 export declare interface ButtonProps {
@@ -9,10 +9,10 @@ export declare interface ButtonProps {
     size?: SizeType;
     disabled?: boolean;
     icon?: React.ReactNode,
-    onClick?: () => void
+    onClick?: () => void;
 }
 
-const Button:React.FC<ButtonProps> = (props) => {
+const Button: React.FC<ButtonProps> = (props) => {
     const {type, icon, className, danger, size, disabled, children, ...restProps} = props;
     const classes = classnames('btn', className, {
         [`btn-${type}`]: type,
@@ -21,9 +21,10 @@ const Button:React.FC<ButtonProps> = (props) => {
         'btn-disabled': disabled
     })
     if (type === 'link') {
-    return (<a className={classes} href='#' {...restProps}>{icon ? <span>{icon}&nbsp;</span>: <span/> }{children}</a>)
+        return (<a className={classes} href='#' {...restProps}>{icon ? <span>{icon}&nbsp;</span> : <span/>}{children}</a>)
     }
-    return <button className={classes} {...restProps} disabled={disabled}>{icon ? <span>{icon}&nbsp;</span>: <span/> }{children}</button>
+    return (<button className={classes} {...restProps} disabled={disabled}>{icon ? <span>{icon}&nbsp;</span> :
+        <span/>}{children}</button>)
 }
 
 Button.defaultProps = {
@@ -31,7 +32,8 @@ Button.defaultProps = {
     type: 'default',
     disabled: false,
     size: 'default',
-    onClick: () => {}
+    onClick: () => {
+    }
 }
 
 export default Button;
