@@ -1,4 +1,4 @@
-import React, {MutableRefObject} from 'react';
+import React from 'react';
 import {ButtonType, SizeType} from '../../data';
 import classnames from 'classnames';
 
@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     const {type, icon, className, danger, size, disabled, children, ...restProps} = props;
     const classes = classnames('btn', className, {
         [`btn-${type}`]: type,
-        [`btn-${size}`]: size,
+        [`btn-size-${size}`]: size,
         'btn-danger': danger,
         'btn-disabled': disabled
     })
