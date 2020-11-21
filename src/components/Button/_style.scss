@@ -30,7 +30,6 @@
       @include btn-dashed($danger);
     }
   }
-
 }
 
 .btn-size-large {
@@ -39,6 +38,9 @@
   &.btn-circle {
     @include btn-circle($btn-min-height-lg)
   }
+  .icon {
+    font-size: $btn-font-size-lg;
+  }
 }
 .btn-size-small {
   @include button-size($btn-min-height-sm, $btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
@@ -46,12 +48,18 @@
   &.btn-circle {
     @include btn-circle($btn-min-height-sm)
   }
+  .icon {
+    font-size: $btn-font-size-sm;
+  }
 }
 .btn-size-default {
   @include button-size($btn-min-height, $btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
   @include btn-gp-style($btn-border-radius);
   &.btn-circle {
     @include btn-circle($btn-min-height)
+  }
+  .icon {
+    font-size: $btn-font-size;
   }
 }
 .btn-default {

@@ -1,8 +1,6 @@
 import React from 'react';
 import classname from "classnames";
 
-import './iconfont.css'
-
 
 export declare interface IconProps {
     type: string;
