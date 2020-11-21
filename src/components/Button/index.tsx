@@ -36,8 +36,7 @@ const Button: React.FC<ButtonProps> = (props) => {
                     <span/>}{children}</button> )
         default: {
             const onClickFunc = disabled ? () => {} : onClick;
-            return (<span className={classes} onClick={onClickFunc} {...restProps}>{icon ? <span>{icon}&nbsp;</span> :
-                <span/>}{children}</span>)
+            return (<span className={classes} onClick={onClickFunc} {...restProps}><span>{icon}&nbsp;{children}</span></span>)
         }
     }
 }

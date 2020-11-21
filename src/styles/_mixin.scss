@@ -4,6 +4,7 @@
   border-radius: $border-radius;
   min-height: $min-size;
   min-width: $min-size;
+  max-height: $min-size;
 }
 
 @mixin btn-circle($min-size) {

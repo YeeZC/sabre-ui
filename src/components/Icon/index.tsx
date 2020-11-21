@@ -1,15 +1,11 @@
 import React from 'react';
 import classname from "classnames";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {library} from "@fortawesome/fontawesome-svg-core";
-import {IconName} from "@fortawesome/fontawesome-common-types";
-import {fas} from "@fortawesome/free-solid-svg-icons";
-import {fab} from "@fortawesome/free-brands-svg-icons";
 
-library.add(fas, fab);
+import './iconfont.css'
+
 
 export declare interface IconProps {
-    type: IconName;
+    type: string;
     spinning?: boolean;
     className?: string;
     color?: string;
@@ -17,15 +13,13 @@ export declare interface IconProps {
 
 
 const Icon: React.FC<IconProps> = ({type, color, className, spinning}) => {
-    const classes = classname('icon', className, {
+    const classes = classname('icon', 'ui-icon', className, {
         [`icon-${type}`]: type,
         [`icon-${color}`]: !!color,
-        'icon-auto': !color
+        'icon-auto': !color,
+        'icon-spin': spinning
     })
-    return (<FontAwesomeIcon className={classes} icon={{
-        prefix: "fas",
-        iconName: type
-    }} spin={spinning} color={color}/>)
+    return (<i className={classes} />)
 }
 
 Icon.defaultProps = {

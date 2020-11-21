@@ -5,18 +5,16 @@ import Link from './components/Link';
 import Icon from "./components/Icon";
 function App() {
   return (
-    <div className="App">
       <header className="App-header">
         <Link to="https://baidu.com">测试</Link>
           <Group>
         <Button type='primary' formType={"submit"}>link</Button>
         <Button danger dashed onClick={() => {
             console.log('hello')
-        }} icon={<Icon type={"bell"} />}>T</Button>
+        }} icon={<Icon type={"view-off"} />}>T</Button>
           </Group>
-          <Icon type={"alipay"} color={"primary"}/>
+          <Icon type={"refresh"} spinning/>
       </header>
-    </div>
   );
 }
 
