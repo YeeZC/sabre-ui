@@ -1,6 +1,6 @@
 @import "src/styles/variables";
 
-.btn {
+.ui-btn {
   position: relative;
   display: inline-block;
   font-weight: $btn-font-weight;
@@ -15,7 +15,7 @@
   box-shadow: $btn-box-shadow;
   cursor: pointer;
   transition: $btn-transition;
-  &.btn-disabled,
+  &.ui-btn-disabled,
   &[disabled] {
     cursor: not-allowed;
     opacity: $btn-disabled-opacity;
@@ -24,80 +24,92 @@
       pointer-events: none;
     }
   }
-  &.btn-danger {
+  &.ui-btn-danger {
     @include button-style($danger, $danger, $white);
-    &.btn-dashed {
+    &.ui-btn-dashed {
       @include btn-dashed($danger);
     }
   }
 }
 
-.btn-size-large {
+.ui-btn-size-large {
   @include button-size($btn-min-height-lg, $btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
   @include btn-gp-style($btn-border-radius-lg);
-  &.btn-circle {
+  &.ui-btn-circle {
     @include btn-circle($btn-min-height-lg)
   }
   .icon {
     font-size: $btn-font-size-lg;
   }
 }
-.btn-size-small {
+.ui-btn-size-small {
   @include button-size($btn-min-height-sm, $btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
   @include btn-gp-style($btn-border-radius-sm);
-  &.btn-circle {
+  &.ui-btn-circle {
     @include btn-circle($btn-min-height-sm)
   }
   .icon {
     font-size: $btn-font-size-sm;
   }
 }
-.btn-size-default {
+
+.ui-btn-size-mini {
+  @include button-size($btn-min-height-mini, $btn-padding-y-mini, $btn-padding-x-mini, $btn-font-size-mini, $btn-border-radius-mini);
+  @include btn-gp-style($btn-border-radius-mini);
+  &.ui-btn-circle {
+    @include btn-circle($btn-min-height-mini)
+  }
+  .icon {
+    font-size: $btn-font-size-mini;
+  }
+}
+
+.ui-btn-size-default {
   @include button-size($btn-min-height, $btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
   @include btn-gp-style($btn-border-radius);
-  &.btn-circle {
+  &.ui-btn-circle {
     @include btn-circle($btn-min-height)
   }
   .icon {
     font-size: $btn-font-size;
   }
 }
-.btn-default {
+.ui-btn-default {
   @include button-style($white, $body-color, $body-color, $white, $primary, $primary);
-  &.btn-dashed {
+  &.ui-btn-dashed {
     @include btn-dashed($body-color);
   }
 }
 
-.btn-primary {
+.ui-btn-primary {
   @include button-style($primary, $primary, $white);
-  &.btn-dashed {
+  &.ui-btn-dashed {
     @include btn-dashed($primary);
   }
 }
 
-.btn-danger {
+.ui-btn-danger {
   @include button-style($danger, $danger, $white);
-  &.btn-dashed {
+  &.ui-btn-dashed {
     @include btn-dashed($danger);
   }
 }
 
-.btn-warn {
+.ui-btn-warn {
   @include button-style($warn, $warn, $white);
-  &.btn-dashed {
+  &.ui-btn-dashed {
     @include btn-dashed($warn);
   }
 }
 
-.btn-success {
+.ui-btn-success {
   @include button-style($success, $success, $white);
-  &.btn-dashed {
+  &.ui-btn-dashed {
     @include btn-dashed($success);
   }
 }
 
-.btn-link {
+.ui-btn-link {
   background: none;
   font-weight: $font-weight-normal;
   color: $btn-link-color;
@@ -113,17 +125,17 @@
     box-shadow: none;
   }
   &:disabled,
-  &.btn-disabled {
+  &.ui-btn-disabled {
     color: $btn-link-disabled-color;
     pointer-events: none;
   }
-  &.btn-gp-last {
+  &.ui-btn-gp-last {
 
   }
-  &.btn-gp-first {
+  &.ui-btn-gp-first {
 
   }
-  &.btn-gp-mid {
+  &.ui-btn-gp-mid {
 
   }
 }

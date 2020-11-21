@@ -52,6 +52,12 @@ $font-size-lg:                $font-size-base * 1.25 !default;
 $font-size-sm:                $font-size-base * .875 !default;
 $font-size-root:              null !default;
 
+$icon-font-sizes: (
+        "default": $font-size-base,
+        "small": $font-size-sm,
+        "large": $font-size-lg
+);
+
 // 字重
 $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
@@ -185,6 +191,11 @@ $btn-padding-x-sm:            .5rem !default;
 $btn-font-size-sm:            $font-size-sm !default;
 $btn-min-height-sm:           2rem !default;
 
+$btn-padding-y-mini:            .125rem !default;
+$btn-padding-x-mini:            .25rem !default;
+$btn-font-size-mini:            $font-size-base * .375 !default;
+$btn-min-height-mini:           1.375rem !default;
+
 $btn-padding-y-lg:            .5rem !default;
 $btn-padding-x-lg:            1rem !default;
 $btn-font-size-lg:            $font-size-lg !default;
@@ -207,6 +218,7 @@ $btn-link-disabled-color:     $gray-6 !default;
 $btn-border-radius:           $border-radius !default;
 $btn-border-radius-lg:        $border-radius-lg !default;
 $btn-border-radius-sm:        $border-radius-sm !default;
+$btn-border-radius-mini:        .15rem !default;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
