@@ -11,6 +11,9 @@
 @include notification-zoom-animation('ui-notification-bottom-right', rights);
 
 .ui-notice {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   min-width: 12.5rem;
   padding: .5rem 1rem;
 }
@@ -23,7 +26,8 @@
   font-size: $h3-font-size;
   position: relative;
   margin-right: .5rem;
-  display: inline-block;
+  margin-top: -.25rem;
+  display: inline-flex;
   white-space: nowrap;
   text-align: center;
   vertical-align: middle;
@@ -35,21 +39,28 @@
   position: relative;
   display: inline-block;
   white-space: nowrap;
-  text-align: center;
+  text-align: left;
   vertical-align: middle;
   background-image: none;
-  box-shadow: $btn-box-shadow;
+  //box-shadow: $btn-box-shadow;
 }
-
-
 
 .ui-notice-content {
   color: $secondary;
+  margin-top: -.5rem;
   margin-bottom: .5rem;
-  margin-right: .5rem;
-  &.ui-notice-margin-icon {
-    margin-left: $h3-font-size + .5rem;
-  }
+  padding-top: .25rem;
+}
+
+.ui-notice-border {
+  border-top: $menu-border-width solid $menu-border-color;
+}
+
+.ui-notice-detail {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  white-space: nowrap;
 }
 
 .ui-notice-footer {

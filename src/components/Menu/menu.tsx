@@ -6,15 +6,14 @@ import classnames from 'classnames';
 interface MenuContextProps {
     active?: React.Key;
     onActive?: (active: React.Key) => void;
-    direction?: MenuDirection;
+    direction?: Direction;
 }
 
 export const MenuContext = createContext<MenuContextProps>({})
 
-type MenuDirection = 'vertical' | 'horizontal';
 
 interface MenuProps {
-    direction?: MenuDirection;
+    direction?: Direction;
     active?: React.Key;
     className?: string;
     style?: React.CSSProperties;

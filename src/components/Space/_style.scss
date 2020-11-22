@@ -1,0 +1,23 @@
+.ui-space {
+  display: flex;
+  flex-wrap: wrap;
+  &.ui-space-horizontal {
+    flex-direction: row;
+  }
+  &.ui-space-vertical {
+    flex-direction: column;
+  }
+}
+
+.ui-space-default {
+  @include space-margin($spacer-base)
+}
+
+.ui-space-large {
+  @include space-margin($spacer-lg)
+}
+
+.ui-space-small {
+  @include space-margin($spacer-sm)
+}
+

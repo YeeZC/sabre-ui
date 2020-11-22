@@ -21,24 +21,25 @@ export declare interface NotificationProps {
 export type NotificationPlacement = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
 const Notice: React.FC<NotificationProps> = ({title, icon, content, ...rest}) => {
-    return (<div className={'ui-notice'}>
-        <span className={classname({'ui-notice-icon': icon})}>{icon}</span>
-        <span>
+    return (<div>
+        <span className={'ui-notice'}>
+            {icon ? <span
+                className={classname({'ui-notice-icon': icon})}>{icon}</span> : ''}
+            <span className={'ui-notice-detail'}>
             {title ? <h3 className={classname({'ui-notice-title': title})}>{title}</h3> : ''}
-            <div className={classname({
-                'ui-notice-content': content,
-                'ui-notice-margin-icon': icon
-            })}>{content}</div>
-            <div className={'ui-notice-footer'}>
+                <div className={classname({
+                    'ui-notice-border': !!title,
+                    'ui-notice-content': content,
+                })}>{content}</div>
+        </span>
+        </span>
+        <div className={'ui-notice-footer'}>
             {rest.onConfirm ?
                 <span>
-                <Button onClick={rest.onCancel} size={"mini"}>{rest.cancelText}</Button>&nbsp;
+                    <Button onClick={rest.onCancel} size={"mini"}>{rest.cancelText}</Button>&nbsp;
                     <Button onClick={rest.onConfirm} size={"mini"} type={"primary"}>{rest.confirmText}</Button>
-            </span> : ''}
-            </div>
-        </span>
-
-
+                </span> : ''}
+        </div>
     </div>)
 }
 

@@ -92,6 +92,9 @@ $body-text-align:           null !default;
 
 // Spacing
 $spacer: 1rem !default;
+$spacer-base: .5rem !default;
+$spacer-sm: $spacer-base / 2 !default;
+$spacer-lg: $spacer-base * 2 !default;
 
 // Paragraphs
 

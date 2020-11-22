@@ -220,3 +220,18 @@
     transform-origin: $origin;
   }
 }
+
+@mixin space-margin($margin) {
+  &.ui-space-horizontal {
+    .ui-space-item {
+      margin: 0 $margin;
+    }
+  }
+
+
+  &.ui-space-vertical {
+    .ui-space-item {
+      margin: $margin 0;
+    }
+  }
+}

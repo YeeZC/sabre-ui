@@ -7,18 +7,28 @@ import notification from "./components/Notification";
 import message from "./components/Message";
 import Menu from "./components/Menu";
 import Tabs from "./components/Tabs";
+import Space from "./components/Space";
 function App() {
   return (
       <header className="App-header">
-        <Tabs type={"card"}>
-            <Tabs.Tab title={"Tab0"}>
-                Content 0
-            </Tabs.Tab>
-            <Tabs.Tab title={"Tab1"}>
-                Content 1
-            </Tabs.Tab>
-        </Tabs>
-
+          <Space>
+          <Button onClick={() => {
+              notification.confirm({
+                  icon: <Icon type={'info-filled'} theme={"primary"}/>,
+                  title: 'Notification',
+                  content: 'content',
+                  closable: true
+              })
+          }}>click</Button>
+          <Button onClick={() => {
+              notification.confirm({
+                  icon: <Icon type={'info-filled'} theme={"primary"}/>,
+                  title: 'Notification',
+                  content: 'content',
+                  closable: true
+              })
+          }}>click</Button>
+          </Space>
       </header>
   );
 }
