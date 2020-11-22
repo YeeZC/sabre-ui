@@ -115,7 +115,8 @@ const notice = (props: NotificationProps) => {
         renderNotification(instance);
     } else {
         Notification.newInstance({
-            style: selectStyle(placement)
+            style: selectStyle(placement),
+            prefixCls: `ui-notification-${placement}`
         }, n => {
             notificationMap.set(placement as NotificationPlacement, n)
             renderNotification(n);

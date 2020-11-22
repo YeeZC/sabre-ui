@@ -177,7 +177,7 @@ $box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
 
 // 按钮
 // 按钮基本属性
-$btn-font-weight:             400;
+$btn-font-weight:             $font-weight-normal;
 $btn-padding-y:               .375rem !default;
 $btn-padding-x:               .75rem !default;
 $btn-font-family:             $font-family-base !default;
@@ -233,7 +233,7 @@ $menu-item-padding-y:          .5rem !default;
 $menu-item-padding-x:          1rem !default;
 $menu-item-active-color:       $primary !default;
 $menu-item-active-border-width: 2px !default;
-$menu-item-disabled-color:     $gray-6 !default;
+$menu-item-disabled-color:     $gray-4 !default;
 
 //sub-menu
 //submenu

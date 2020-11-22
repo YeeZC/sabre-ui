@@ -5,21 +5,19 @@ import Link from './components/Link';
 import Icon from "./components/Icon";
 import notification from "./components/Notification";
 import message from "./components/Message";
+import Menu from "./components/Menu";
+import Tabs from "./components/Tabs";
 function App() {
   return (
       <header className="App-header">
-        <Link to="https://baidu.com">测试</Link>
-          <Button.Group>
-        <Button type='primary' formType={"submit"} >link</Button>
-        <Button danger dashed onClick={() => {
-            notification.success({
-                content:"Hello",
-                title: 'title',
-                closable: true
-            });
-        }} icon={<Icon type={"view-off"} />}>T</Button>
-          </Button.Group>
-          <Icon type={"refresh"} spinning/>
+        <Tabs type={"card"}>
+            <Tabs.Tab title={"Tab0"}>
+                Content 0
+            </Tabs.Tab>
+            <Tabs.Tab title={"Tab1"}>
+                Content 1
+            </Tabs.Tab>
+        </Tabs>
 
       </header>
   );

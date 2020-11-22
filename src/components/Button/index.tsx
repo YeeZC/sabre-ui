@@ -14,5 +14,6 @@ const Button: CC = props => {
 }
 
 Button.Group = Group
+Button.displayName = "Button"
 
 export default Button;

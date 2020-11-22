@@ -1,0 +1,22 @@
+@include notification-style('ui-msg')
+@include notification-zoom-animation('ui-msg', top left, scale(.45,.45), scale(1,1))
+
+.ui-msg-item {
+  position: relative;
+  min-width: 100%;
+  line-height: $line-height-base;
+  display: inline-block;
+  font-weight: $font-weight-normal;
+  color: $body-color;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  font-size: $font-size-base;
+}
+
+.ui-msg-item-content {
+  margin-left: .25rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

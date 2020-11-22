@@ -51,4 +51,6 @@ Btn.defaultProps = {
     }
 }
 
+Btn.displayName = "Button"
+
 export default Btn;

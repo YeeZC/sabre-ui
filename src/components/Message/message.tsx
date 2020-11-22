@@ -20,7 +20,9 @@ const show = (n: NotificationInstance, content: ReactNode, duration?: number) =>
 
 export const render = (content: ReactNode, duration?: number) => {
     if (!notification) {
-        Notification.newInstance({}, (n) => {
+        Notification.newInstance({
+            prefixCls: 'ui-msg'
+        }, (n) => {
             notification = n
             show(n, content, duration)
         });
@@ -79,8 +81,7 @@ const Message: React.FC<MessageProps> = (props) => {
             }
         }
     }, [])
-    return (<span className="msg-content">&nbsp;<Icon {...selectIcon(type)}/>
-        &nbsp;&nbsp;{text}</span>)
+    return (<span className="ui-msg-item"><Icon {...selectIcon(type)}/><i className="ui-msg-item-content">{text}</i></span>)
 }
 
 Message.defaultProps = {

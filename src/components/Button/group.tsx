@@ -1,15 +1,19 @@
-import React, {ReactElement} from "react";
+import React from "react";
 import classnames from "classnames";
+import {ButtonProps} from "./button";
 
 const Group: React.FC<{}> = ({children, ...rest}) => {
 
     const nodes = React.Children.toArray(children).filter(child => {
-        return child as ReactElement;
+        const btn = child as React.FunctionComponentElement<ButtonProps>;
+        if (btn && btn.type.displayName === "Button") {
+            return btn;
+        }
     });
 
     const length = nodes.length;
     return (<span className={'ui-btn-gp'}>{nodes.map((child, idx) => {
-        const element = child as ReactElement;
+        const element = child as React.FunctionComponentElement<ButtonProps>
         const {className} = element.props;
         return React.cloneElement(element, {
             className: classnames(className, {
@@ -20,5 +24,7 @@ const Group: React.FC<{}> = ({children, ...rest}) => {
         })
     })}</span>)
 }
+
+Group.displayName = "BtnGroup"
 
 export default Group;
