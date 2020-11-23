@@ -5,4 +5,5 @@ Divider.defaultProps = {
     type: "horizontal",
     size: "default"
 }
+
 export default Divider;

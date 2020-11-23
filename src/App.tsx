@@ -10,9 +10,8 @@ import Tabs from "./components/Tabs";
 import Space from "./components/Space";
 import Row from "./components/Row";
 import Card from "./components/Card";
-import Tag from "./components/Tag/tag";
 import Progress from "./components/Progress";
-import Divider from "./components/Divider/divider";
+import Divider from "./components/Divider";
 
 function App() {
     return (
