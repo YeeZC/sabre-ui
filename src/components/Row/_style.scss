@@ -3,17 +3,20 @@ $row-width: 100%;
   position: relative;
   padding: .5rem;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
   min-width: $row-width;
   max-width: $row-width;
-  // test
-  background-color: $cyan;
+  &.ui-row-flex-wrap {
+    flex-wrap: wrap;
+  }
 }
 
 .ui-col {
   padding: .125rem;
-  background-color: $danger;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
   @for $i from 1 through 24 {
     &.ui-col-#{$i} {
       min-width: ($i / 24.0) * $row-width;

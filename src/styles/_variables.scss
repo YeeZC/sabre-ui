@@ -297,3 +297,13 @@ $progress-bg:                       $gray-2 !default;
 $progress-border-radius:            $border-radius !default;
 $progress-bar-color:                $white !default;
 $progress-bar-transition:           width .6s ease !default;
+
+$card-padding-base: 1.5rem !default;;
+$card-padding-sm: 1rem !default;
+$card-padding-lg: 2rem !default;
+
+$card-body-font-size-base: $font-size-base !default;
+$card-body-font-size-lg: $font-size-lg !default;
+$card-body-font-size-sm: $font-size-sm !default;
+
+$card-box-shadow-sm:               0 .125rem .25rem rgba($black, .15) !default;

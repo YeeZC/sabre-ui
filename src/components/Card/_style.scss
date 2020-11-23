@@ -1,0 +1,64 @@
+.ui-card {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  &.ui-card-border {
+    border: $border-width solid $border-color;
+    border-radius: $border-radius / 2;
+  }
+  &.ui-card-hoverable {
+    &:hover {
+      box-shadow: $card-box-shadow-sm;
+      cursor: pointer;
+    }
+  }
+  @include card-style($card-padding-base, $card-body-font-size-base);
+}
+
+.ui-card-header {
+  border-bottom: $border-width solid $border-color;
+}
+
+.ui-card-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0;
+  li>span {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+    border-right: $border-width solid $border-color;
+    &:hover {
+      color: $primary;
+    }
+  }
+  li:last-child>span {
+    border-right: none;
+  }
+}
+
+.ui-card-cover {
+  >* {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.ui-card-default {
+  @include card-style($card-padding-base, $card-body-font-size-base)
+}
+
+.ui-card-large {
+  border-radius: $border-radius-lg;
+  @include card-style($card-padding-lg, $card-body-font-size-lg)
+}
+
+.ui-card-small {
+  border-radius: $border-radius-sm;
+  @include card-style($card-padding-sm, $card-body-font-size-sm)
+}

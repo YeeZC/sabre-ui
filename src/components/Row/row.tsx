@@ -5,15 +5,18 @@ import {useRenderChildren} from "../../hooks/useRenderChildren";
 
 interface RowProps {
     style?: React.CSSProperties;
-    className?: string
+    className?: string;
+    flexWrap?: boolean;
 }
 
 interface RowCompoundedComponent extends React.FC<RowProps> {
     Col: React.FC<ColProps>
 }
 
-const Row: RowCompoundedComponent = ({style, className, children}) => {
-    const classes = classNames('ui-row', className);
+const Row: RowCompoundedComponent = ({style, className, children, ...rest}) => {
+    const classes = classNames('ui-row', className, {
+        'ui-row-flex-wrap': rest.flexWrap
+    });
     const cols = useRenderChildren(children, 'Col');
     const colCount = React.Children.count(cols);
     let free = 24;
@@ -40,6 +43,10 @@ const Row: RowCompoundedComponent = ({style, className, children}) => {
             }
         })}
     </div>)
+}
+
+Row.defaultProps = {
+    flexWrap: true
 }
 
 Row.Col = Col

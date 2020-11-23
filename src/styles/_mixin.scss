@@ -240,3 +240,39 @@
     }
   }
 }
+
+@mixin card-style($padding-base, $body-font-size, $padding-title: $padding-base/1.5) {
+  .ui-card-header {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    font-size: $body-font-size;
+    padding: 0 $padding-base;
+    font-family: $headings-font-family;
+    font-style: $headings-font-style;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    color: $headings-color;
+    .ui-card-title {
+      padding: $padding-title 0;
+      min-width: 50%;
+    }
+    .ui-card-extra {
+      padding: $padding-title 0;
+      text-align: right;
+      font-size: $body-font-size *.875;
+      min-width: 50%;
+    }
+  }
+  .ui-card-body {
+    font-size: $body-font-size;
+    padding: $padding-base;
+  }
+  .ui-card-actions {
+    font-size: $body-font-size;
+    border-top: $border-width solid $border-color;
+    padding: $padding-title - .125 0;
+    color: $secondary;
+  }
+}

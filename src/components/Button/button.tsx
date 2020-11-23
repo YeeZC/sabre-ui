@@ -27,14 +27,24 @@ const Btn: React.FC<ButtonProps> = (props) => {
         'ui-btn-disabled': disabled,
         'ui-btn-dashed': dashed
     })
+    const onClickFunc = disabled ? (e: React.MouseEvent) => {} : (e: React.MouseEvent) => {
+        if (onClick) {
+            onClick();
+        }
+        e.stopPropagation();
+    };
     switch (formType) {
         case "reset":
         case "submit":
-            return (<button type={formType} className={classes} disabled={disabled} {...restProps}>
+            return (<button type={formType}
+                            className={classes}
+                            disabled={disabled}
+                            onClick={onClickFunc}
+                            {...restProps}>
                 {icon ? <span>{icon}&nbsp;</span> :
                     <span/>}{children}</button> )
         default: {
-            const onClickFunc = disabled ? () => {} : onClick;
+
             return (<span className={classes} onClick={onClickFunc} {...restProps}><span>{icon ? <span>{icon}&nbsp;</span> :
                 <span/>}{children}</span></span>)
         }

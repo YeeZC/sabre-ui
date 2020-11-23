@@ -9,51 +9,27 @@ import Menu from "./components/Menu";
 import Tabs from "./components/Tabs";
 import Space from "./components/Space";
 import Row from "./components/Row";
+import Card from "./components/Card";
 function App() {
   return (
       <header className="App-header">
-          <Row>
-              <Row.Col span={3}>
-                      <Button onClick={() => {
-                          notification.confirm({
-                              icon: <Icon type={'info-filled'} theme={"primary"}/>,
-                              title: 'Notification',
-                              content: 'content',
-                              closable: true
-                          })
-                      }}>click</Button>
-              </Row.Col>
-              <Row.Col span={2}>
-                  <Button onClick={() => {
-                      notification.confirm({
-                          icon: <Icon type={'info-filled'} theme={"primary"}/>,
-                          title: 'Notification',
-                          content: 'content',
-                          closable: true
-                      })
-                  }}>click</Button>
-              </Row.Col>
-              <Row.Col span={7}>
-                  <Button onClick={() => {
-                      notification.confirm({
-                          icon: <Icon type={'info-filled'} theme={"primary"}/>,
-                          title: 'Notification',
-                          content: 'content',
-                          closable: true
-                      })
-                  }}>click</Button>
-              </Row.Col>
-              <Row.Col span={12}>
-                  <Button onClick={() => {
-                      notification.confirm({
-                          icon: <Icon type={'info-filled'} theme={"primary"}/>,
-                          title: 'Notification',
-                          content: 'content',
-                          closable: true
-                      })
-                  }}>click</Button>
-              </Row.Col>
-          </Row>
+          <Card style={{width: 300}}
+                title={"Title"}
+                hoverable
+                extra={<Button.Group>
+                    <Button onClick={() => console.log('a')} type={"primary"}>a</Button>
+                    <Button onClick={() => console.log('b')} danger>b</Button>
+                </Button.Group>}
+                onClick={() => {
+                    console.log('click')
+                }}
+                actions={[
+                    'add',
+                    'remove',
+                ]}
+                cover={<img src={"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606127011506&di=e12dcb449dca900ece2135fb5087f263&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F08%2F22%2F01300000242726125670225939875.jpg"}/>}>
+              hello
+          </Card>
 
       </header>
   );
