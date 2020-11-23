@@ -8,27 +8,33 @@ import message from "./components/Message";
 import Menu from "./components/Menu";
 import Tabs from "./components/Tabs";
 import Space from "./components/Space";
+import Row from "./components/Row";
 function App() {
   return (
       <header className="App-header">
-          <Space>
-          <Button onClick={() => {
-              notification.confirm({
-                  icon: <Icon type={'info-filled'} theme={"primary"}/>,
-                  title: 'Notification',
-                  content: 'content',
-                  closable: true
-              })
-          }}>click</Button>
-          <Button onClick={() => {
-              notification.confirm({
-                  icon: <Icon type={'info-filled'} theme={"primary"}/>,
-                  title: 'Notification',
-                  content: 'content',
-                  closable: true
-              })
-          }}>click</Button>
-          </Space>
+          <Row>
+              <Row.Col>
+                      <Button onClick={() => {
+                          notification.confirm({
+                              icon: <Icon type={'info-filled'} theme={"primary"}/>,
+                              title: 'Notification',
+                              content: 'content',
+                              closable: true
+                          })
+                      }}>click</Button>
+              </Row.Col>
+              <Row.Col>
+                  <Button onClick={() => {
+                      notification.confirm({
+                          icon: <Icon type={'info-filled'} theme={"primary"}/>,
+                          title: 'Notification',
+                          content: 'content',
+                          closable: true
+                      })
+                  }}>click</Button>
+              </Row.Col>
+          </Row>
+
       </header>
   );
 }

@@ -8,14 +8,22 @@ interface TabsProps {
     current?: React.Key;
     type?: TabsType;
     className?: string;
-    onSelect?: (key: React.Key) => void
+    onSelect?: (key?: React.Key) => void;
+    style?: React.CSSProperties;
 }
 
 interface TabsCompoundedComponent extends React.FC<TabsProps> {
     Tab: React.FC<TabProps>
 }
 
-const Tabs: TabsCompoundedComponent = ({current, type, className, onSelect, children}) => {
+const Tabs: TabsCompoundedComponent = ({
+                                           current,
+                                           type,
+                                           className,
+                                           onSelect,
+                                           children,
+                                           style
+                                       }) => {
     const classes = classNames('ui-tabs', className, {
         [`ui-tabs-${type}`]: type
     })
@@ -37,7 +45,7 @@ const Tabs: TabsCompoundedComponent = ({current, type, className, onSelect, chil
 
 
     return (<div>
-        <ul className={classes}>
+        <ul className={classes} style={style}>
             {tabs?.map(tab => {
                 const {tabKey, disabled, title} = tab.props;
                 const classes = classNames('ui-tab', className, {
@@ -47,6 +55,9 @@ const Tabs: TabsCompoundedComponent = ({current, type, className, onSelect, chil
                 const handleClick = () => {
                     if (!disabled && active !== tabKey) {
                         setActive(tabKey)
+                        if (onSelect) {
+                            onSelect(tabKey as React.Key)
+                        }
                     }
                 }
                 return (<li className={classes} onClick={handleClick} key={tabKey}>{title}</li>)

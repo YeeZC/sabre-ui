@@ -228,10 +228,15 @@
     }
   }
 
-
   &.ui-space-vertical {
     .ui-space-item {
       margin: $margin 0;
+    }
+  }
+
+  &.ui-space-around {
+    .ui-space-item {
+      margin: $margin;
     }
   }
 }

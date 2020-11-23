@@ -12,6 +12,7 @@ export declare interface ButtonProps {
     icon?: React.ReactNode;
     dashed?: boolean;
     onClick?: () => void;
+    style?: React.CSSProperties;
 }
 
 type ButtonShape = 'circle' | 'square'

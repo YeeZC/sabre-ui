@@ -9,9 +9,15 @@ export declare interface SubMenuProps {
     icon?: ReactNode;
     title: ReactNode,
     disabled?: boolean;
+    style?: React.CSSProperties
 }
 
-const SubMenu: React.FC<SubMenuProps> = ({itemKey, title, disabled, children, icon}) => {
+const SubMenu: React.FC<SubMenuProps> = ({itemKey,
+                                             title,
+                                             disabled,
+                                             children,
+                                             icon,
+                                             ...rest}) => {
     const context = useContext(MenuContext);
     const isActive = (itemKey && context.active) ? context.active.toString().startsWith(itemKey.toString())
         : false;
@@ -45,7 +51,7 @@ const SubMenu: React.FC<SubMenuProps> = ({itemKey, title, disabled, children, ic
         }
     }: {}
 
-    return (<li className={classes} {...hoverShow}>
+    return (<li className={classes} {...hoverShow} {...rest}>
         <div className={'ui-menu-submenu-title'} {...clickShow}>{title}</div>
         {animation.animate((<ul className={classnames('ui-menu-submenu')}>
             {React.Children.map(children, (child, index) => {

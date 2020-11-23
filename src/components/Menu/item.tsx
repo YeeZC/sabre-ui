@@ -7,9 +7,10 @@ export interface MenuItemProps {
     onSelect?: () => void;
     icon?: ReactNode;
     disabled?: boolean;
+    style?: React.CSSProperties;
 }
 
-const Item: React.FC<MenuItemProps> = ({itemKey, disabled, onSelect, children}) => {
+const Item: React.FC<MenuItemProps> = ({itemKey, disabled, onSelect, children, ...rest}) => {
     const context = useContext(MenuContext);
     const classes = classnames('ui-menu-item', {
         'ui-menu-item-active': context.active === itemKey && !disabled,
@@ -26,7 +27,7 @@ const Item: React.FC<MenuItemProps> = ({itemKey, disabled, onSelect, children}) 
         }
 
     }
-    return <li className={classes} onClick={() => handleClick(itemKey as React.Key)}>{children}</li>
+    return <li className={classes} onClick={() => handleClick(itemKey as React.Key)} {...rest}>{children}</li>
 }
 
 Item.displayName = "MenuItem";

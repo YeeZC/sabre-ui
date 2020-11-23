@@ -1,0 +1,22 @@
+$row-width: 100%;
+.ui-row {
+  position: relative;
+  padding: .5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  min-width: $row-width;
+  max-width: $row-width;
+  // test
+  background-color: $cyan;
+}
+
+.ui-col {
+  padding: .125rem;
+  background-color: $danger;
+  @for $i from 1 through 24 {
+    &.ui-col-#{$i} {
+      min-width: ($i / 24.0) * $row-width;
+    }
+  }
+}
