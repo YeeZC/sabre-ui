@@ -1,13 +1,12 @@
 import React from 'react';
 import classname from "classnames";
 
-export type IconTheme = 'primary' | 'success' | 'danger' | 'info' | 'warn';
 
 export declare interface IconProps {
     type: string;
     spinning?: boolean;
     className?: string;
-    theme?: IconTheme;
+    theme?: Theme;
     size?: SizeType | number
 }
 

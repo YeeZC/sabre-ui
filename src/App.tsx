@@ -10,6 +10,7 @@ import Tabs from "./components/Tabs";
 import Space from "./components/Space";
 import Row from "./components/Row";
 import Card from "./components/Card";
+import Tag from "./components/Tag/tag";
 function App() {
   return (
       <header className="App-header">
@@ -28,9 +29,12 @@ function App() {
                     'remove',
                 ]}
                 cover={<img src={"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606127011506&di=e12dcb449dca900ece2135fb5087f263&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F08%2F22%2F01300000242726125670225939875.jpg"}/>}>
-              hello
-          </Card>
 
+          </Card>
+          <Tag text={"测试"} icon={<Icon type={'info'}/> } closable/>
+          <Tag text={"测试"} icon={<Icon type={'info'}/> } closable/>
+          <Tag text={"测试"} icon={<Icon type={'info'}/> } closable/>
+          <Tag text={"测试"} icon={<Icon type={'info'}/> } closable/>
       </header>
   );
 }

@@ -1,5 +1,5 @@
 import React, {ReactNode, useEffect} from "react";
-import Icon, {IconTheme} from "../Icon";
+import Icon from "../Icon";
 import {NotificationInstance} from "rc-notification/lib/Notification";
 import Notification from "rc-notification";
 
@@ -34,7 +34,7 @@ export const render = (content: ReactNode, duration?: number) => {
 
 interface IconSelector {
     type: string;
-    theme: IconTheme
+    theme: Theme
 }
 
 export declare interface MessageProps {

@@ -1,0 +1,25 @@
+.ui-tag {
+  padding: $tag-padding-y $tag-padding-x;
+  font-size: $tag-font-size;
+  border-radius: $border-radius;
+  >span {
+    margin: 0 $tag-padding-y;
+  }
+  .ui-tag-close {
+    cursor: pointer;
+    margin-left: 2*$tag-padding-x;
+    margin-right: 0;
+  }
+  &.ui-tag-closed {
+    display: none;
+  }
+}
+
+@each $key, $val in $theme-colors {
+  .ui-tag-#{$key} {
+    color: $val;
+    border: $border-width solid rgba($val, .875);
+    background-color: rgba($val, .125);
+  }
+}
+
