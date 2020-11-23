@@ -10,7 +10,7 @@ export interface MenuItemProps {
     style?: React.CSSProperties;
 }
 
-const Item: React.FC<MenuItemProps> = ({itemKey, disabled, onSelect, children, ...rest}) => {
+export const Item: React.FC<MenuItemProps> = ({itemKey, disabled, onSelect, children, ...rest}) => {
     const context = useContext(MenuContext);
     const classes = classnames('ui-menu-item', {
         'ui-menu-item-active': context.active === itemKey && !disabled,
@@ -31,5 +31,3 @@ const Item: React.FC<MenuItemProps> = ({itemKey, disabled, onSelect, children, .
 }
 
 Item.displayName = "MenuItem";
-
-export default Item;

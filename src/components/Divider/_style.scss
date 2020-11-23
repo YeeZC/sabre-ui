@@ -1,0 +1,40 @@
+.ui-divider {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0,0,0,.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum";
+  border-top: 1px solid rgba(0,0,0,.06);
+  @include divider-margin($divider-margin);
+  &.ui-divider-horizontal {
+    display: flex;
+    clear: both;
+    width: 100%;
+    min-width: 100%;
+  }
+
+  &.ui-divider-vertical {
+    display: flex;
+    clear: both;
+    height: 100%;
+    min-height: 100%;
+    border-top: none;
+    border-right: 1px solid rgba(0,0,0,.06);
+  }
+}
+
+.ui-divider-default {
+  @include divider-margin($divider-margin);
+}
+
+.ui-divider-small {
+  @include divider-margin($divider-margin-sm);
+}
+
+.ui-divider-large {
+  @include divider-margin($divider-margin-lg);
+}

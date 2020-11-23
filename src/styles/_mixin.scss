@@ -276,3 +276,13 @@
     color: $secondary;
   }
 }
+
+@mixin divider-margin($divider-margin) {
+  &.ui-divider-horizontal {
+    margin: $divider-margin 0;
+  }
+
+  &.ui-divider-vertical {
+    margin: 0 $divider-margin;
+  }
+}

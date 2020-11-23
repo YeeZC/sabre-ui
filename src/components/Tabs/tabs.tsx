@@ -1,6 +1,6 @@
 import React, {createContext, FunctionComponentElement, PropsWithChildren, useState} from "react";
 import classNames from "classnames";
-import Tab, {TabProps} from "./tab";
+import {Tab, TabProps} from "./tab";
 
 export type TabsType = 'line' | 'card'
 
@@ -16,7 +16,7 @@ interface TabsCompoundedComponent extends React.FC<TabsProps> {
     Tab: React.FC<TabProps>
 }
 
-const Tabs: TabsCompoundedComponent = ({
+export const Tabs: TabsCompoundedComponent = ({
                                            current,
                                            type,
                                            className,
@@ -76,5 +76,3 @@ Tabs.defaultProps = {
 }
 
 Tabs.Tab = Tab;
-
-export default Tabs;

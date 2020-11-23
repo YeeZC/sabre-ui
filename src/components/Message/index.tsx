@@ -1,5 +1,5 @@
-import React, {ReactNode} from 'react';
-import Message, {render} from "./message";
+import React from 'react';
+import {Message, render} from "./message";
 
 interface MessageProvider {
     success: (msg: string, duration?: number) => void;

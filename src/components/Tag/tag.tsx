@@ -10,7 +10,7 @@ interface TagProps {
     onClose?: MouseEventHandler
 }
 
-const Tag:React.FC<TagProps> = (props) => {
+export const Tag:React.FC<TagProps> = (props) => {
     const {text, icon, color, closable, onClose} = props;
     const [closed, setClosed] = useState(false);
     const useTheme = () => {
@@ -61,5 +61,3 @@ const Tag:React.FC<TagProps> = (props) => {
 Tag.defaultProps = {
     color: "secondary"
 }
-
-export default Tag;

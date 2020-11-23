@@ -1,7 +1,7 @@
 
 import React from "react";
-import Group from "./group";
-import Btn, {ButtonProps} from "./button";
+import {Group} from "./group";
+import {Btn, ButtonProps} from "./button";
 
 interface CompoundedComponent extends React.FC<ButtonProps> {
     Group: typeof Group;

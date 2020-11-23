@@ -12,7 +12,7 @@ export declare interface SubMenuProps {
     style?: React.CSSProperties
 }
 
-const SubMenu: React.FC<SubMenuProps> = ({itemKey,
+export const SubMenu: React.FC<SubMenuProps> = ({itemKey,
                                              title,
                                              disabled,
                                              children,
@@ -76,5 +76,3 @@ const SubMenu: React.FC<SubMenuProps> = ({itemKey,
 }
 
 SubMenu.displayName = "SubMenu";
-
-export default SubMenu;

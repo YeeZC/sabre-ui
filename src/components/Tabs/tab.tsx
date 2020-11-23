@@ -9,7 +9,7 @@ export interface TabProps {
     className?: string
 }
 
-const Tab: React.FC<TabProps> = (props) => {
+export const Tab: React.FC<TabProps> = (props) => {
     const {className, style} = props;
     const classes = classNames('ui-tab-content', className);
     return (<div className={classes} style={style}>{props.children}</div>)
@@ -20,5 +20,3 @@ Tab.defaultProps = {
 }
 
 Tab.displayName = "Tab"
-
-export default Tab;

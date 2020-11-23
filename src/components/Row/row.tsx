@@ -1,6 +1,6 @@
 import React, {FunctionComponentElement} from "react";
 import classNames from "classnames";
-import Col, {ColProps} from "./col";
+import {Col, ColProps} from "./col";
 import {useRenderChildren} from "../../hooks/useRenderChildren";
 
 interface RowProps {
@@ -13,7 +13,7 @@ interface RowCompoundedComponent extends React.FC<RowProps> {
     Col: React.FC<ColProps>
 }
 
-const Row: RowCompoundedComponent = ({style, className, children, ...rest}) => {
+export const Row: RowCompoundedComponent = ({style, className, children, ...rest}) => {
     const classes = classNames('ui-row', className, {
         'ui-row-flex-wrap': rest.flexWrap
     });
@@ -50,5 +50,3 @@ Row.defaultProps = {
 }
 
 Row.Col = Col
-
-export default Row;

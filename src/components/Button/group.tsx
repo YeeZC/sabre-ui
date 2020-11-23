@@ -2,7 +2,7 @@ import React from "react";
 import classnames from "classnames";
 import {ButtonProps} from "./button";
 
-const Group: React.FC<{}> = ({children, ...rest}) => {
+export const Group: React.FC<{}> = ({children, ...rest}) => {
 
     const nodes = React.Children.toArray(children).filter(child => {
         const btn = child as React.FunctionComponentElement<ButtonProps>;
@@ -26,5 +26,3 @@ const Group: React.FC<{}> = ({children, ...rest}) => {
 }
 
 Group.displayName = "BtnGroup"
-
-export default Group;

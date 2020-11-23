@@ -1,6 +1,6 @@
 import React, {createContext, FunctionComponentElement, useState} from "react";
-import Item, {MenuItemProps} from "./item";
-import SubMenu, {SubMenuProps} from "./sub";
+import {Item, MenuItemProps} from "./item";
+import {SubMenu, SubMenuProps} from "./sub";
 import classnames from 'classnames';
 
 interface MenuContextProps {
@@ -26,7 +26,7 @@ interface MenuCompoundedComponent extends React.FC<MenuProps> {
 
 type MenuCC = MenuCompoundedComponent;
 
-const Menu: MenuCC = ({direction, className, active, children, ...rest}) => {
+export const Menu: MenuCC = ({direction, className, active, children, ...rest}) => {
     const [current, setCurrent] = useState(active);
 
 
@@ -44,7 +44,7 @@ const Menu: MenuCC = ({direction, className, active, children, ...rest}) => {
         <ul className={classes} {...rest}>
             <MenuContext.Provider value={context}>
                 {React.Children.map(children, ((child, index) => {
-                    const element = child as FunctionComponentElement<MenuItemProps| SubMenuProps>;
+                    const element = child as FunctionComponentElement<MenuItemProps | SubMenuProps>;
                     if (element) {
                         const {displayName} = element.type;
                         if (displayName === 'MenuItem' || displayName == 'SubMenu') {
@@ -67,5 +67,3 @@ Menu.defaultProps = {
 
 Menu.Item = Item;
 Menu.SubMenu = SubMenu;
-
-export default Menu;

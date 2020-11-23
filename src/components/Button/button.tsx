@@ -17,7 +17,7 @@ export declare interface ButtonProps {
 
 type ButtonShape = 'circle' | 'square'
 
-const Btn: React.FC<ButtonProps> = (props) => {
+export const Btn: React.FC<ButtonProps> = (props) => {
     const {type, icon, className, danger, formType, dashed, size, shape, disabled, children, onClick, ...restProps} = props;
     const classes = classnames('ui-btn', className, {
         [`ui-btn-${type}`]: type,
@@ -63,5 +63,3 @@ Btn.defaultProps = {
 }
 
 Btn.displayName = "Button"
-
-export default Btn;

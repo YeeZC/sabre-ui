@@ -7,7 +7,7 @@ export declare interface ColProps {
     style?: React.CSSProperties
 }
 
-const Col: React.FC<ColProps> = ({span, className, style, children}) => {
+export const Col: React.FC<ColProps> = ({span, className, style, children}) => {
     const handleSpan = () => {
         if (span) {
             return Math.floor(span)
@@ -25,5 +25,3 @@ const Col: React.FC<ColProps> = ({span, className, style, children}) => {
 }
 
 Col.displayName = 'Col';
-
-export default Col;

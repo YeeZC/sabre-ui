@@ -68,7 +68,7 @@ const selectIcon = (type: StatusType): IconSelector => {
     }
 }
 
-const Message: React.FC<MessageProps> = (props) => {
+export const Message: React.FC<MessageProps> = (props) => {
     const {type, text} = props;
     useEffect(() => {
         return () => {
@@ -87,5 +87,3 @@ const Message: React.FC<MessageProps> = (props) => {
 Message.defaultProps = {
     type: "info",
 }
-
-export default Message;

@@ -11,32 +11,20 @@ import Space from "./components/Space";
 import Row from "./components/Row";
 import Card from "./components/Card";
 import Tag from "./components/Tag/tag";
-function App() {
-  return (
-      <header className="App-header">
-          <Card style={{width: 300}}
-                title={"Title"}
-                hoverable
-                extra={<Button.Group>
-                    <Button onClick={() => console.log('a')} type={"primary"}>a</Button>
-                    <Button onClick={() => console.log('b')} danger>b</Button>
-                </Button.Group>}
-                onClick={() => {
-                    console.log('click')
-                }}
-                actions={[
-                    'add',
-                    'remove',
-                ]}
-                cover={<img src={"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606127011506&di=e12dcb449dca900ece2135fb5087f263&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F08%2F22%2F01300000242726125670225939875.jpg"}/>}>
+import Progress from "./components/Progress";
+import Divider from "./components/Divider/divider";
 
-          </Card>
-          <Tag text={"测试"} icon={<Icon type={'info'}/> } closable/>
-          <Tag text={"测试"} icon={<Icon type={'info'}/> } closable/>
-          <Tag text={"测试"} icon={<Icon type={'info'}/> } closable/>
-          <Tag text={"测试"} icon={<Icon type={'info'}/> } closable/>
-      </header>
-  );
+function App() {
+    return (
+        <header className="App-header">
+            <div style={{width: 100, height: 300}}>
+                <p>aaa</p>
+                <Divider size={20} type={"vertical"}/>
+                <p>bbb</p>
+            </div>
+
+        </header>
+    );
 }
 
 export default App;
