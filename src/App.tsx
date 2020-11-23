@@ -13,7 +13,7 @@ function App() {
   return (
       <header className="App-header">
           <Row>
-              <Row.Col>
+              <Row.Col span={3}>
                       <Button onClick={() => {
                           notification.confirm({
                               icon: <Icon type={'info-filled'} theme={"primary"}/>,
@@ -23,7 +23,27 @@ function App() {
                           })
                       }}>click</Button>
               </Row.Col>
-              <Row.Col>
+              <Row.Col span={2}>
+                  <Button onClick={() => {
+                      notification.confirm({
+                          icon: <Icon type={'info-filled'} theme={"primary"}/>,
+                          title: 'Notification',
+                          content: 'content',
+                          closable: true
+                      })
+                  }}>click</Button>
+              </Row.Col>
+              <Row.Col span={7}>
+                  <Button onClick={() => {
+                      notification.confirm({
+                          icon: <Icon type={'info-filled'} theme={"primary"}/>,
+                          title: 'Notification',
+                          content: 'content',
+                          closable: true
+                      })
+                  }}>click</Button>
+              </Row.Col>
+              <Row.Col span={12}>
                   <Button onClick={() => {
                       notification.confirm({
                           icon: <Icon type={'info-filled'} theme={"primary"}/>,
