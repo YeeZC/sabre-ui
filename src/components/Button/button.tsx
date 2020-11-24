@@ -1,5 +1,7 @@
 import classnames from "classnames";
 import React from "react";
+import {ButtonType, SizeType} from "../../data";
+import { Group } from "./group";
 
 export declare interface ButtonProps {
     type?: ButtonType;
@@ -15,9 +17,13 @@ export declare interface ButtonProps {
     style?: React.CSSProperties;
 }
 
-type ButtonShape = 'circle' | 'square'
+export type ButtonShape = 'circle' | 'square'
 
-export const Btn: React.FC<ButtonProps> = (props) => {
+interface CompoundedComponent extends React.FC<ButtonProps> {
+    Group: typeof Group;
+}
+
+export const Button: CompoundedComponent = (props) => {
     const {type, icon, className, danger, formType, dashed, size, shape, disabled, children, onClick, ...restProps} = props;
     const classes = classnames('ui-btn', className, {
         [`ui-btn-${type}`]: type,
@@ -51,7 +57,10 @@ export const Btn: React.FC<ButtonProps> = (props) => {
     }
 }
 
-Btn.defaultProps = {
+Button.Group = Group
+Button.displayName = "Button"
+
+Button.defaultProps = {
     danger: false,
     type: 'default',
     disabled: false,
@@ -62,4 +71,4 @@ Btn.defaultProps = {
     }
 }
 
-Btn.displayName = "Button"
+Button.displayName = "Button"

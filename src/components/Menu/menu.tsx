@@ -2,6 +2,7 @@ import React, {createContext, FunctionComponentElement, useState} from "react";
 import {Item, MenuItemProps} from "./item";
 import {SubMenu, SubMenuProps} from "./sub";
 import classnames from 'classnames';
+import {Direction} from "../../data";
 
 interface MenuContextProps {
     active?: React.Key;

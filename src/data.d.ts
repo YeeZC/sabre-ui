@@ -1,7 +1,7 @@
 
-type StatusType = 'info' | 'success' | 'warn' | 'error';
-type ButtonType = 'default' | 'primary' | 'success' | 'warn' | 'link';
-type SizeType = 'default' | 'small' | 'large';
-type Direction = 'vertical' | 'horizontal';
-type Theme = 'primary' | 'success' | 'danger' | 'info' | 'warn' | 'secondary' | 'dark';
-type VoidCall = () => void;
+export type StatusType = 'info' | 'success' | 'warn' | 'error';
+export type ButtonType = 'default' | 'primary' | 'success' | 'warn' | 'link';
+export type SizeType = 'default' | 'small' | 'large';
+export type Direction = 'vertical' | 'horizontal';
+export type Theme = 'primary' | 'success' | 'danger' | 'info' | 'warn' | 'secondary' | 'dark';
+export type VoidCall = () => void;

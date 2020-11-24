@@ -18,11 +18,11 @@ function App() {
     return (
         <header className="App-header">
             <div style={{width: 300, height: 300}}>
-                <p>aaa</p>
-                <Divider size={20} placement={'right'} dashed>
-                    Text
-                </Divider>
-                <p>bbb</p>
+                <span>
+                <span>aaa</span>
+                <Divider size={20} placement={'right'} type={"vertical"}></Divider>
+                <span>a</span>
+                </span>
                 <Input.Number placeholder={"请输入"} defaultValue={10} steps={.3} onChange={v => console.log(v)}/>
                 <Divider size={20} placement={'right'} dashed>
                     Text

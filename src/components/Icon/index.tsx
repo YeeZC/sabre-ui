@@ -1,5 +1,6 @@
 import React from 'react';
 import classname from "classnames";
+import {SizeType, Theme} from "../../data";
 
 
 export declare interface IconProps {

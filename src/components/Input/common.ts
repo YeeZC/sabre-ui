@@ -1,4 +1,5 @@
 import {ReactNode} from "react";
+import {SizeType} from "../../data";
 
 export interface InputPropsBase {
     name?: string;

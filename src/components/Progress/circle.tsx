@@ -3,6 +3,7 @@ import {colorMap, ProgressProps, ProgressStrokeColor} from "./common";
 import {Circle} from "rc-progress";
 import classNames from "classnames";
 import Icon from "../Icon";
+import {Theme} from "../../data";
 
 export const CircleProgress: React.FC<ProgressProps> = (props) => {
     const {

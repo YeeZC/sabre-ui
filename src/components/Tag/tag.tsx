@@ -1,6 +1,7 @@
 import React, {MouseEventHandler, ReactNode, useState} from "react";
 import classNames from "classnames";
 import Icon from "../Icon";
+import {Theme} from "../../data";
 
 interface TagProps {
     text: string;

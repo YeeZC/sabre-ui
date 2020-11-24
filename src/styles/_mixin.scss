@@ -8,7 +8,7 @@
 }
 
 @mixin btn-circle($min-size) {
-  border-radius: $min-size / 2
+  border-radius: 50%
 }
 
 @mixin btn-gp-style($border-radius) {

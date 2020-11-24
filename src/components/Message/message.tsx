@@ -2,6 +2,7 @@ import React, {ReactNode, useEffect} from "react";
 import Icon from "../Icon";
 import {NotificationInstance} from "rc-notification/lib/Notification";
 import Notification from "rc-notification";
+import {StatusType, Theme} from "../../data";
 
 let notification: NotificationInstance | undefined;
 

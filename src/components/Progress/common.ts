@@ -1,4 +1,5 @@
 import {ReactNode, useEffect, useRef} from "react";
+import {Theme} from "../../data";
 
 export interface ProgressStrokeColor {
     from: string;

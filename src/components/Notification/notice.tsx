@@ -3,6 +3,7 @@ import classname from "classnames";
 import Button from "../Button";
 import {NotificationInstance} from "rc-notification/lib/Notification";
 import Notification from "rc-notification";
+import {VoidCall} from "../../data";
 
 export declare interface NotificationProps {
     placement?: NotificationPlacement;
