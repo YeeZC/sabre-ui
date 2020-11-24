@@ -16,10 +16,17 @@ import Divider from "./components/Divider";
 function App() {
     return (
         <header className="App-header">
-            <div style={{width: 100, height: 300}}>
+            <div style={{width: 300, height: 300}}>
                 <p>aaa</p>
-                <Divider size={20} type={"vertical"}/>
+                <Divider size={20} placement={'right'} dashed>
+                    Text
+                </Divider>
                 <p>bbb</p>
+                <Button type={"primary"} onClick={() => {
+                    notification.success({
+                        content: "Hello"
+                    })
+                }}>点击通知</Button>
             </div>
 
         </header>

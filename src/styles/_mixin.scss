@@ -128,9 +128,7 @@
   .#{$prefix}-notice {
     padding: 7px 20px 7px 10px;
     border-radius: 3px 3px;
-    border: 1px solid #999;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border: 0px solid rgba(0, 0, 0, 0);
     background: #fff;
     display: block;
     width: auto;
@@ -280,6 +278,50 @@
 @mixin divider-margin($divider-margin) {
   &.ui-divider-horizontal {
     margin: $divider-margin 0;
+
+    &.ui-divider-text {
+      display: flex;
+      margin: $divider-margin 0;
+      font-size: 1rem;
+      white-space: nowrap;
+      text-align: center;
+      border-top: none;
+      &::before, &::after {
+        position: relative;
+        top: 50%;
+        width: 50%;
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: $gray-3;
+        border-bottom: 0;
+        transform: translateY(50%);
+        content: "";
+      }
+      .ui-divider-inner-text {
+        padding: 0 1rem;
+      }
+      &.ui-divider-dashed {
+        &::before, &::after {
+          border-top-style: dashed;
+        }
+      }
+      &.ui-divider-text-left {
+        &::after {
+          width: 95%;
+        }
+        &::before {
+          width: 5%;
+        }
+      }
+      &.ui-divider-text-right {
+        &::after {
+          width: 5%;
+        }
+        &::before {
+          width: 95%;
+        }
+      }
+    }
   }
 
   &.ui-divider-vertical {
