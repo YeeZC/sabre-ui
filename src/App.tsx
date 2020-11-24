@@ -12,6 +12,7 @@ import Row from "./components/Row";
 import Card from "./components/Card";
 import Progress from "./components/Progress";
 import Divider from "./components/Divider";
+import Input from "./components/Input";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                     Text
                 </Divider>
                 <p>bbb</p>
+                <Input placeholder={"请输入"} size={"small"}/>
                 <Button type={"primary"} onClick={() => {
                     notification.success({
                         content: "Hello"

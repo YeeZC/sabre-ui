@@ -328,3 +328,9 @@
     margin: 0 $divider-margin;
   }
 }
+
+@mixin input-size($paddingY, $paddingX, $font-size, $border-radius) {
+  border-radius: $border-radius;
+  padding: $paddingY $paddingX;
+  font-size: $font-size;
+}

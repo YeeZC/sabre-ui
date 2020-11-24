@@ -1,0 +1,30 @@
+.ui-input {
+  border-color: $border-color;
+  border-width: 1px;
+  border-style: solid;
+  font-family: $input-font-family;
+  @include input-size($input-padding-y, $input-padding-x,
+          $input-font-size, $input-border-radius);
+  &:hover, &.hover,&:focus,&.focus {
+    border-color: $primary;
+  }
+  &:focus,&.focus {
+    outline: none;
+    box-shadow: $input-focus-box-shadow;
+  }
+}
+
+.ui-input-default {
+  @include input-size($input-padding-y, $input-padding-x,
+          $input-font-size, $input-border-radius);
+}
+
+.ui-input-small {
+  @include input-size($input-padding-y-sm, $input-padding-x-sm,
+          $input-font-size-sm, $input-border-radius-sm);
+}
+
+.ui-input-large {
+  @include input-size($input-padding-y-lg, $input-padding-x-lg,
+          $input-font-size-lg, $input-border-radius-lg);
+}
