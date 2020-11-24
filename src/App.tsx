@@ -23,7 +23,10 @@ function App() {
                     Text
                 </Divider>
                 <p>bbb</p>
-                <Input placeholder={"请输入"} size={"small"}/>
+                <Input.Number placeholder={"请输入"} defaultValue={10} steps={.3} onChange={v => console.log(v)}/>
+                <Divider size={20} placement={'right'} dashed>
+                    Text
+                </Divider>
                 <Button type={"primary"} onClick={() => {
                     notification.success({
                         content: "Hello"

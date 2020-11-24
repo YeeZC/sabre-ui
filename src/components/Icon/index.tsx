@@ -21,7 +21,7 @@ const Icon: React.FC<IconProps> = ({type, theme, className, size, spinning}) => 
     let style = {};
     if (typeof size === "number") {
         style = {
-            "font-size": `${size}rem`
+            fontSize: `${size}rem`,
         }
     }
     return (<i className={classes} style={style}/>)

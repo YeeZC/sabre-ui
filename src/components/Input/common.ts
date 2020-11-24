@@ -1,6 +1,11 @@
+import {ReactNode} from "react";
 
 export interface InputPropsBase {
-    value?: string;
+    name?: string;
     placeholder?: string;
     size?: SizeType;
+    value?: string;
+    defaultValue?: string;
+    onChange?:(value: string) => void;
+    prefix?: ReactNode
 }

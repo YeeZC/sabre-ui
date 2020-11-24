@@ -290,6 +290,10 @@ $input-group-addon-color:               $input-color !default;
 $input-group-addon-bg:                  $gray-2 !default;
 $input-group-addon-border-color:        $input-border-color !default;
 
+$input-height-base: $btn-min-height !default;
+$input-height-sm: $btn-min-height-sm !default;
+$input-height-lg: $btn-min-height-lg !default;
+
 // Progress bars
 
 $progress-font-size:                $font-size-base * .75 !default;

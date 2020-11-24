@@ -329,8 +329,18 @@
   }
 }
 
-@mixin input-size($paddingY, $paddingX, $font-size, $border-radius) {
+@mixin input-size($input-height, $paddingY, $paddingX, $font-size, $border-radius) {
+  height: $input-height;
+  max-height: $input-height;
   border-radius: $border-radius;
   padding: $paddingY $paddingX;
   font-size: $font-size;
+
+  .ui-input-prefix {
+    margin-right: $paddingY;
+  }
+
+  .ui-input-number-picker {
+    border-radius: 0 $border-radius $border-radius 0;
+  }
 }
