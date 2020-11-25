@@ -67,7 +67,7 @@ export const SubMenu: React.FC<SubMenuProps> = ({itemKey,
                 }
             })}
         </ul>), {
-            in: show,
+            show: show,
             timeout: 100,
             type: "zoom-in-top"
         })}

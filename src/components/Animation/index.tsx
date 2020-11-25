@@ -8,15 +8,15 @@ export interface AnimationApi {
 
 export interface AnimationProps {
     type?: AnimationType;
-    in?: boolean;
+    show?: boolean;
     classNames?: string;
     timeout: number;
     appear?: boolean;
     unmountOnExit?: boolean;
 }
 
-export const Animation: React.FC<AnimationProps> = ({classNames, type, children, ...rest}) => {
-    return <CSSTransition classNames={classNames || type} {...rest}>
+export const Animation: React.FC<AnimationProps> = ({classNames, show, type, children, ...rest}) => {
+    return <CSSTransition classNames={classNames || type} in={show} {...rest}>
         {children}
     </CSSTransition>
 }

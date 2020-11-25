@@ -1,30 +1,3 @@
-import React from "react";
-import {Line} from "./line";
-import {CircleProgress} from "./circle";
-import {ProgressProps} from "./common";
-
-export type ProgressType = 'line' | 'circle';
-
-interface ProgressCompoundedComponent extends React.FC<ProgressProps & {type?: ProgressType}> {
-    Line: React.FC<ProgressProps>;
-    Circle: React.FC<ProgressProps>;
-}
-
-type ProgressCC = ProgressCompoundedComponent;
-
-const Progress: ProgressCC = (props) => {
-    const {type} = props;
-    if (type === "line") {
-        return <Line {...props}/>
-    }
-    return <CircleProgress {...props}/>
-}
-
-Progress.defaultProps = {
-    type: "line"
-}
-
-Progress.Line = Line;
-Progress.Circle = CircleProgress;
+import {Progress} from "./progress";
 
 export default Progress;

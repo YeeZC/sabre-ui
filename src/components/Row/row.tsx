@@ -3,7 +3,7 @@ import classNames from "classnames";
 import {Col, ColProps} from "./col";
 import {useRenderChildren} from "../../hooks/useRenderChildren";
 
-interface RowProps {
+export interface RowProps {
     style?: React.CSSProperties;
     className?: string;
     flexWrap?: boolean;

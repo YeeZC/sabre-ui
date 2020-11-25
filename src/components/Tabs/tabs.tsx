@@ -4,7 +4,7 @@ import {Tab, TabProps} from "./tab";
 
 export type TabsType = 'line' | 'card'
 
-interface TabsProps {
+export interface TabsProps {
     current?: React.Key;
     type?: TabsType;
     className?: string;

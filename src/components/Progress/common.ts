@@ -1,7 +1,10 @@
-import {ReactNode, useEffect, useRef} from "react";
+import {ReactNode} from "react";
 import {Theme} from "../../data";
 
 export interface ProgressStrokeColor {
+    /**
+     * 起始颜色
+     */
     from: string;
     to: string;
 }

@@ -2,7 +2,7 @@ import React, {ReactElement} from "react";
 import classNames from "classnames";
 import {Direction, SizeType} from "../../data";
 
-interface SpaceProps {
+export interface SpaceProps {
     direction?: Direction | 'around';
     size?: SizeType | number
 }

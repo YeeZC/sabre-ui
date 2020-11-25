@@ -1,14 +1,14 @@
 import React from 'react';
 import {Message, render} from "./message";
 
-interface MessageProvider {
+export interface MessageApi {
     success: (msg: string, duration?: number) => void;
     warn: (msg: string, duration?: number) => void;
     info: (msg: string, duration?: number) => void;
     error: (msg: string, duration?: number) => void;
 }
 
-const message: MessageProvider = {
+const message: MessageApi = {
     success: (msg, duration) => {
         render(<Message text={msg} type={"success"}/>, duration);
     },

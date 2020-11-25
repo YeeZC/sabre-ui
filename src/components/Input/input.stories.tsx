@@ -6,7 +6,7 @@ import Space from "../Space";
 
 const meta: Meta = {
     title: 'Input',
-    component: Input
+    component: Input,
 }
 
 export default meta;

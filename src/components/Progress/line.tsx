@@ -16,23 +16,35 @@ export const Line: React.FC<ProgressProps> = (props) => {
         status
     } = props;
 
+    const handlePercent = () => {
+        if (!percent || percent < 0) {
+            return 0;
+        }
+        if (percent > 100) {
+            return 100;
+        }
+        return percent;
+    }
+
+    const value = handlePercent();
+
     const renderText = () => {
         if (format) {
-            return format(percent);
+            return format(value);
         }
-        if (percent === 100) {
+        if (value === 100) {
             return <Icon type={'check-filled'} theme={"success"}/>
         }
-        return `${percent}%`
+        return `${value}%`
     }
 
     let style: React.CSSProperties = {
-        width: `${percent}%`
+        width: `${value}%`
     };
 
     if (typeof strokeColor === "string") {
         style.backgroundColor = strokeColor;
-    } else if(percent === 100) {
+    } else if(value === 100) {
         style.backgroundColor = colorMap.get('success');
     }else {
         const color = strokeColor as ProgressStrokeColor;
@@ -45,12 +57,12 @@ export const Line: React.FC<ProgressProps> = (props) => {
 
     return (<div className={classNames("ui-progress", "ui-progress-line")} style={{width: size}}>
         <div className={classNames('ui-progress-outer', {
-            'ui-progress-status-active': status === "active" && percent < 100
+            'ui-progress-status-active': status === "active" && value < 100
         })} style={{
             height: strokeSize || 10
         }}>
             <div className={classNames('ui-progress-bg', {
-                'ui-progress-bg-round': strokeLinecap === "round" || percent === 100,
+                'ui-progress-bg-round': strokeLinecap === "round" || value === 100,
             })} style={style}/>
         </div>
         {showInfo ? <div className={'ui-progress-text'}>{renderText()}</div> : ''}

@@ -36,22 +36,19 @@
 }
 
 .ui-tabs-card {
+  border-bottom: $menu-border-width solid $menu-border-color;
   >.ui-tab {
     border: $menu-border-width solid transparent;
-    border-bottom: $menu-border-width solid $menu-border-color;
     &.ui-tab-active {
+      border-color: $menu-border-color;
       border-bottom-color: transparent;
       border-radius: .5rem .5rem 0 0;
-      border-top-color: $menu-border-color;
-      border-left-color: $menu-border-color;
-      border-right-color: $menu-border-color;
       &:hover {
         border-bottom-color: transparent;
       }
-
     }
     &:hover {
-      border-bottom: $menu-border-width solid $menu-border-color;
+      border-bottom: $menu-border-width solid transparent;
     }
   }
 }

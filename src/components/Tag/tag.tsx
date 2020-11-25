@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Icon from "../Icon";
 import {Theme} from "../../data";
 
-interface TagProps {
+export interface TagProps {
     text: string;
     icon?: ReactNode;
     color?: Theme | string;
