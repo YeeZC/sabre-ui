@@ -3,8 +3,8 @@ import classNames from "classnames";
 import {InputPropsBase} from "./common";
 import Icon from "../Icon";
 
-export const Password:React.FC<InputPropsBase> = (props) =>  {
-    const {prefix, name, value, placeholder, size, defaultValue, onChange} = props;
+export const Password: React.FC<InputPropsBase> = (props) => {
+    const {prefix, name, value, placeholder, size, defaultValue, onChange, className} = props;
     const [inputValue, setValue] = useState<string>(value || defaultValue || '');
     const [focus, setFocus] = useState<boolean>(false)
     const [show, setShow] = useState<boolean>(false);
@@ -20,10 +20,12 @@ export const Password:React.FC<InputPropsBase> = (props) =>  {
     }, [inputValue])
 
     return (
-        <div className={classNames('ui-input', 'ui-input-password', {
-            [`ui-input-${size}`]: size,
-            'focus': focus
-        })}>
+        <div className={classNames('ui-input',
+            'ui-input-password',
+            className, {
+                [`ui-input-${size}`]: size,
+                'focus': focus,
+            })}>
             {prefix ? <span className={'ui-input-prefix'}>{prefix}</span> : ''}
             <input type={show ? 'text' : 'password'}
                    name={name}
@@ -41,9 +43,9 @@ export const Password:React.FC<InputPropsBase> = (props) =>  {
                            onChange(event.target.value)
                        }
                    }}/>
-                   <span className={'ui-input-view'} onClick={() => {
-                       setShow(!show)
-                   }}>
+            <span className={'ui-input-view'} onClick={() => {
+                setShow(!show)
+            }}>
                        {show ? <Icon type={'view-off'}/> : <Icon type={'view'}/>}
                    </span>
         </div>)

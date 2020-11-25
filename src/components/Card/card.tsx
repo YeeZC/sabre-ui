@@ -1,7 +1,8 @@
-import React, {ReactNode} from "react";
+import React, {MouseEventHandler, ReactNode} from "react";
 import classNames from "classnames";
+import {SizeType} from "../../data";
 
-interface CardProps {
+export interface CardProps {
     className?: string;
     style?: React.CSSProperties;
     title?: ReactNode;
@@ -16,7 +17,7 @@ interface CardProps {
 }
 
 
-const Card: React.FC<CardProps> = (props) => {
+export const Card: React.FC<CardProps> = (props) => {
     const {className,
         style,
         border,
@@ -72,7 +73,13 @@ const Card: React.FC<CardProps> = (props) => {
         }
     }
 
-    return (<div className={classes} style={style} onClick={onClick}>
+    const handleClick: MouseEventHandler = (e) => {
+        if (hoverable && onClick) {
+            onClick(e);
+        }
+    }
+
+    return (<div className={classes} style={style} onClick={handleClick}>
         {renderTitle()}
         {renderCover()}
         {renderContent()}
@@ -84,5 +91,3 @@ Card.defaultProps = {
     border: true,
     hoverable: false
 }
-
-export default Card;

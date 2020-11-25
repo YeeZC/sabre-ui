@@ -13,7 +13,7 @@ interface MenuContextProps {
 export const MenuContext = createContext<MenuContextProps>({})
 
 
-interface MenuProps {
+export interface MenuProps {
     direction?: Direction;
     active?: React.Key;
     className?: string;

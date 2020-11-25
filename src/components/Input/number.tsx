@@ -5,17 +5,17 @@ import Icon from "../Icon";
 
 const regExp = new RegExp('^[+|-]?[0-9]+.{0,1}[0-9]{0,2}$');
 
-export interface NumberProps extends Omit<InputPropsBase, 'value'|'defaultValue'|'onChange' > {
+export interface NumberProps extends Omit<InputPropsBase, 'value' | 'defaultValue' | 'onChange'> {
     value?: number;
     defaultValue?: number;
-    onChange?:(value: number) => void
+    onChange?: (value: number) => void
     min?: number;
     max?: number;
     steps?: number;
 }
 
-export const Num:React.FC<NumberProps> = (props) =>  {
-    const {name, value, placeholder, size, defaultValue, onChange} = props;
+export const Num: React.FC<NumberProps> = (props) => {
+    const {name, value, placeholder, size, defaultValue, onChange, className, prefix} = props;
     const {min, max, steps} = props;
     const [inputValue, setValue] = useState<number>(value || defaultValue || 0);
     const [dig, setDig] = useState<number>(1)
@@ -63,10 +63,11 @@ export const Num:React.FC<NumberProps> = (props) =>  {
         return result;
     }
     return (
-        <div className={classNames('ui-input', 'ui-input-number', {
+        <div className={classNames('ui-input', 'ui-input-number', className, {
             [`ui-input-${size}`]: size,
-            'focus': focus
+            'focus': focus,
         })}>
+            {prefix ? <span className={'ui-input-prefix'}>{prefix}</span> : ''}
             <input type={'text'}
                    name={name}
                    ref={(r) => {
@@ -79,12 +80,12 @@ export const Num:React.FC<NumberProps> = (props) =>  {
                    onBlur={() => setFocus(false)}
                    onChange={event => {
                        const {value} = event.target;
-                        const number = Number(value) * dig;
-                        if (number && checkRange(number)) {
-                            setValue(number);
-                        }
+                       const number = Number(value) * dig;
+                       if (number && checkRange(number)) {
+                           setValue(number);
+                       }
                    }}/>
-                   <span className={'ui-input-number-picker'}>
+            <span className={'ui-input-number-picker'}>
                        <span onClick={() => {
                            const b = checkRange(inputValue + step);
                            if (b) {
@@ -106,3 +107,5 @@ Num.defaultProps = {
     size: "default",
     steps: 1
 }
+
+export default Num;

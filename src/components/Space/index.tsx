@@ -12,7 +12,7 @@ const Space:React.FC<SpaceProps> = ({direction,size, children}) => {
         [`ui-space-${direction}`]: direction,
         [`ui-space-${size}`]: typeof size === "string"
     })
-    let style:React.CSSProperties | undefined = undefined;
+    let style:React.CSSProperties = {};
     if (typeof size === "number") {
         switch (direction) {
             case "around": {
@@ -47,9 +47,13 @@ const Space:React.FC<SpaceProps> = ({direction,size, children}) => {
             const element = child as ReactElement;
             if (element) {
                 const {className} = element.props;
+                const styled = element.props.style || {}
                 return React.cloneElement(element, {
                     className: classNames(className, 'ui-space-item'),
-                    style
+                    style: {
+                        ...styled,
+                        ...style
+                    }
                 })
             }
         })}

@@ -2,8 +2,8 @@ import React, {useEffect, useRef, useState} from "react";
 import classNames from "classnames";
 import {InputPropsBase} from "./common";
 
-export const Text:React.FC<InputPropsBase> = (props) =>  {
-    const {name, value, placeholder, size, defaultValue, onChange} = props;
+export const Text: React.FC<InputPropsBase> = (props) => {
+    const {name, value, placeholder, size, defaultValue, onChange, className, prefix} = props;
     const [inputValue, setValue] = useState<string>(value || defaultValue || '');
     const [focus, setFocus] = useState<boolean>(false);
     const inputRef = useRef<HTMLInputElement>();
@@ -18,26 +18,29 @@ export const Text:React.FC<InputPropsBase> = (props) =>  {
     }, [inputValue])
 
     return (
-        <div className={classNames('ui-input', 'ui-input-text', {
-            [`ui-input-${size}`]: size,
-            'focus': focus
-        })}>
-        <input type={'text'}
-               name={name}
-               ref={(r) => {
-                   if (r) {
-                       inputRef.current = r;
-                   }
-               }}
-               placeholder={placeholder}
-               onFocus={() => setFocus(true)}
-               onBlur={() => setFocus(false)}
-               onChange={event => {
-                   setValue(event.target.value);
-                   if (onChange) {
-                       onChange(event.target.value)
-                   }
-               }}/>
+        <div className={classNames('ui-input',
+            'ui-input-text',
+            className, {
+                [`ui-input-${size}`]: size,
+                'focus': focus,
+            })}>
+            {prefix ? <span className={'ui-input-prefix'}>{prefix}</span> : ''}
+            <input type={'text'}
+                   name={name}
+                   ref={(r) => {
+                       if (r) {
+                           inputRef.current = r;
+                       }
+                   }}
+                   placeholder={placeholder}
+                   onFocus={() => setFocus(true)}
+                   onBlur={() => setFocus(false)}
+                   onChange={event => {
+                       setValue(event.target.value);
+                       if (onChange) {
+                           onChange(event.target.value)
+                       }
+                   }}/>
         </div>)
 }
 

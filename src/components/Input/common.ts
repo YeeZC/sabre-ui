@@ -8,5 +8,6 @@ export interface InputPropsBase {
     value?: string;
     defaultValue?: string;
     onChange?:(value: string) => void;
-    prefix?: ReactNode
+    prefix?: ReactNode;
+    className?: string;
 }

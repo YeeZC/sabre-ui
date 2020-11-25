@@ -6,7 +6,7 @@ export interface AnimationApi {
     animate: (node: ReactNode, props: AnimationProps) => ReactElement;
 }
 
-interface AnimationProps {
+export interface AnimationProps {
     type?: AnimationType;
     in?: boolean;
     classNames?: string;
@@ -15,7 +15,7 @@ interface AnimationProps {
     unmountOnExit?: boolean;
 }
 
-const Animation: React.FC<AnimationProps> = ({classNames, type, children, ...rest}) => {
+export const Animation: React.FC<AnimationProps> = ({classNames, type, children, ...rest}) => {
     return <CSSTransition classNames={classNames || type} {...rest}>
         {children}
     </CSSTransition>

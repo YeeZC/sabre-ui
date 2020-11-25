@@ -1,24 +1,18 @@
 .ui-input {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
+  justify-content: center;
   border-color: $border-color;
   border-width: 1px;
   border-style: solid;
   font-family: $input-font-family;
   @include input-size($input-height-base, $input-padding-y, $input-padding-x,
           $input-font-size, $input-border-radius);
-  &:hover, &.hover,&:focus,&.focus {
-    border-color: $primary;
-    .ui-input-number-picker {
-      opacity: 1
-    }
-  }
-  &:focus,&.focus {
-    outline: none;
-    box-shadow: $input-focus-box-shadow;
-  }
   input {
+    width: 100%;
     &:placeholder-shown {
       text-overflow: ellipsis;
     }
@@ -30,6 +24,17 @@
     border: none;
     outline: none;
     min-height: 100%;
+  }
+
+  &:hover, &.hover,&:focus,&.focus {
+    border-color: $primary;
+    .ui-input-number-picker {
+      opacity: 1
+    }
+  }
+  &:focus,&.focus {
+    outline: none;
+    box-shadow: $input-focus-box-shadow;
   }
   .ui-input-number-picker {
     max-height: $input-height-base;
