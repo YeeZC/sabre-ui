@@ -6,7 +6,15 @@ import Button from "../Button";
 
 const meta: Meta = {
     title: 'Tooltip',
-    component: Tooltip
+    component: Tooltip,
+    argTypes: {
+        placement: {
+            control: {
+                type: 'select'
+            },
+            defaultValue: 'top'
+        }
+    }
 }
 
 export default meta;
@@ -14,11 +22,14 @@ export default meta;
 export const Template:Story<TooltipProps> = (props) => {
     const target = {
         ...props,
+        placement: props.placement || 'top',
         tip: props.tip || 'This is a tip'
     }
-    return (<Tooltip {...target}>
-        <Button type={'primary'}>Click</Button>
-    </Tooltip>)
+    return (<div style={{height: 300, display:"flex", alignItems: "center", justifyContent: "center"}}>
+        <Tooltip {...target}>
+        <Button type={'primary'} size={"large"}>Hover</Button>
+    </Tooltip>
+    </div>)
 }
 
 Template.storyName = 'Tooltip'

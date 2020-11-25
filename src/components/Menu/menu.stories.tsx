@@ -11,7 +11,9 @@ const meta: Meta = {
 export default meta;
 
 export const Template: Story<MenuProps> = (props) => {
-    return (<Menu {...props}>
+    return (
+        <div style={{height: 300}}>
+        <Menu {...props}>
         <Menu.Item>MenuItem 1</Menu.Item>
         <Menu.Item disabled>MenuItem 2</Menu.Item>
         <Menu.Item>MenuItem 3</Menu.Item>
@@ -20,7 +22,7 @@ export const Template: Story<MenuProps> = (props) => {
             <Menu.Item>SubMenu Item 2</Menu.Item>
             <Menu.Item>SubMenu Item 3</Menu.Item>
         </Menu.SubMenu>
-    </Menu>)
+    </Menu></div>)
 }
 
 Template.storyName = "Menu"

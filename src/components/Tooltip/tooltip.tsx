@@ -1,65 +1,60 @@
 import React, {ReactNode, useEffect, useRef, useState} from "react";
+import classNames from "classnames";
 import {Placement} from "../../data";
-import Notification from "rc-notification";
-import {NotificationInstance} from "rc-notification/lib/Notification";
+import animation, {AnimationType} from "../Animation";
 
 export interface TooltipProps {
     tip: ReactNode;
     placement?: Placement;
+    color?: string;
+    className?: string;
 }
 
-interface Point {
-    x: number;
-    y: number;
-}
-
-const getPoint = (element: HTMLElement):Point => {
-    let elm: HTMLElement | null = element;
-    let y = 0;
-    let x = 0;
-    do {
-        y += elm.offsetTop;
-        x += elm.offsetLeft;
-        elm = (elm.offsetParent as HTMLElement);
-    } while (elm)
-    return {
-        x: element.offsetWidth + x,
-        y: + y
+function testColor(color: string | undefined | null) {
+    if (!color) {
+        return false;
     }
+    const re1 = /^#([0-9a-f]{6}|[0-9a-f]{3})$/i;
+    return re1.test(color);
 }
+
 
 export const Tooltip: React.FC<TooltipProps> = (props) => {
-    const {tip, placement, children} = props;
-    const [key] = useState(new Date().getTime());
-    const [notification, setNotification] = useState<NotificationInstance>();
-    const ref = useRef<HTMLDivElement>();
+    const {tip, placement, children, color, className} = props;
+    const [show, setShow] = useState(false)
+    const classes = classNames('ui-tooltip', className, {
+        [`ui-tooltip-${placement}`]: placement
+    })
 
-    return (<div style={{
-        display: "inline-block"
-    }} ref={(r) => {
-        if (r) {
-            ref.current = r
+    const zoom:AnimationType = classNames({
+        'zoom-in-top': placement === "bottom",
+        'zoom-in-bottom': placement === "top",
+        'zoom-in-left': placement === "right",
+        'zoom-in-right': placement === "left",
+    }) as AnimationType;
+
+    const style = testColor(color) ? {
+            backgroundColor: color
+        }: {}
+
+    let timer: any;
+    return (<div className={classes} onMouseEnter={(e) => {
+        if (timer) {
+            clearTimeout(timer)
         }
-    }} onMouseEnter={(e) => {
-        // const {offsetHeight, offsetWidth} = e.target;
-        // Notification.newInstance({
-        //     style: {
-        //         top: offsetHeight,
-        //         left: offsetWidth
-        //     },
-        //     prefixCls: 'ui-tooltip'
-        // }, n => {
-        //     setNotification(n)
-        //     n.notice({
-        //         content: tip,
-        //         duration: null,
-        //         key,
-        //     })
-        // })
+        timer = setTimeout(()=> {
+            setShow(true)
+        }, 100)
+
     }} onMouseLeave={() => {
-        notification?.removeNotice(key)
+        setShow(false)
     }}>
         {children}
+        {animation.animate(<div className={'ui-tooltip-content'} style={style}><span>{tip}</span></div>, {
+            type: zoom,
+            show,
+            timeout: 200
+        })}
     </div>)
 }
 

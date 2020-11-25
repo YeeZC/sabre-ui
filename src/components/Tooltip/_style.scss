@@ -1,2 +1,77 @@
-@include notification-style('ui-tooltip')
-@include notification-default-animation('ui-tooltip')
+.ui-tooltip {
+  display: inline-flex;
+  position: relative;
+
+  .ui-tooltip-content {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    color: white;
+    display: inline-block;
+    white-space: nowrap;
+    position: absolute;
+    background: $gray-8;
+    z-index: 100;
+    border-radius: .25rem;
+
+    &::before, &::after {
+      z-index: -1;
+      content: "";
+      background-color: inherit;
+      transform:rotate(45deg);
+      position: absolute;
+    }
+  }
+}
+
+.ui-tooltip-top {
+  .ui-tooltip-content {
+    bottom: calc(100% + .5rem);
+    left: 0;
+    &::after {
+      width: .5rem;
+      height: .5rem;
+      left: 10%;
+      top: calc(100% - .375rem);
+    }
+  }
+}
+
+.ui-tooltip-bottom {
+  .ui-tooltip-content {
+    top: calc(100% + .5rem);
+    left: 0;
+
+    &::before {
+      width: .5rem;
+      height: .5rem;
+      left: 10%;
+      bottom: calc(100% - .375rem);
+    }
+  }
+}
+
+.ui-tooltip-right {
+  .ui-tooltip-content {
+    top: calc(50% - 1rem);
+    left: calc(100% + .5rem);
+    &::before {
+      width: .5rem;
+      height: .5rem;
+      right: calc(100% - .375rem);
+      top: calc(50% - .25rem);
+    }
+  }
+}
+
+.ui-tooltip-left {
+  .ui-tooltip-content {
+    top: calc(50% - 1rem);
+    right: calc(100% + .5rem);
+    &::after {
+      width: .5rem;
+      height: .5rem;
+      left: calc(100% - .375rem);
+      top: calc(50% - .25rem);
+    }
+  }
+}

@@ -1,9 +1,11 @@
 @include zoom-animation('top', scaleY(0), scaleY(1), center top);
+@include zoom-animation('bottom', scaleY(0), scaleY(1), center bottom);
+@include zoom-animation('left', scaleX(0), scaleX(1), left);
+@include zoom-animation('right', scaleX(0), scaleX(1), right);
 @include zoom-animation('top-left', scale(.45, .45), scale(1, 1), top left);
 @include zoom-animation('top-right', scale(.45, .45), scale(1, 1), top right);
 @include zoom-animation('bottom-left', scale(.45, .45), scale(1, 1), bottom left);
 @include zoom-animation('bottom-right', scale(.45, .45), scale(1, 1), bottom right);
-@include zoom-animation('bottom', scaleY(0), scaleY(1), center bottom);
 
 @keyframes animation-fade-in {
   0% {
