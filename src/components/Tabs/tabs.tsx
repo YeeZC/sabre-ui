@@ -62,6 +62,7 @@ export const Tabs: TabsCompoundedComponent = ({
                 }
                 return (<li className={classes} onClick={handleClick} key={tabKey}>{title}</li>)
             })}
+            {type === "card" ? <li className={'ui-tab ui-tab-tail'}/> : ''}
         </ul>
         {tabs?.filter(tab => {
             const {tabKey} = tab.props;

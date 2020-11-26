@@ -1,4 +1,4 @@
-.ui-radio, .ui-radio-wrapper, .ui-radio-button, .ui-radio-button-wrapper {
+.ui-checkbox, .ui-checkbox-wrapper {
   box-sizing: border-box;
   padding: 0;
   color: rgba(0,0,0,.85);
@@ -23,33 +23,18 @@
     >* {
       pointer-events: none;
     }
-    .ui-radio-inner {
-      background-color: lighten($gray-5, 25%);
-    }
-    .ui-radio-button-inner {
+    .ui-checkbox-inner {
       background-color: lighten($gray-5, 25%);
     }
   }
 }
 
-.ui-radio-wrapper {
+.ui-checkbox-wrapper {
   margin: 0 .5rem 0 0;
 }
 
-.ui-radio-button-wrapper {
-  border: $border-width solid $border-color;
-  border-radius: .25rem;
-  display: inline-flex;
-  padding: .25rem 1rem;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  &.disabled {
-    background-color: lighten($gray-5, 25%);
-  }
-}
 
-.ui-radio, .ui-radio-button {
+.ui-checkbox {
   margin: 0;
   top: 0;
   line-height: 1;
@@ -57,7 +42,7 @@
   outline: none;
 }
 
-.ui-radio-input, .ui-radio-button-input {
+.ui-checkbox-input {
   position: absolute;
   top: 0;
   right: 0;
@@ -74,57 +59,19 @@
   }
 }
 
-.ui-radio-checked {
-  .ui-radio-inner {
+.ui-checkbox-checked {
+  .ui-checkbox-inner {
     border-color: $primary;
   }
 }
 
-.ui-radio-group {
+.ui-checkbox-group {
   display: inline-flex;
 
-  .ui-radio-button-wrapper:first-child {
-    border-radius: .25rem 0 0 .25rem;
-  }
-  .ui-radio-button-wrapper:not(:first-child) {
-    border-left-color: transparent;
-    border-radius: 0;
-    margin-left: -$border-width;
-  }
-
-  .ui-radio-button-wrapper:last-child {
-    border-top-right-radius: .25rem;
-    border-bottom-right-radius: .25rem;
-  }
-
-  .ui-radio-button-wrapper:not(.disabled) {
-    z-index: 1;
-  }
 }
 
-.ui-radio-group-outline {
-  .ui-radio-button-wrapper-checked {
-    border-color: $primary;
-    color: $primary;
-    &.ui-radio-button-wrapper:not(:first-child) {
-      border-left-color: $primary;
-    }
 
-    &::before {
-      background-color: $primary;
-    }
-  }
-}
-
-.ui-radio-group-filled {
-  .ui-radio-button-wrapper-checked {
-    border-color: transparent;
-    background-color: $primary;
-    color: white;
-  }
-}
-
-.ui-radio-inner {
+.ui-checkbox-inner {
   position: relative;
   top: 0;
   left: 0;
@@ -133,28 +80,46 @@
   height: 1rem;
   background-color: transparent;
   border: 1px solid $gray-4;
-  border-radius: 50%;
   transition: all .3s;
 
-  &::after {
+  &::before {
     position: absolute;
-    top: .1875rem;
-    left: .1875rem;
+    top: .125rem;
+    left: .125rem;
     display: table;
-    width: .5rem;
-    height: .5rem;
+    width: .65rem;
+    height: .65rem;
     background-color: #1890ff;
     border-top: 0;
     border-left: 0;
-    border-radius: .5rem;
     transform: scale(0);
     opacity: 0;
     transition: all .3s cubic-bezier(.78,.14,.15,.86);
-    content: " ";
+    content: "";
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: table;
+    width: .65rem;
+    height: .65rem;
+    background-color: #1890ff;
+    border-top: 0;
+    border-left: 0;
+    font-family: "ui-icon", serif !important;
+    font-style: normal;
+    color: white;
+    font-weight: 400;
+    transform: scale(0);
+    opacity: 0;
+    transition: all .3s cubic-bezier(.78,.14,.15,.86);
+    content: "\e7fd";
   }
 }
 
-.ui-radio-checked {
+.ui-checkbox-checked {
   &::after {
     position: absolute;
     top: 0;
@@ -162,7 +127,6 @@
     width: 100%;
     height: 100%;
     border: 1px solid $primary;
-    border-radius: 50%;
     visibility: hidden;
     -webkit-animation: antRadioEffect .36s ease-in-out;
     animation: antRadioEffect .36s ease-in-out;
@@ -170,7 +134,7 @@
     animation-fill-mode: both;
     content: "";
   }
-  .ui-radio-inner {
+  .ui-checkbox-inner {
     &::after {
       opacity: 1;
       transform: scale(1);
@@ -178,7 +142,30 @@
   }
 }
 
-span.ui-radio+* {
+.ui-checkbox-indeterminate {
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid $primary;
+    visibility: hidden;
+    -webkit-animation: antRadioEffect .36s ease-in-out;
+    animation: antRadioEffect .36s ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    content: "";
+  }
+  .ui-checkbox-inner {
+    &::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+span.ui-checkbox+* {
   padding-right: .5rem;
   padding-left: .5rem;
 }

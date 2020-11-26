@@ -1,6 +1,6 @@
 .ui-tabs {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   padding-left: 0;
   margin-bottom: .25rem;
   list-style: none;
@@ -36,19 +36,25 @@
 }
 
 .ui-tabs-card {
-  border-bottom: $menu-border-width solid $menu-border-color;
   >.ui-tab {
-    border: $menu-border-width solid transparent;
+    border: none;
+    border-bottom: $menu-border-width solid $border-color;
     &.ui-tab-active {
-      border-color: $menu-border-color;
+      border-top: $menu-border-width solid $border-color;
+      border-left: $menu-border-width solid $border-color;
+      border-right: $menu-border-width solid $border-color;
       border-bottom-color: transparent;
       border-radius: .5rem .5rem 0 0;
       &:hover {
         border-bottom-color: transparent;
       }
     }
-    &:hover {
-      border-bottom: $menu-border-width solid transparent;
+    &.ui-tab-tail {
+      margin-left: -$border-width;
+      width: 100%;
+      &:hover {
+        cursor: default;
+      }
     }
   }
 }

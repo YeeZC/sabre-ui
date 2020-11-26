@@ -4,10 +4,11 @@ import {Direction, SizeType} from "../../data";
 
 export interface SpaceProps {
     direction?: Direction | 'around';
-    size?: SizeType | number
+    size?: SizeType | number;
+    style?: React.CSSProperties
 }
 
-const Space:React.FC<SpaceProps> = ({direction,size, children}) => {
+const Space:React.FC<SpaceProps> = ({direction,size, children, ...rest}) => {
     const classes = classNames('ui-space', {
         [`ui-space-${direction}`]: direction,
         [`ui-space-${size}`]: typeof size === "string"
@@ -42,7 +43,7 @@ const Space:React.FC<SpaceProps> = ({direction,size, children}) => {
         }
     }
 
-    return <span className={classes}>
+    return <span className={classes} style={rest.style}>
         {React.Children.map(children, child => {
             const element = child as ReactElement;
             if (element) {

@@ -16,6 +16,10 @@ export const Base: React.FC<RadioProps & {prefixCls: string}> = (props) => {
     const [checked, setChecked] = useState(defaultChecked || props.checked)
 
     useEffect(() => {
+        setChecked(defaultChecked || props.checked || false)
+    }, [defaultChecked, props.checked])
+
+    useEffect(() => {
         if (context.value && !disabled) {
             setChecked(context.value === value)
         }
@@ -40,7 +44,8 @@ export const Base: React.FC<RadioProps & {prefixCls: string}> = (props) => {
             }
         }}>
             <span className={classes}>
-                <input className={`${prefixCls}-input`} name={name} type={'radio'} disabled={disabled} value={value} checked={checked}/>
+                <input className={`${prefixCls}-input`} name={name} type={'radio'} disabled={disabled} value={value}
+                       checked={checked} onChange={() => {}}/>
                 <span className={`${prefixCls}-inner`}/>
             </span>
             <span>{children}</span>

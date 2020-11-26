@@ -13,7 +13,7 @@ export default meta;
 
 export const Template: Story<RowProps> = (props) => {
     return (
-        <Space direction={"vertical"}>
+        <Space direction={"vertical"} style={{width: '100%'}}>
             <Row {...props}>
                 <Row.Col span={24} style={{justifyContent: "center",
                     backgroundColor: '#1890ff', color: 'white'}}>Col-24</Row.Col>
