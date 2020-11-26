@@ -13,11 +13,18 @@ export interface AnimationProps {
     timeout: number;
     appear?: boolean;
     unmountOnExit?: boolean;
+    wrapper?: boolean
 }
 
-export const Animation: React.FC<AnimationProps> = ({classNames, show, type, children, ...rest}) => {
+export const Animation: React.FC<AnimationProps> = ({
+                                                        classNames,
+                                                        show,
+                                                        type,
+                                                        children,
+                                                        wrapper,
+                                                        ...rest}) => {
     return <CSSTransition classNames={classNames || type} in={show} {...rest}>
-        {children}
+        {wrapper ? <span>{children}</span> : {children}}
     </CSSTransition>
 }
 

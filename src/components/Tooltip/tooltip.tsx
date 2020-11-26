@@ -2,6 +2,7 @@ import React, {ReactNode, useEffect, useRef, useState} from "react";
 import classNames from "classnames";
 import {Placement} from "../../data";
 import animation, {AnimationType} from "../Animation";
+import {testColor} from "../../utils";
 
 export interface TooltipProps {
     tip: ReactNode;
@@ -9,15 +10,6 @@ export interface TooltipProps {
     color?: string;
     className?: string;
 }
-
-function testColor(color: string | undefined | null) {
-    if (!color) {
-        return false;
-    }
-    const re1 = /^#([0-9a-f]{6}|[0-9a-f]{3})$/i;
-    return re1.test(color);
-}
-
 
 export const Tooltip: React.FC<TooltipProps> = (props) => {
     const {tip, placement, children, color, className} = props;

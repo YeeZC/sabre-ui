@@ -1,0 +1,76 @@
+.ui-badge {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  .ui-badge-count {
+    position: absolute;
+    z-index: auto;
+    min-width: 1.25rem;
+    height: 1.25rem;
+    padding: 0 .375rem;
+    color: #fff;
+    font-weight: 400;
+    font-size: .75rem;
+    line-height: 1.25rem;
+    white-space: nowrap;
+    text-align: center;
+    background: $danger;
+    border-radius: .625rem;
+    top: 0;
+    right: 0;
+    box-shadow: 0 0 0 1px #fff;
+    transform: translate(50%,-50%);
+    //transform-origin: 100% 0;
+  }
+
+  &.ui-badge-dot {
+    .ui-badge-count {
+      min-width: .375rem;
+      max-width: .375rem;
+      min-height: .375rem;
+      max-height: .375rem;
+      border-radius: 100%;
+      padding: 0;
+    }
+  }
+  &.ui-badge-no-content {
+    .ui-badge-text-inner {
+      padding-left: .75rem;
+    }
+    .ui-badge-count {
+      min-width: .375rem;
+      max-width: .375rem;
+      min-height: .375rem;
+      max-height: .375rem;
+      border-radius: 100%;
+      padding: 0;
+      top: 50%;
+      left: 0;
+
+    }
+  }
+}
+
+.ui-badge-info {
+  .ui-badge-count {
+    background-color: $secondary;
+  }
+}
+
+.ui-badge-success {
+  .ui-badge-count {
+    background-color: $success;
+  }
+}
+
+.ui-badge-warn {
+  .ui-badge-count {
+    background-color: $warn;
+  }
+}
+
+.ui-badge-error {
+  .ui-badge-count {
+    background-color: $danger;
+  }
+}
