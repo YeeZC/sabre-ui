@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import classNames from "classnames";
 import {InputPropsBase} from "./common";
 import Icon from "../Icon";
+import {Base} from "./base";
 
 const regExp = new RegExp('^[+|-]?[0-9]+.{0,1}[0-9]{0,2}$');
 
@@ -16,7 +17,7 @@ export interface NumberProps extends Omit<InputPropsBase, 'value' | 'defaultValu
 
 export const Num: React.FC<NumberProps> = (props) => {
     const {name, value, placeholder, size, defaultValue, onChange, className, prefix} = props;
-    const {min, max, steps} = props;
+    const {min, max, steps, disabled} = props;
     const [inputValue, setValue] = useState<number>(value || defaultValue || 0);
     const [dig, setDig] = useState<number>(1)
     const [step, setStep] = useState<number>(1)
@@ -63,12 +64,13 @@ export const Num: React.FC<NumberProps> = (props) => {
         return result;
     }
     return (
-        <div className={classNames('ui-input', 'ui-input-number', className, {
-            [`ui-input-${size}`]: size,
-            'focus': focus,
-        })}>
-            {prefix ? <span className={'ui-input-prefix'}>{prefix}</span> : ''}
+        <Base className={classNames('ui-input-number', className)}
+              size={size}
+              prefix={prefix}
+              disabled={disabled}
+              focus={focus}>
             <input type={'text'}
+                   disabled={disabled}
                    name={name}
                    ref={(r) => {
                        if (r) {
@@ -99,7 +101,7 @@ export const Num: React.FC<NumberProps> = (props) => {
                            }
                        }}><Icon type={'arrow-down'}/></span>
                    </span>
-        </div>)
+        </Base>)
 }
 
 Num.displayName = 'Input.Number';

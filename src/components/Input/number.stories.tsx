@@ -6,23 +6,6 @@ import {NumberProps} from "./number";
 const meta: Meta = {
     title: 'Input.Number',
     component: Input.Number,
-    argTypes: {
-        value: {
-            control: {
-                type: 'range',
-                min: 0,
-                max: 100
-            }
-        },
-        defaultValue: {
-            control: {
-                type: 'number',
-                min: 0,
-                max: 100
-            },
-            defaultValue: 10
-        }
-    }
 }
 
 export default meta;

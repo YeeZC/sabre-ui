@@ -2,9 +2,10 @@ import React, {useEffect, useRef, useState} from "react";
 import classNames from "classnames";
 import {InputPropsBase} from "./common";
 import Icon from "../Icon";
+import {Base} from "./base";
 
 export const Password: React.FC<InputPropsBase> = (props) => {
-    const {prefix, name, value, placeholder, size, defaultValue, onChange, className} = props;
+    const {prefix, name, value, placeholder, size, defaultValue, onChange, className, disabled} = props;
     const [inputValue, setValue] = useState<string>(value || defaultValue || '');
     const [focus, setFocus] = useState<boolean>(false)
     const [show, setShow] = useState<boolean>(false);
@@ -20,14 +21,13 @@ export const Password: React.FC<InputPropsBase> = (props) => {
     }, [inputValue])
 
     return (
-        <div className={classNames('ui-input',
-            'ui-input-password',
-            className, {
-                [`ui-input-${size}`]: size,
-                'focus': focus,
-            })}>
-            {prefix ? <span className={'ui-input-prefix'}>{prefix}</span> : ''}
+        <Base className={classNames('ui-input-password', className)}
+              size={size}
+              disabled={disabled}
+              prefix={prefix}
+              focus={focus}>
             <input type={show ? 'text' : 'password'}
+                   disabled={disabled}
                    name={name}
                    ref={(r) => {
                        if (r) {
@@ -48,7 +48,7 @@ export const Password: React.FC<InputPropsBase> = (props) => {
             }}>
                        {show ? <Icon type={'view-off'}/> : <Icon type={'view'}/>}
                    </span>
-        </div>)
+        </Base>)
 }
 
 Password.displayName = 'Input.Password';

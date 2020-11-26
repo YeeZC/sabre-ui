@@ -1,9 +1,10 @@
 import React, {useEffect, useRef, useState} from "react";
 import classNames from "classnames";
 import {InputPropsBase} from "./common";
+import {Base} from "./base";
 
 export const Text: React.FC<InputPropsBase> = (props) => {
-    const {name, value, placeholder, size, defaultValue, onChange, className, prefix} = props;
+    const {name, value, placeholder, size, defaultValue, onChange, className, prefix, disabled} = props;
     const [inputValue, setValue] = useState<string>(value || defaultValue || '');
     const [focus, setFocus] = useState<boolean>(false);
     const inputRef = useRef<HTMLInputElement>();
@@ -17,15 +18,13 @@ export const Text: React.FC<InputPropsBase> = (props) => {
         }
     }, [inputValue])
 
-    return (
-        <div className={classNames('ui-input',
-            'ui-input-text',
-            className, {
-                [`ui-input-${size}`]: size,
-                'focus': focus,
-            })}>
-            {prefix ? <span className={'ui-input-prefix'}>{prefix}</span> : ''}
+    return (<Base className={classNames('ui-input-text', className)}
+                  size={size}
+                  disabled={disabled}
+                  prefix={prefix}
+                  focus={focus}>
             <input type={'text'}
+                   disabled={disabled}
                    name={name}
                    ref={(r) => {
                        if (r) {
@@ -41,7 +40,7 @@ export const Text: React.FC<InputPropsBase> = (props) => {
                            onChange(event.target.value)
                        }
                    }}/>
-        </div>)
+        </Base>)
 }
 
 Text.displayName = 'Input.Text';

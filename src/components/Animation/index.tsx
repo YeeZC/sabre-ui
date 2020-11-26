@@ -23,15 +23,20 @@ export const Animation: React.FC<AnimationProps> = ({
                                                         children,
                                                         wrapper,
                                                         ...rest}) => {
+    let element = children;
+    if (wrapper) {
+        element = <span>{children}</span>
+    }
     return <CSSTransition classNames={classNames || type} in={show} {...rest}>
-        {wrapper ? <span>{children}</span> : {children}}
+        {element}
     </CSSTransition>
 }
 
 Animation.defaultProps = {
     type: "zoom-in-top",
     appear: true,
-    unmountOnExit: true
+    unmountOnExit: true,
+    wrapper: false
 }
 
 const animation: AnimationApi = {

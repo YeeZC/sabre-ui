@@ -343,4 +343,10 @@
   .ui-input-number-picker {
     border-radius: 0 $border-radius $border-radius 0;
   }
+
+  &.ui-input-textarea {
+    max-height: 100%;
+    height: auto;
+    padding: $input-padding-y-sm 0 0 $input-padding-x-sm;
+  }
 }

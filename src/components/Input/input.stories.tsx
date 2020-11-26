@@ -14,7 +14,7 @@ export default meta;
 export const DefaultInput: Story<InputPropsBase> = (props) => {
     return (
         <Space direction={"vertical"}>
-            <Input {...props}/>
+            <Input {...props} disabled placeholder={'disabled'}/>
             <Input.Text {...props}/>
             <Input.Password {...props}/>
         </Space>

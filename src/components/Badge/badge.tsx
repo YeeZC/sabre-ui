@@ -3,12 +3,13 @@ import {StatusType} from "../../data";
 import classNames from "classnames";
 import {testColor} from "../../utils";
 import animation from "../Animation";
+import {CSSTransition} from "react-transition-group";
 
 export interface BadgeProps {
     className?: string;
     style?: React.CSSProperties;
     count?: number | ReactNode;
-    status?: StatusType;
+    status?: StatusType | 'progressing';
     text?: ReactNode;
     overflowCount?: number;
     dot?: boolean;
@@ -33,7 +34,7 @@ export const Badge: React.FC<BadgeProps> = (props) => {
         return count;
     }
 
-    const colorStyle = ():React.CSSProperties => {
+    const colorStyle = (): React.CSSProperties => {
         if (testColor(color)) {
             return {
                 backgroundColor: color
@@ -58,13 +59,12 @@ export const Badge: React.FC<BadgeProps> = (props) => {
 
     return <span className={classes} style={style}>
         {renderContent()}
-        {animation.animate(<sup className={'ui-badge-count'} style={colorStyle()}>
-            {formatCount()}
-        </sup>, {
-            type: "zoom-in-bottom",
-            timeout: 300,
-            show: isShow(),
-            wrapper: true
-        })}
+
+        <CSSTransition classNames={'zoom-in-bottom'} in={isShow()} timeout={300} appear unmountOnExit>
+                <sup className={'ui-badge-count'} style={colorStyle()}>
+                    {formatCount()}
+                </sup>
+            </CSSTransition>
+
     </span>
 }

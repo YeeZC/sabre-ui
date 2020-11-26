@@ -24,6 +24,23 @@
     border: none;
     outline: none;
     min-height: 100%;
+    background-color: transparent;
+  }
+
+  textarea {
+    width: 100%;
+    &:placeholder-shown {
+      text-overflow: ellipsis;
+    }
+    &::placeholder {
+      font-family: $input-font-family;
+      color: $gray-5;
+    }
+    height: auto;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    overflow-y: auto;
   }
 
   &:hover, &.hover,&:focus,&.focus {
@@ -38,6 +55,17 @@
   }
   .ui-input-number-picker {
     max-height: $input-height-base;
+  }
+
+  &.disabled,&[disabled] {
+    background-color: $gray-1;
+    cursor: not-allowed;
+    &:hover, &.hover,&:focus,&.focus {
+      border-color: $border-color;
+    }
+    > * {
+      pointer-events: none;
+    }
   }
 }
 

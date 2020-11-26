@@ -10,4 +10,5 @@ export interface InputPropsBase {
     onChange?:(value: string) => void;
     prefix?: ReactNode;
     className?: string;
+    disabled?: boolean
 }

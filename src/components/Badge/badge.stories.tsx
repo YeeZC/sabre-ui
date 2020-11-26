@@ -16,7 +16,7 @@ const meta:Meta = {
                 min: 0,
                 max: 100
             },
-            defaultValue: 0
+            defaultValue: 1
         }
     }
 }
@@ -26,10 +26,10 @@ export default meta;
 export const Template: Story<BadgeProps> = (props) => {
     return (
         <Space direction={"vertical"}>
-        <Badge {...props} count={'hello'}>
+        <Badge {...props}>
             <div style={{height: 40, width: 40, backgroundColor: '#ced4da'}}/>
         </Badge>
-            <Badge dot status={"success"} text={'he'}/>
+            <Badge dot status={"progressing"} text={'he'}/>
             <Badge dot status={"error"}/>
 
     </Space>)
