@@ -14,10 +14,15 @@ export const Base: React.FC<RadioProps & {prefixCls: string}> = (props) => {
     const {disabled, defaultChecked, value, children, name, prefixCls} = props;
     const context = useContext(GroupContext);
     const [checked, setChecked] = useState(defaultChecked || props.checked)
+    useEffect(() => {
+        setChecked(defaultChecked || props.checked)
+    }, [defaultChecked, props.checked])
 
     useEffect(() => {
-        setChecked(defaultChecked || props.checked || false)
-    }, [defaultChecked, props.checked])
+        if (checked && context && context.onChange) {
+            context.onChange(value)
+        }
+    }, [checked])
 
     useEffect(() => {
         if (context.value && !disabled) {
@@ -36,10 +41,8 @@ export const Base: React.FC<RadioProps & {prefixCls: string}> = (props) => {
     return (
         <label className={wrapper} onClick={(e: React.MouseEvent) => {
             if (!checked) {
+                e.preventDefault();
                 setChecked(true)
-                if (context && context.onChange) {
-                    context.onChange(e, value)
-                }
                 e.stopPropagation()
             }
         }}>

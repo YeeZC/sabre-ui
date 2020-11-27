@@ -1,7 +1,7 @@
 import React, {FunctionComponentElement} from "react";
 import classNames from "classnames";
 import {Col, ColProps} from "./col";
-import {useRenderChildren} from "../../hooks/useRenderChildren";
+import {useRenderChildren} from "../../hooks";
 
 export interface RowProps {
     style?: React.CSSProperties;

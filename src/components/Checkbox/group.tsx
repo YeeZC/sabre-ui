@@ -61,7 +61,8 @@ export const Group: React.FC<CheckboxGroupProps> = (props) => {
                 const props: CheckboxProps & Attributes = {
                     ...element.props,
                     name,
-                    checked: defaultValue === element.props.value || value === element.props.value,
+                    checked: false,
+                    defaultChecked: element.props.defaultChecked || element.props.checked,
                     disabled: disabled || element.props.disabled,
                     key: element.key || index
                 }

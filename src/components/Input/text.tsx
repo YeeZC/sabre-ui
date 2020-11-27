@@ -18,6 +18,12 @@ export const Text: React.FC<InputPropsBase> = (props) => {
         }
     }, [inputValue])
 
+    useEffect(() => {
+        if (value !== inputValue) {
+            setValue(value || '')
+        }
+    }, [value])
+
     return (<Base className={classNames('ui-input-text', className)}
                   size={size}
                   disabled={disabled}

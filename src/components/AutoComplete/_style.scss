@@ -1,0 +1,22 @@
+.ui-autocomplete {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  > ul {
+    border: $border-width solid $border-color;
+    border-radius: .25rem;
+    margin-top: .5rem;
+    list-style: none;
+    padding-left: 0;
+    li {
+      padding: $input-padding-y $input-padding-x;
+      cursor: pointer;
+      &:hover {
+        background-color: lighten($primary, 40%);
+      }
+      &:not(:last-child) {
+        border-bottom: $border-width solid $border-color;
+      }
+    }
+  }
+}

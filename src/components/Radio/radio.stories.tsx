@@ -16,7 +16,7 @@ export default meta;
 export const Template: Story<RadioProps> = (props) => {
     return <Space direction={"vertical"}>
         <Radio.Group onChange={action('radio')}>
-            <Radio {...props} value={"hello"}>Hello</Radio>
+            <Radio {...props} value={"hello"} checked>Hello</Radio>
             <Radio value={"world"}>World</Radio>
         </Radio.Group>
         <Radio.Group onChange={action('radio.button')} buttonStyle={"outline"}>

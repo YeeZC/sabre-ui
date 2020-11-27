@@ -6,7 +6,7 @@ import {RadioProps} from "./radio";
 export type ButtonStyle = 'outline' | 'filled';
 
 interface GroupContextInf {
-    onChange?: (e: React.MouseEvent, value?: any) => void;
+    onChange?: ( value?: any) => void;
     value?: any
 }
 
@@ -19,7 +19,7 @@ export interface GroupProps {
     name?: string;
     size?: SizeType;
     value?: any;
-    onChange?: (e: React.MouseEvent, value: any) => void
+    onChange?: (value: any) => void
 }
 
 export const Group: React.FC<GroupProps> = (props) => {
@@ -30,10 +30,10 @@ export const Group: React.FC<GroupProps> = (props) => {
         'ui-radio-group-disabled': disabled
     })
     const context: GroupContextInf = {
-        onChange: (e, value) => {
+        onChange: (value) => {
             setValue(value)
             if (onChange) {
-                onChange(e, value)
+                onChange(value)
             }
         },
         value
@@ -46,7 +46,8 @@ export const Group: React.FC<GroupProps> = (props) => {
                 const props: RadioProps & Attributes = {
                     ...element.props,
                     name,
-                    checked: defaultValue === element.props.value || value === element.props.value,
+                    checked: false,
+                    defaultChecked: element.props.defaultChecked || element.props.checked,
                     disabled: disabled || element.props.disabled,
                     key: element.key || index
                 }

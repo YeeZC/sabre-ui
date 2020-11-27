@@ -18,25 +18,18 @@ interface CheckboxCompounded extends React.FC<CheckboxProps> {
 }
 
 export const Checkbox: CheckboxCompounded = (props) => {
-    console.log('props', props)
     const {disabled, defaultChecked, value, children, name, onChange} = props;
     const context = useContext(GroupContext);
-    const [checked, setChecked] = useState(false)
+    const [checked, setChecked] = useState(defaultChecked || props.checked)
     const [indeterminate, setIndeterminate] = useState(false)
 
     useEffect(() => {
         setChecked(defaultChecked || props.checked || false)
-    }, [defaultChecked, props.checked])
+    }, [defaultChecked])
 
     useEffect(() => {
         setIndeterminate(props.indeterminate || false)
     }, [props.indeterminate])
-
-    useEffect(() => {
-        if (context.value && !disabled) {
-            setChecked(context.value.indexOf(value) >= 0)
-        }
-    }, [context.value])
 
     useEffect(() => {
         if (onChange) {
@@ -53,6 +46,14 @@ export const Checkbox: CheckboxCompounded = (props) => {
             setIndeterminate(false)
         }
     }, [checked])
+
+    useEffect(() => {
+        if (context.value && !disabled) {
+            setChecked(context.value.includes(value) )
+        }
+    }, [context.value])
+
+
 
     const wrapper = classNames(`ui-checkbox-wrapper`, {
         [`ui-checkbox-wrapper-checked`]: !disabled && checked,
@@ -75,9 +76,7 @@ export const Checkbox: CheckboxCompounded = (props) => {
                 <input className={`ui-checkbox-input`} name={name} type={'checkbox'}
                        disabled={disabled}
                        value={value}
-                       checked={checked}
-                       onChange={() => {
-                       }}
+                       defaultChecked={checked}
                 />
                 <span className={`ui-checkbox-inner`}/>
             </span>
