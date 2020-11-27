@@ -5,7 +5,7 @@ import {Theme} from "../../data";
 
 export interface TagProps  {
     className?: string;
-    text: ReactNode;
+    text: string;
     icon?: ReactNode;
     color?: Theme | string;
     closable?: boolean;

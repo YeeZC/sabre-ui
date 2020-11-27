@@ -1,0 +1,10 @@
+.ui-empty {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  color: $gray-4;
+  padding: 2rem 4rem;
+  width: 100%;
+}

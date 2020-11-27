@@ -8,10 +8,26 @@
     padding-left: 0;
     box-shadow: $submenu-box-shadow;
     li {
+      width: 100%;
+      display: inline-flex;
       padding: $input-padding-y $input-padding-x;
       cursor: pointer;
       &:hover {
         background-color: lighten($primary, 40%);
+      }
+
+      &.loading {
+        justify-content: center;
+        align-items: center;
+        cursor: default;
+        &:hover {
+          background-color: inherit;
+        }
+      }
+      &.empty {
+        &:hover {
+          background-color: inherit;
+        }
       }
     }
   }

@@ -1,4 +1,4 @@
-import React, {ReactElement, ReactNode} from "react";
+import React, {MutableRefObject, ReactElement, ReactNode, RefObject, useEffect, useState} from "react";
 
 export function useRenderChildren<T>(children: ReactNode, name?: string): ReactNode {
     return React.Children.map(children, (child) => {
@@ -10,4 +10,34 @@ export function useRenderChildren<T>(children: ReactNode, name?: string): ReactN
             }
         }
     })
+}
+
+export function useClickOutSide<T extends HTMLElement>(ref: RefObject<T| undefined>
+    | MutableRefObject<T| undefined>, handle: Function) {
+    useEffect(() => {
+        const listener = (event: MouseEvent) => {
+            if (!ref.current|| ref.current.contains(event.target as Node)) {
+                return
+            }
+            handle(event);
+        }
+        document.addEventListener('click', listener);
+
+        return () => {
+            document.removeEventListener('click', listener)
+        }
+    }, [ref, handle])
+}
+
+export function useDebounce<T>(value: T, delay = 300) {
+    const [debounce, setDebounce] = useState<T>();
+    useEffect(() => {
+        const handler = setTimeout(()=> {
+            setDebounce(value)
+        }, delay)
+        return () => {
+            clearTimeout(handler)
+        }
+    }, [value, delay]);
+    return debounce
 }

@@ -10,9 +10,16 @@ export declare interface IconProps {
     theme?: Theme;
     size?: SizeType | number;
     onClick?: MouseEventHandler;
+    style?: React.CSSProperties;
 }
 
-const Icon: React.FC<IconProps> = ({type, theme, className, size, spinning, onClick}) => {
+const Icon: React.FC<IconProps> = ({type,
+                                       theme,
+                                       className,
+                                       size,
+                                       spinning,
+                                       onClick,
+                                       ...rest}) => {
     const classes = classname('ui-icon', className, {
         [`ui-icon-${type}`]: type,
         [`ui-icon-theme-${theme}`]: !!theme,
@@ -20,7 +27,9 @@ const Icon: React.FC<IconProps> = ({type, theme, className, size, spinning, onCl
         'ui-icon-auto': !theme,
         'ui-icon-spin': spinning,
     })
-    let style = {};
+    let style = {
+        ...rest.style
+    };
     if (typeof size === "number") {
         style = {
             fontSize: `${size}rem`,

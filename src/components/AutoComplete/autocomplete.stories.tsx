@@ -24,8 +24,13 @@ export const Template: Story<AutoCompleteProps> = (props) => {
             label: 'ccca',
             value: 'ccca'
         }]
-    return (<AutoComplete fetch={(async keyword => {
-        return data.filter(item => item.label.includes(keyword))
+    return (<AutoComplete fetch={(keyword => {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve(data.filter(item => item.label.includes(keyword)))
+            }, 2000)
+        })
+
     })}/>)
 }
 
