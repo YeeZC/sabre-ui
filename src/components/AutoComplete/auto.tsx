@@ -18,7 +18,7 @@ export interface AutoCompleteProps extends Omit<InputPropsBase, 'onChange'>{
 export const AutoComplete: React.FC<AutoCompleteProps> = (props) => {
     const classes = classNames('ui-autocomplete');
     const {fetch, renderItem, onChange} = props;
-    const [value, setValue] = useState<string>();
+    const [value, setValue] = useState<Data<any>>({});
     const [keyword, setKeyword] = useState<string>();
     const [data, setData] = useState<Data<any>[]>([]);
     const [show, setShow] = useState(true)
@@ -41,14 +41,14 @@ export const AutoComplete: React.FC<AutoCompleteProps> = (props) => {
     }, [keyword])
 
     return (<div className={classes}>
-        <Input.Text {...props} value={value} onChange={v => {
+        <Input.Text {...props} name={undefined} value={value.label} onChange={v => {
             setKeyword(v);
         }}/>
         {animation.animate(
             <ul>
                 {data.map(item => (
                     <li onClick={() => {
-                        setValue(item.label);
+                        setValue(item);
                         setShow(false)
                     if (onChange) {
                         onChange(item)
