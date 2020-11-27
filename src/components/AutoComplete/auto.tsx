@@ -37,13 +37,19 @@ export const AutoComplete: React.FC<AutoCompleteProps> = (props) => {
                 setShow(!show)
             }
             fetch(keyword).then(res => setData(res))
+        } else {
+            setShow(false)
         }
     }, [keyword])
 
     return (<div className={classes}>
         <Input.Text {...props} name={undefined} value={value.label} onChange={v => {
             setKeyword(v);
-        }}/>
+        }} onFocus={() => {
+            if (!show && (keyword && keyword?.length > 0)) {
+                setShow(true)
+            }
+        }} onBlur={() => setShow(false)}/>
         {animation.animate(
             <ul>
                 {data.map(item => (

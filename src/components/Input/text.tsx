@@ -28,6 +28,8 @@ export const Text: React.FC<InputPropsBase> = (props) => {
                   size={size}
                   disabled={disabled}
                   prefix={prefix}
+                  onFocus={props.onFocus}
+                  onBlur={props.onBlur}
                   focus={focus}>
             <input type={'text'}
                    disabled={disabled}

@@ -28,6 +28,8 @@ export const TextArea: React.FC<TextAreaProps> = (props) => {
     return <Base focus={focus}
                  disabled={disabled}
                  className={classNames(className, 'ui-input-textarea')}
+                 onFocus={props.onFocus}
+                 onBlur={props.onBlur}
                  size={size}>
         <textarea
             disabled={disabled}

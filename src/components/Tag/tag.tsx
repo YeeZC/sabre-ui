@@ -1,10 +1,11 @@
-import React, {MouseEventHandler, ReactNode, useState} from "react";
+import React, {MouseEventHandler, ReactNode, useEffect, useState} from "react";
 import classNames from "classnames";
 import Icon from "../Icon";
 import {Theme} from "../../data";
 
-export interface TagProps {
-    text: string;
+export interface TagProps  {
+    className?: string;
+    text: ReactNode;
     icon?: ReactNode;
     color?: Theme | string;
     closable?: boolean;
@@ -12,7 +13,7 @@ export interface TagProps {
 }
 
 export const Tag:React.FC<TagProps> = (props) => {
-    const {text, icon, color, closable, onClose} = props;
+    const {text, icon, color, closable, onClose, className} = props;
     const [closed, setClosed] = useState(false);
     const useTheme = () => {
         if (color) {
@@ -30,13 +31,17 @@ export const Tag:React.FC<TagProps> = (props) => {
         return undefined;
     }
     const theme = useTheme();
-    const classes = classNames('ui-tag', {
+    const classes = classNames('ui-tag', className, {
         [`ui-tag-${theme}`]: theme,
         'ui-tag-closable': closable,
-        'ui-tag-closed': closed
+        'ui-tag-closed': closable && closed
     })
 
     let style:React.CSSProperties = {}
+
+    useEffect(() => {
+        console.log('closed', text , closed)
+    }, [closed])
 
     if (!theme && color) {
         style = {
@@ -45,11 +50,21 @@ export const Tag:React.FC<TagProps> = (props) => {
         }
     }
 
+    let timeout: NodeJS.Timeout;
     const handleClosed: MouseEventHandler = (e) => {
-        setClosed(true)
-        if (onClose) {
-            onClose(e);
+        e.preventDefault()
+        if (timeout) {
+            clearTimeout(timeout);
         }
+
+        timeout = setTimeout(() => {
+            setClosed(true)
+            if (onClose) {
+                onClose(e);
+            }
+        }, 300)
+
+        e.stopPropagation();
     }
 
     return (<span className={classes} style={style}>
