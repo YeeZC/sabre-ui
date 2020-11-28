@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import {MenuContext} from "./menu";
 import {MenuItemProps} from "./item";
 import animation from "../Animation";
+import Icon from "../Icon";
 
 export declare interface SubMenuProps {
     itemKey?: React.Key;
@@ -53,6 +54,7 @@ export const SubMenu: React.FC<SubMenuProps> = ({itemKey,
 
     return (<li className={classes} {...hoverShow} {...rest}>
         <div className={'ui-menu-submenu-title'} {...clickShow}>{title}</div>
+        {!vertical? <Icon type={'arrow-down'}/>:''}
         {animation.animate((<ul className={classnames('ui-menu-submenu')}>
             {React.Children.map(children, (child, index) => {
                 const element = child as React.FunctionComponentElement<SubMenuProps | MenuItemProps>;

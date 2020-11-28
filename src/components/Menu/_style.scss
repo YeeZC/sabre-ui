@@ -1,5 +1,5 @@
 .ui-menu {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 1rem;
@@ -56,6 +56,9 @@
   flex-direction: column;
   border-bottom: none;
   border-right: $menu-border-width solid $menu-border-color;
+  height: 100%;
+  min-width: 200px;
+  box-shadow: none;
   >.ui-menu-item {
     border-left: $menu-item-active-border-width solid transparent;
     &.ui-menu-item-active, &:hover {
@@ -66,9 +69,29 @@
 }
 
 .ui-menu-horizontal {
+  width: 100%;
   >.ui-menu-item {
     border-bottom: $menu-item-active-border-width solid transparent;
   }
+
+  .ui-menu-submenu-item {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    .ui-icon {
+      margin-left: .5rem;
+      transform: rotate(0deg);
+      transition: transform .2s linear .2s;
+    }
+    &:hover {
+      .ui-icon {
+          transform: rotate(180deg);
+      }
+    }
+  }
+
   .ui-menu-submenu {
     position: absolute;
     background: $white;
