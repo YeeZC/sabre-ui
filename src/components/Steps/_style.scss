@@ -1,0 +1,160 @@
+.ui-steps {
+  display: flex;
+  flex-wrap: nowrap;
+  text-align: initial;
+
+  .ui-step-content {
+    display: inline-block;
+    vertical-align: top;
+
+    .ui-step-title {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+
+  &.ui-steps-vertical {
+    flex-direction: column;
+    height: 100%;
+    .ui-step {
+      display: block;
+      flex: 1 0 auto;
+      padding-left: 0;
+      overflow: hidden;
+
+      &:not(:last-child) {
+        .ui-step-icon::after {
+          position: absolute;
+          width: 1px;
+          height: 9999px;
+          background-color: $border-color;
+          content: "";
+        }
+
+        &.ui-step-finish {
+          .ui-step-icon::after {
+            background-color: $primary;
+          }
+        }
+      }
+
+      &:not(:first-child) {
+        margin-top: .2rem;
+      }
+    }
+
+  }
+
+  &.ui-steps-horizontal {
+    flex-direction: row;
+    width: 100%;
+    .ui-step {
+      white-space: nowrap;
+      &:not(:last-child) {
+        .ui-step-title {
+          &::after {
+            position: absolute;
+            width: 9999px;
+            left: calc(100% + .5rem);
+            height: 1px;
+            background-color: $border-color;
+            content: "";
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.ui-step {
+  display: inline-block;
+  flex: 1;
+  color: $gray-8;
+  position: relative;
+  overflow: hidden;
+  vertical-align: top;
+
+  .ui-step-sub-title {
+    color: $gray-5;
+  }
+  .ui-step-description {
+    color: $body-color;
+  }
+
+  .ui-step-icon {
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    border: $border-width solid transparent;
+  }
+
+  &.ui-step-error {
+    color: $danger;
+    .ui-step-icon {
+      border-color: $danger;
+    }
+  }
+
+  &.ui-step-process {
+    .ui-step-icon {
+      border-color: $primary;
+      background-color: $primary;
+      color: white;
+    }
+  }
+
+  &.ui-step-default {
+    color: $gray-5;
+    .ui-step-icon {
+      border-color: $gray-5;
+    }
+  }
+
+  &.ui-step-finish {
+    .ui-step-icon {
+      border-color: $primary;
+      color: $primary;
+    }
+
+    &.ui-step:not(:last-child) {
+      .ui-step-title {
+        &::after {
+          background-color: $primary;
+        }
+      }
+
+    }
+  }
+
+  &:last-child {
+    flex: none;
+  }
+
+  &.ui-step-clickable {
+    cursor: pointer;
+    &:hover {
+      color: $primary;
+      .ui-step-description, .ui-step-sub-title {
+        color: $primary;
+      }
+      .ui-step-icon {
+        border-color: $primary;
+      }
+    }
+  }
+
+  &.ui-step-disabled {
+    cursor: not-allowed;
+  }
+}
+
+.ui-steps-default {
+  @include steps-size(1rem, .875rem)
+}
+
+.ui-steps-small {
+  @include steps-size(.875rem, .5rem)
+}

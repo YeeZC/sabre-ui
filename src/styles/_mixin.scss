@@ -350,3 +350,54 @@
     padding: $input-padding-y-sm 0 0 $input-padding-x-sm;
   }
 }
+
+@mixin steps-size($title-font-size, $sub-font-size) {
+  .ui-step {
+    .ui-step-content {
+      margin-left: $title-font-size / 2;
+      .ui-step-title {
+        position: relative;
+        font-size: $title-font-size;
+        line-height: $title-font-size * 2;
+        .ui-step-sub-title {
+          margin-left: $title-font-size / 2;
+        }
+
+        &::after {
+          top: $title-font-size;
+        }
+      }
+      .ui-step-sub-title, .ui-step-description {
+        font-size: $sub-font-size;
+      }
+    }
+
+    .ui-step-content {
+      display: inline-flex;
+      flex-direction: column;
+    }
+  }
+
+  .ui-step-icon {
+    width: $title-font-size * 2;
+    height: $title-font-size * 2;
+    font-size: $title-font-size;
+    line-height: $title-font-size * 2;
+  }
+
+  &.ui-steps-vertical {
+    .ui-step-description {
+      padding-bottom: $sub-font-size;
+    }
+
+    .ui-step-icon:not(:last-child)::after {
+      top: $title-font-size * 2.25;
+    }
+  }
+
+  &.ui-steps-horizontal {
+    .ui-step:not(:first-child) {
+      padding-left: $title-font-size / 2;
+    }
+  }
+}
