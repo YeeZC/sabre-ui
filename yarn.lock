@@ -828,7 +828,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.4"
 
-"@babel/plugin-transform-react-constant-elements@^7.12.1", "@babel/plugin-transform-react-constant-elements@^7.9.0":
+"@babel/plugin-transform-react-constant-elements@^7.9.0":
   version "7.12.1"
   resolved "https://registry.npm.taobao.org/@babel/plugin-transform-react-constant-elements/download/@babel/plugin-transform-react-constant-elements-7.12.1.tgz"
   integrity sha1-RHHwhR/uwyMcyaqg3M3jmUfBrB4=
@@ -1170,7 +1170,7 @@
     "@babel/plugin-transform-react-jsx-source" "^7.12.1"
     "@babel/plugin-transform-react-pure-annotations" "^7.12.1"
 
-"@babel/preset-react@^7.12.1", "@babel/preset-react@^7.12.5":
+"@babel/preset-react@^7.12.1":
   version "7.12.7"
   resolved "https://registry.npm.taobao.org/@babel/preset-react/download/@babel/preset-react-7.12.7.tgz#36d61d83223b07b6ac4ec55cf016abb0f70be83b"
   integrity sha1-NtYdgyI7B7asTsVc8BarsPcL6Ds=
@@ -1853,17 +1853,17 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storybook/addon-actions@6.1.5", "@storybook/addon-actions@^6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/addon-actions/download/@storybook/addon-actions-6.1.5.tgz?cache=0&sync_timestamp=1606208977762&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40storybook%2Faddon-actions%2Fdownload%2F%40storybook%2Faddon-actions-6.1.5.tgz#0feefe7825ccb7d3970a8231b6b552247bdbe190"
-  integrity sha1-D+7+eCXMt9OXCoIxtrVSJHvb4ZA=
+"@storybook/addon-actions@6.1.8", "@storybook/addon-actions@^6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/addon-actions/download/@storybook/addon-actions-6.1.8.tgz#b1a74710daaac8846df539590ff1152d7a18cdb8"
+  integrity sha1-sadHENqqyIRt9TlZD/EVLXoYzbg=
   dependencies:
-    "@storybook/addons" "6.1.5"
-    "@storybook/api" "6.1.5"
-    "@storybook/client-api" "6.1.5"
-    "@storybook/components" "6.1.5"
-    "@storybook/core-events" "6.1.5"
-    "@storybook/theming" "6.1.5"
+    "@storybook/addons" "6.1.8"
+    "@storybook/api" "6.1.8"
+    "@storybook/client-api" "6.1.8"
+    "@storybook/components" "6.1.8"
+    "@storybook/core-events" "6.1.8"
+    "@storybook/theming" "6.1.8"
     core-js "^3.0.1"
     fast-deep-equal "^3.1.1"
     global "^4.3.2"
@@ -1876,17 +1876,17 @@
     util-deprecate "^1.0.2"
     uuid "^8.0.0"
 
-"@storybook/addon-backgrounds@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/addon-backgrounds/download/@storybook/addon-backgrounds-6.1.5.tgz#5f73c4eae85bb4e9b6fcb85fce9e374c5909d369"
-  integrity sha1-X3PE6uhbtOm2/Lhfzp43TFkJ02k=
+"@storybook/addon-backgrounds@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/addon-backgrounds/download/@storybook/addon-backgrounds-6.1.8.tgz?cache=0&sync_timestamp=1606526142558&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40storybook%2Faddon-backgrounds%2Fdownload%2F%40storybook%2Faddon-backgrounds-6.1.8.tgz#0ff2687c7793741ad06455591c963c2a5760d44e"
+  integrity sha1-D/JofHeTdBrQZFVZHJY8Kldg1E4=
   dependencies:
-    "@storybook/addons" "6.1.5"
-    "@storybook/api" "6.1.5"
-    "@storybook/client-logger" "6.1.5"
-    "@storybook/components" "6.1.5"
-    "@storybook/core-events" "6.1.5"
-    "@storybook/theming" "6.1.5"
+    "@storybook/addons" "6.1.8"
+    "@storybook/api" "6.1.8"
+    "@storybook/client-logger" "6.1.8"
+    "@storybook/components" "6.1.8"
+    "@storybook/core-events" "6.1.8"
+    "@storybook/theming" "6.1.8"
     core-js "^3.0.1"
     global "^4.3.2"
     memoizerific "^1.11.3"
@@ -1894,24 +1894,24 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-controls@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/addon-controls/download/@storybook/addon-controls-6.1.5.tgz#026bb3b9730f6476671ccd62b2bd30985eaaa6ed"
-  integrity sha1-AmuzuXMPZHZnHM1isr0wmF6qpu0=
+"@storybook/addon-controls@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/addon-controls/download/@storybook/addon-controls-6.1.8.tgz#3892198994484d8c82cdb595a3307037c6ffd573"
+  integrity sha1-OJIZiZRITYyCzbWVozBwN8b/1XM=
   dependencies:
-    "@storybook/addons" "6.1.5"
-    "@storybook/api" "6.1.5"
-    "@storybook/client-api" "6.1.5"
-    "@storybook/components" "6.1.5"
-    "@storybook/node-logger" "6.1.5"
-    "@storybook/theming" "6.1.5"
+    "@storybook/addons" "6.1.8"
+    "@storybook/api" "6.1.8"
+    "@storybook/client-api" "6.1.8"
+    "@storybook/components" "6.1.8"
+    "@storybook/node-logger" "6.1.8"
+    "@storybook/theming" "6.1.8"
     core-js "^3.0.1"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-docs@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/addon-docs/download/@storybook/addon-docs-6.1.5.tgz?cache=0&sync_timestamp=1606211163699&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40storybook%2Faddon-docs%2Fdownload%2F%40storybook%2Faddon-docs-6.1.5.tgz#09a872283335582181e9df121523df49c9358855"
-  integrity sha1-CahyKDM1WCGB6d8SFSPfSck1iFU=
+"@storybook/addon-docs@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/addon-docs/download/@storybook/addon-docs-6.1.8.tgz#4c189b54fdb3d7cef35f9da34e091c21aec29107"
+  integrity sha1-TBibVP2z187zX52jTgkcIa7CkQc=
   dependencies:
     "@babel/core" "^7.12.1"
     "@babel/generator" "^7.12.1"
@@ -1922,18 +1922,18 @@
     "@mdx-js/loader" "^1.6.19"
     "@mdx-js/mdx" "^1.6.19"
     "@mdx-js/react" "^1.6.19"
-    "@storybook/addons" "6.1.5"
-    "@storybook/api" "6.1.5"
-    "@storybook/client-api" "6.1.5"
-    "@storybook/client-logger" "6.1.5"
-    "@storybook/components" "6.1.5"
-    "@storybook/core" "6.1.5"
-    "@storybook/core-events" "6.1.5"
+    "@storybook/addons" "6.1.8"
+    "@storybook/api" "6.1.8"
+    "@storybook/client-api" "6.1.8"
+    "@storybook/client-logger" "6.1.8"
+    "@storybook/components" "6.1.8"
+    "@storybook/core" "6.1.8"
+    "@storybook/core-events" "6.1.8"
     "@storybook/csf" "0.0.1"
-    "@storybook/node-logger" "6.1.5"
-    "@storybook/postinstall" "6.1.5"
-    "@storybook/source-loader" "6.1.5"
-    "@storybook/theming" "6.1.5"
+    "@storybook/node-logger" "6.1.8"
+    "@storybook/postinstall" "6.1.8"
+    "@storybook/source-loader" "6.1.8"
+    "@storybook/theming" "6.1.8"
     acorn "^7.1.0"
     acorn-jsx "^5.1.0"
     acorn-walk "^7.0.0"
@@ -1954,20 +1954,20 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-essentials@^6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/addon-essentials/download/@storybook/addon-essentials-6.1.5.tgz#a86c9d0b004d95ba86355fc77ef2997a93d78527"
-  integrity sha1-qGydCwBNlbqGNV/HfvKZepPXhSc=
+"@storybook/addon-essentials@^6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/addon-essentials/download/@storybook/addon-essentials-6.1.8.tgz#acb3103e32dd50546f0ed69bb4ba17bb2fc4a62f"
+  integrity sha1-rLMQPjLdUFRvDtabtLoXuy/Epi8=
   dependencies:
-    "@storybook/addon-actions" "6.1.5"
-    "@storybook/addon-backgrounds" "6.1.5"
-    "@storybook/addon-controls" "6.1.5"
-    "@storybook/addon-docs" "6.1.5"
-    "@storybook/addon-toolbars" "6.1.5"
-    "@storybook/addon-viewport" "6.1.5"
-    "@storybook/addons" "6.1.5"
-    "@storybook/api" "6.1.5"
-    "@storybook/node-logger" "6.1.5"
+    "@storybook/addon-actions" "6.1.8"
+    "@storybook/addon-backgrounds" "6.1.8"
+    "@storybook/addon-controls" "6.1.8"
+    "@storybook/addon-docs" "6.1.8"
+    "@storybook/addon-toolbars" "6.1.8"
+    "@storybook/addon-viewport" "6.1.8"
+    "@storybook/addons" "6.1.8"
+    "@storybook/api" "6.1.8"
+    "@storybook/node-logger" "6.1.8"
     core-js "^3.0.1"
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
@@ -1993,16 +1993,16 @@
     react-lifecycles-compat "^3.0.4"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-links@^6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/addon-links/download/@storybook/addon-links-6.1.5.tgz?cache=0&sync_timestamp=1606210833210&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40storybook%2Faddon-links%2Fdownload%2F%40storybook%2Faddon-links-6.1.5.tgz#fbf9b4914565f4f5e86d74473f8be66a87db59ce"
-  integrity sha1-+/m0kUVl9PXobXRHP4vmaofbWc4=
+"@storybook/addon-links@^6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/addon-links/download/@storybook/addon-links-6.1.8.tgz#5fecab85a82810a40472171368cb6fddfe9373be"
+  integrity sha1-X+yrhagoEKQEchcTaMtv3f6Tc74=
   dependencies:
-    "@storybook/addons" "6.1.5"
-    "@storybook/client-logger" "6.1.5"
-    "@storybook/core-events" "6.1.5"
+    "@storybook/addons" "6.1.8"
+    "@storybook/client-logger" "6.1.8"
+    "@storybook/core-events" "6.1.8"
     "@storybook/csf" "0.0.1"
-    "@storybook/router" "6.1.5"
+    "@storybook/router" "6.1.8"
     "@types/qs" "^6.9.0"
     core-js "^3.0.1"
     global "^4.3.2"
@@ -2011,28 +2011,28 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-toolbars@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/addon-toolbars/download/@storybook/addon-toolbars-6.1.5.tgz#dc4d37ed417ffd3257e3f7bfe56838ddd1488fb1"
-  integrity sha1-3E037UF//TJX4/e/5Wg43dFIj7E=
+"@storybook/addon-toolbars@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/addon-toolbars/download/@storybook/addon-toolbars-6.1.8.tgz#ee85103853fec821c26d1c7db3afbc2c404e780c"
+  integrity sha1-7oUQOFP+yCHCbRx9s6+8LEBOeAw=
   dependencies:
-    "@storybook/addons" "6.1.5"
-    "@storybook/api" "6.1.5"
-    "@storybook/client-api" "6.1.5"
-    "@storybook/components" "6.1.5"
+    "@storybook/addons" "6.1.8"
+    "@storybook/api" "6.1.8"
+    "@storybook/client-api" "6.1.8"
+    "@storybook/components" "6.1.8"
     core-js "^3.0.1"
 
-"@storybook/addon-viewport@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/addon-viewport/download/@storybook/addon-viewport-6.1.5.tgz#4b8b39934ed646d18a8c510e3f15a50919278f69"
-  integrity sha1-S4s5k07WRtGKjFEOPxWlCRknj2k=
+"@storybook/addon-viewport@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/addon-viewport/download/@storybook/addon-viewport-6.1.8.tgz#8cd90f9d25922d8a051fb64cba496e949c292e49"
+  integrity sha1-jNkPnSWSLYoFH7ZMuklulJwpLkk=
   dependencies:
-    "@storybook/addons" "6.1.5"
-    "@storybook/api" "6.1.5"
-    "@storybook/client-logger" "6.1.5"
-    "@storybook/components" "6.1.5"
-    "@storybook/core-events" "6.1.5"
-    "@storybook/theming" "6.1.5"
+    "@storybook/addons" "6.1.8"
+    "@storybook/api" "6.1.8"
+    "@storybook/client-logger" "6.1.8"
+    "@storybook/components" "6.1.8"
+    "@storybook/core-events" "6.1.8"
+    "@storybook/theming" "6.1.8"
     core-js "^3.0.1"
     global "^4.3.2"
     memoizerific "^1.11.3"
@@ -2052,17 +2052,17 @@
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
-"@storybook/addons@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/addons/download/@storybook/addons-6.1.5.tgz?cache=0&sync_timestamp=1606210902540&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40storybook%2Faddons%2Fdownload%2F%40storybook%2Faddons-6.1.5.tgz#c6f1861af8ed845f7139805e752b2b210ace2c0b"
-  integrity sha1-xvGGGvjthF9xOYBedSsrIQrOLAs=
+"@storybook/addons@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/addons/download/@storybook/addons-6.1.8.tgz#5efef0d3da0970589c948a89a273a9650111c7f7"
+  integrity sha1-Xv7w09oJcFiclIqJonOpZQERx/c=
   dependencies:
-    "@storybook/api" "6.1.5"
-    "@storybook/channels" "6.1.5"
-    "@storybook/client-logger" "6.1.5"
-    "@storybook/core-events" "6.1.5"
-    "@storybook/router" "6.1.5"
-    "@storybook/theming" "6.1.5"
+    "@storybook/api" "6.1.8"
+    "@storybook/channels" "6.1.8"
+    "@storybook/client-logger" "6.1.8"
+    "@storybook/core-events" "6.1.8"
+    "@storybook/router" "6.1.8"
+    "@storybook/theming" "6.1.8"
     core-js "^3.0.1"
     global "^4.3.2"
     regenerator-runtime "^0.13.7"
@@ -2093,19 +2093,19 @@
     telejson "^3.2.0"
     util-deprecate "^1.0.2"
 
-"@storybook/api@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/api/download/@storybook/api-6.1.5.tgz#89b3b4e849b821009e7823bc179cf396bda1e3ff"
-  integrity sha1-ibO06Em4IQCeeCO8F5zzlr2h4/8=
+"@storybook/api@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/api/download/@storybook/api-6.1.8.tgz#c45dbdfc184fc8046897c810b28667801007592c"
+  integrity sha1-xF29/BhPyARol8gQsoZngBAHWSw=
   dependencies:
     "@reach/router" "^1.3.3"
-    "@storybook/channels" "6.1.5"
-    "@storybook/client-logger" "6.1.5"
-    "@storybook/core-events" "6.1.5"
+    "@storybook/channels" "6.1.8"
+    "@storybook/client-logger" "6.1.8"
+    "@storybook/core-events" "6.1.8"
     "@storybook/csf" "0.0.1"
-    "@storybook/router" "6.1.5"
+    "@storybook/router" "6.1.8"
     "@storybook/semver" "^7.3.2"
-    "@storybook/theming" "6.1.5"
+    "@storybook/theming" "6.1.8"
     "@types/reach__router" "^1.3.5"
     core-js "^3.0.1"
     fast-deep-equal "^3.1.1"
@@ -2118,14 +2118,14 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/channel-postmessage@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/channel-postmessage/download/@storybook/channel-postmessage-6.1.5.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40storybook%2Fchannel-postmessage%2Fdownload%2F%40storybook%2Fchannel-postmessage-6.1.5.tgz#346b78b9c6e363ebe89ab71c42a997cf81b9c626"
-  integrity sha1-NGt4ucbjY+vomrccQqmXz4G5xiY=
+"@storybook/channel-postmessage@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/channel-postmessage/download/@storybook/channel-postmessage-6.1.8.tgz#2f327bdb800c188e4f51e3ba38baf339ed94bca0"
+  integrity sha1-LzJ724AMGI5PUeO6OLrzOe2UvKA=
   dependencies:
-    "@storybook/channels" "6.1.5"
-    "@storybook/client-logger" "6.1.5"
-    "@storybook/core-events" "6.1.5"
+    "@storybook/channels" "6.1.8"
+    "@storybook/client-logger" "6.1.8"
+    "@storybook/core-events" "6.1.8"
     core-js "^3.0.1"
     global "^4.3.2"
     qs "^6.6.0"
@@ -2138,25 +2138,25 @@
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/channels@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/channels/download/@storybook/channels-6.1.5.tgz?cache=0&sync_timestamp=1606212978018&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40storybook%2Fchannels%2Fdownload%2F%40storybook%2Fchannels-6.1.5.tgz#4aa8061334a4abcd84b255ac630bf7c7a1c47e55"
-  integrity sha1-SqgGEzSkq82EslWsYwv3x6HEflU=
+"@storybook/channels@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/channels/download/@storybook/channels-6.1.8.tgz#e5f5d2b3968fab5b298a16b57d174735119caef7"
+  integrity sha1-5fXSs5aPq1spiha1fRdHNRGcrvc=
   dependencies:
     core-js "^3.0.1"
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/client-api@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/client-api/download/@storybook/client-api-6.1.5.tgz?cache=0&sync_timestamp=1606208011310&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40storybook%2Fclient-api%2Fdownload%2F%40storybook%2Fclient-api-6.1.5.tgz#dc87bc55c715ec78979f4f43d0edccbdb54b9b72"
-  integrity sha1-3Ie8VccV7HiXn09D0O3MvbVLm3I=
+"@storybook/client-api@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/client-api/download/@storybook/client-api-6.1.8.tgz#15f958cefa3fc7e9e137f8adb6382449e70601e7"
+  integrity sha1-FflYzvo/x+nhN/ittjgkSecGAec=
   dependencies:
-    "@storybook/addons" "6.1.5"
-    "@storybook/channel-postmessage" "6.1.5"
-    "@storybook/channels" "6.1.5"
-    "@storybook/client-logger" "6.1.5"
-    "@storybook/core-events" "6.1.5"
+    "@storybook/addons" "6.1.8"
+    "@storybook/channel-postmessage" "6.1.8"
+    "@storybook/channels" "6.1.8"
+    "@storybook/client-logger" "6.1.8"
+    "@storybook/core-events" "6.1.8"
     "@storybook/csf" "0.0.1"
     "@types/qs" "^6.9.0"
     "@types/webpack-env" "^1.15.3"
@@ -2178,10 +2178,10 @@
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/client-logger@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/client-logger/download/@storybook/client-logger-6.1.5.tgz#a6c3cc6e9158a177b3d68f9c15a833e9c6371e78"
-  integrity sha1-psPMbpFYoXez1o+cFagz6cY3Hng=
+"@storybook/client-logger@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/client-logger/download/@storybook/client-logger-6.1.8.tgz#ab0b9f6269c9a3ec33305aba39a96b6869a9500a"
+  integrity sha1-qwufYmnJo+wzMFq6OalraGmpUAo=
   dependencies:
     core-js "^3.0.1"
     global "^4.3.2"
@@ -2213,15 +2213,15 @@
     simplebar-react "^1.0.0-alpha.6"
     ts-dedent "^1.1.0"
 
-"@storybook/components@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/components/download/@storybook/components-6.1.5.tgz#4b5c6fc23dbc6ef24db94dbb15fc2df5e024dd53"
-  integrity sha1-S1xvwj28bvJNuU27Ffwt9eAk3VM=
+"@storybook/components@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/components/download/@storybook/components-6.1.8.tgz#bb4393a19480523583ae1a2629e32dab91ca6e15"
+  integrity sha1-u0OToZSAUjWDrhomKeMtq5HKbhU=
   dependencies:
     "@popperjs/core" "^2.4.4"
-    "@storybook/client-logger" "6.1.5"
+    "@storybook/client-logger" "6.1.8"
     "@storybook/csf" "0.0.1"
-    "@storybook/theming" "6.1.5"
+    "@storybook/theming" "6.1.8"
     "@types/overlayscrollbars" "^1.9.0"
     "@types/react-color" "^3.0.1"
     "@types/react-syntax-highlighter" "11.0.4"
@@ -2246,17 +2246,17 @@
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/core-events@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/core-events/download/@storybook/core-events-6.1.5.tgz#e060a85dfee2b4515bf961e6d3157cc4daf3cb40"
-  integrity sha1-4GCoXf7itFFb+WHm0xV8xNrzy0A=
+"@storybook/core-events@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/core-events/download/@storybook/core-events-6.1.8.tgz#b782790104cd40ab1199650177929209067b5520"
+  integrity sha1-t4J5AQTNQKsRmWUBd5KSCQZ7VSA=
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/core@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/core/download/@storybook/core-6.1.5.tgz?cache=0&sync_timestamp=1606208021233&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40storybook%2Fcore%2Fdownload%2F%40storybook%2Fcore-6.1.5.tgz#27f096c5eb32809efc73b45fa6f52351a28eeb0a"
-  integrity sha1-J/CWxesygJ78c7RfpvUjUaKO6wo=
+"@storybook/core@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/core/download/@storybook/core-6.1.8.tgz#ff7df0048f405d2bab7a7b1f6c37baa35d562993"
+  integrity sha1-/33wBI9AXSurensfbDe6o11WKZM=
   dependencies:
     "@babel/core" "^7.12.3"
     "@babel/plugin-proposal-class-properties" "^7.12.1"
@@ -2280,20 +2280,20 @@
     "@babel/preset-react" "^7.12.1"
     "@babel/preset-typescript" "^7.12.1"
     "@babel/register" "^7.12.1"
-    "@storybook/addons" "6.1.5"
-    "@storybook/api" "6.1.5"
-    "@storybook/channel-postmessage" "6.1.5"
-    "@storybook/channels" "6.1.5"
-    "@storybook/client-api" "6.1.5"
-    "@storybook/client-logger" "6.1.5"
-    "@storybook/components" "6.1.5"
-    "@storybook/core-events" "6.1.5"
+    "@storybook/addons" "6.1.8"
+    "@storybook/api" "6.1.8"
+    "@storybook/channel-postmessage" "6.1.8"
+    "@storybook/channels" "6.1.8"
+    "@storybook/client-api" "6.1.8"
+    "@storybook/client-logger" "6.1.8"
+    "@storybook/components" "6.1.8"
+    "@storybook/core-events" "6.1.8"
     "@storybook/csf" "0.0.1"
-    "@storybook/node-logger" "6.1.5"
-    "@storybook/router" "6.1.5"
+    "@storybook/node-logger" "6.1.8"
+    "@storybook/router" "6.1.8"
     "@storybook/semver" "^7.3.2"
-    "@storybook/theming" "6.1.5"
-    "@storybook/ui" "6.1.5"
+    "@storybook/theming" "6.1.8"
+    "@storybook/ui" "6.1.8"
     "@types/glob-base" "^0.3.0"
     "@types/micromatch" "^4.0.1"
     "@types/node-fetch" "^2.5.4"
@@ -2367,10 +2367,10 @@
   dependencies:
     lodash "^4.17.15"
 
-"@storybook/node-logger@6.1.5", "@storybook/node-logger@^6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/node-logger/download/@storybook/node-logger-6.1.5.tgz#abdf8ff71043da3513080dc4db78ecd9375eeda5"
-  integrity sha1-q9+P9xBD2jUTCA3E23js2Tde7aU=
+"@storybook/node-logger@6.1.8", "@storybook/node-logger@^6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/node-logger/download/@storybook/node-logger-6.1.8.tgz#1308fd353c21bc01c54b9b6b58d6e936389148a7"
+  integrity sha1-Ewj9NTwhvAHFS5trWNbpNjiRSKc=
   dependencies:
     "@types/npmlog" "^4.1.2"
     chalk "^4.0.0"
@@ -2378,10 +2378,10 @@
     npmlog "^4.1.2"
     pretty-hrtime "^1.0.3"
 
-"@storybook/postinstall@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/postinstall/download/@storybook/postinstall-6.1.5.tgz#ab5fb0929d105cafbe7f03eb652276684e07249e"
-  integrity sha1-q1+wkp0QXK++fwPrZSJ2aE4HJJ4=
+"@storybook/postinstall@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/postinstall/download/@storybook/postinstall-6.1.8.tgz#30863c820d0b91a3515abef6446a4cfb7e4abb92"
+  integrity sha1-MIY8gg0LkaNRWr72RGpM+35Ku5I=
   dependencies:
     core-js "^3.0.1"
 
@@ -2397,19 +2397,18 @@
     react-docgen-typescript-plugin "^0.6.2"
     semver "^7.3.2"
 
-"@storybook/react@^6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/react/download/@storybook/react-6.1.5.tgz?cache=0&sync_timestamp=1606209060801&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40storybook%2Freact%2Fdownload%2F%40storybook%2Freact-6.1.5.tgz#856132576fc928eb043947922c901076d0d321b6"
-  integrity sha1-hWEyV2/JKOsEOUeSLJAQdtDTIbY=
+"@storybook/react@^6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/react/download/@storybook/react-6.1.8.tgz#f1111cf2de398012e715b559fd8e169f433b59af"
+  integrity sha1-8REc8t45gBLnFbVZ/Y4Wn0M7Wa8=
   dependencies:
     "@babel/preset-flow" "^7.12.1"
     "@babel/preset-react" "^7.12.1"
     "@pmmmwh/react-refresh-webpack-plugin" "^0.4.2"
-    "@storybook/addons" "6.1.5"
-    "@storybook/core" "6.1.5"
-    "@storybook/node-logger" "6.1.5"
+    "@storybook/addons" "6.1.8"
+    "@storybook/core" "6.1.8"
+    "@storybook/node-logger" "6.1.8"
     "@storybook/semver" "^7.3.2"
-    "@svgr/webpack" "^5.4.0"
     "@types/webpack-env" "^1.15.3"
     babel-plugin-add-react-displayname "^0.0.5"
     babel-plugin-named-asset-import "^0.3.1"
@@ -2440,10 +2439,10 @@
     qs "^6.6.0"
     util-deprecate "^1.0.2"
 
-"@storybook/router@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/router/download/@storybook/router-6.1.5.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40storybook%2Frouter%2Fdownload%2F%40storybook%2Frouter-6.1.5.tgz#aac1a17215435adfc9b1f0d3b5bcc3f8e0f283b6"
-  integrity sha1-qsGhchVDWt/JsfDTtbzD+ODyg7Y=
+"@storybook/router@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/router/download/@storybook/router-6.1.8.tgz#629c1ad4d89af17a7da203bbc7b0613db4ef82e7"
+  integrity sha1-Ypwa1Nia8Xp9ogO7x7BhPbTvguc=
   dependencies:
     "@reach/router" "^1.3.3"
     "@types/reach__router" "^1.3.5"
@@ -2460,13 +2459,13 @@
     core-js "^3.6.5"
     find-up "^4.1.0"
 
-"@storybook/source-loader@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/source-loader/download/@storybook/source-loader-6.1.5.tgz?cache=0&sync_timestamp=1606210932976&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40storybook%2Fsource-loader%2Fdownload%2F%40storybook%2Fsource-loader-6.1.5.tgz#e397010ffb28df41fe9fa6fdbb910838730b8735"
-  integrity sha1-45cBD/so30H+n6b9u5EIOHMLhzU=
+"@storybook/source-loader@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/source-loader/download/@storybook/source-loader-6.1.8.tgz#1332734f323b328290001cec375ce12c431fbe04"
+  integrity sha1-EzJzTzI7MoKQABzsN1zhLEMfvgQ=
   dependencies:
-    "@storybook/addons" "6.1.5"
-    "@storybook/client-logger" "6.1.5"
+    "@storybook/addons" "6.1.8"
+    "@storybook/client-logger" "6.1.8"
     "@storybook/csf" "0.0.1"
     core-js "^3.0.1"
     estraverse "^4.2.0"
@@ -2495,15 +2494,15 @@
     resolve-from "^5.0.0"
     ts-dedent "^1.1.0"
 
-"@storybook/theming@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/theming/download/@storybook/theming-6.1.5.tgz#c149156da7a497bee858354a1a2ae952ec5c1e51"
-  integrity sha1-wUkVbaekl77oWDVKGirpUuxcHlE=
+"@storybook/theming@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/theming/download/@storybook/theming-6.1.8.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40storybook%2Ftheming%2Fdownload%2F%40storybook%2Ftheming-6.1.8.tgz#f8243537d34af75e524b6114a4a80c2decf362d9"
+  integrity sha1-+CQ1N9NK915SS2EUpKgMLezzYtk=
   dependencies:
     "@emotion/core" "^10.1.1"
     "@emotion/is-prop-valid" "^0.8.6"
     "@emotion/styled" "^10.0.23"
-    "@storybook/client-logger" "6.1.5"
+    "@storybook/client-logger" "6.1.8"
     core-js "^3.0.1"
     deep-object-diff "^1.1.0"
     emotion-theming "^10.0.19"
@@ -2513,21 +2512,21 @@
     resolve-from "^5.0.0"
     ts-dedent "^2.0.0"
 
-"@storybook/ui@6.1.5":
-  version "6.1.5"
-  resolved "https://registry.npm.taobao.org/@storybook/ui/download/@storybook/ui-6.1.5.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40storybook%2Fui%2Fdownload%2F%40storybook%2Fui-6.1.5.tgz#b9ab737d3e3e06d0bd0284298fd9e3dd8edce33b"
-  integrity sha1-uatzfT4+BtC9AoQpj9nj3Y7c4zs=
+"@storybook/ui@6.1.8":
+  version "6.1.8"
+  resolved "https://registry.npm.taobao.org/@storybook/ui/download/@storybook/ui-6.1.8.tgz#196390b9330d7d1959e3f2f681210b647980a4e9"
+  integrity sha1-GWOQuTMNfRlZ4/L2gSELZHmApOk=
   dependencies:
     "@emotion/core" "^10.1.1"
-    "@storybook/addons" "6.1.5"
-    "@storybook/api" "6.1.5"
-    "@storybook/channels" "6.1.5"
-    "@storybook/client-logger" "6.1.5"
-    "@storybook/components" "6.1.5"
-    "@storybook/core-events" "6.1.5"
-    "@storybook/router" "6.1.5"
+    "@storybook/addons" "6.1.8"
+    "@storybook/api" "6.1.8"
+    "@storybook/channels" "6.1.8"
+    "@storybook/client-logger" "6.1.8"
+    "@storybook/components" "6.1.8"
+    "@storybook/core-events" "6.1.8"
+    "@storybook/router" "6.1.8"
     "@storybook/semver" "^7.3.2"
-    "@storybook/theming" "6.1.5"
+    "@storybook/theming" "6.1.8"
     "@types/markdown-to-jsx" "^6.11.0"
     copy-to-clipboard "^3.0.8"
     core-js "^3.0.1"
@@ -2611,7 +2610,7 @@
     "@svgr/babel-plugin-transform-react-native-svg" "^5.4.0"
     "@svgr/babel-plugin-transform-svg-component" "^5.5.0"
 
-"@svgr/core@^5.4.0", "@svgr/core@^5.5.0":
+"@svgr/core@^5.4.0":
   version "5.5.0"
   resolved "https://registry.npm.taobao.org/@svgr/core/download/@svgr/core-5.5.0.tgz"
   integrity sha1-gugmuHFdcQgxIP6PJJLsfXh0pXk=
@@ -2637,7 +2636,7 @@
     "@svgr/hast-util-to-babel-ast" "^5.5.0"
     svg-parser "^2.0.2"
 
-"@svgr/plugin-svgo@^5.4.0", "@svgr/plugin-svgo@^5.5.0":
+"@svgr/plugin-svgo@^5.4.0":
   version "5.5.0"
   resolved "https://registry.npm.taobao.org/@svgr/plugin-svgo/download/@svgr/plugin-svgo-5.5.0.tgz"
   integrity sha1-AtpV2FMgVJMk4gHHsuU79DH8wkY=
@@ -2658,20 +2657,6 @@
     "@svgr/core" "^5.4.0"
     "@svgr/plugin-jsx" "^5.4.0"
     "@svgr/plugin-svgo" "^5.4.0"
-    loader-utils "^2.0.0"
-
-"@svgr/webpack@^5.4.0":
-  version "5.5.0"
-  resolved "https://registry.npm.taobao.org/@svgr/webpack/download/@svgr/webpack-5.5.0.tgz#aae858ee579f5fa8ce6c3166ef56c6a1b381b640"
-  integrity sha1-quhY7lefX6jObDFm71bGobOBtkA=
-  dependencies:
-    "@babel/core" "^7.12.3"
-    "@babel/plugin-transform-react-constant-elements" "^7.12.1"
-    "@babel/preset-env" "^7.12.1"
-    "@babel/preset-react" "^7.12.5"
-    "@svgr/core" "^5.5.0"
-    "@svgr/plugin-jsx" "^5.5.0"
-    "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
 "@testing-library/dom@^7.27.1":
