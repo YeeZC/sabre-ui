@@ -64,16 +64,39 @@
       }
     }
   }
+
+  &.ui-steps-type-nav {
+    border-bottom: $border-width solid $border-color;
+    .ui-step {
+      padding-bottom: .5rem;
+      border-bottom: $border-width * 2 solid transparent;
+      &.ui-step-clickable:hover, &.ui-step-process {
+        border-bottom-color: $primary;
+      }
+      &:not(:last-child) {
+        .ui-step-title::after {
+          display: none;
+        }
+
+        &::after {
+          position: absolute;
+          font-family: "ui-icon", serif;
+          content: "\e670";
+          color: $gray-3;
+        }
+      }
+    }
+  }
 }
 
 
 .ui-step {
-  display: inline-block;
+  display: inline-flex;
   flex: 1;
   color: $gray-8;
   position: relative;
   overflow: hidden;
-  vertical-align: top;
+  align-items: start;
 
   .ui-step-sub-title {
     color: $gray-5;

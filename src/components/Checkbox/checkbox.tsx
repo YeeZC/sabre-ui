@@ -13,7 +13,7 @@ export interface CheckboxProps {
 }
 
 
-interface CheckboxCompounded extends React.FC<CheckboxProps> {
+type CheckboxCompounded = React.FC<CheckboxProps> & {
     Group: React.FC<CheckboxGroupProps>
 }
 

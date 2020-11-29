@@ -5,7 +5,7 @@ import {ProgressProps} from "./common";
 
 export type ProgressType = 'line' | 'circle';
 
-interface ProgressCompoundedComponent extends React.FC<ProgressProps & {type?: ProgressType}> {
+type ProgressCompoundedComponent = React.FC<ProgressProps & {type?: ProgressType}> & {
     Line: React.FC<ProgressProps>;
     Circle: React.FC<ProgressProps>;
 }

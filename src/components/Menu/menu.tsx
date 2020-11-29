@@ -20,7 +20,7 @@ export interface MenuProps {
     style?: React.CSSProperties;
 }
 
-interface MenuCompoundedComponent extends React.FC<MenuProps> {
+type MenuCompoundedComponent = React.FC<MenuProps> & {
     SubMenu: React.FC<SubMenuProps>,
     Item: React.FC<MenuItemProps>
 }

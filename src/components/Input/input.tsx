@@ -6,7 +6,7 @@ import {Num, NumberProps} from "./number";
 import {TextArea, TextAreaProps} from "./textarea";
 
 
-interface InputCompoundedComponent extends React.FC<InputPropsBase> {
+type InputCompoundedComponent = React.FC<InputPropsBase> & {
     Text: React.FC<InputPropsBase>;
     Password: React.FC<InputPropsBase>;
     Number: React.FC<NumberProps>;

@@ -9,7 +9,7 @@ export interface RowProps {
     flexWrap?: boolean;
 }
 
-interface RowCompoundedComponent extends React.FC<RowProps> {
+type RowCompoundedComponent = React.FC<RowProps> & {
     Col: React.FC<ColProps>
 }
 

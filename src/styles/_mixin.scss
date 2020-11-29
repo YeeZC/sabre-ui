@@ -353,6 +353,7 @@
 
 @mixin steps-size($title-font-size, $sub-font-size) {
   .ui-step {
+    vertical-align: top;
     .ui-step-content {
       margin-left: $title-font-size / 2;
       .ui-step-title {
@@ -385,6 +386,69 @@
     line-height: $title-font-size * 2;
   }
 
+  &.ui-steps-type-nav {
+    .ui-step {
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+      overflow: visible;
+      &:last-child {
+        flex: 1;
+      }
+      &:not(:last-child) {
+        &::after {
+          font-family: "ui-icon", serif;
+          content: "\e670";
+          font-size: $title-font-size * 2;
+          color: $gray-3;
+          background-color: transparent;
+          line-height: $title-font-size * 2;
+          width: $title-font-size * 2;
+          height: $title-font-size * 2;
+          top: 0;
+          left: 100%;
+        }
+      }
+    }
+  }
+
+  &.ui-steps-type-dot {
+
+    .ui-step {
+      vertical-align: top;
+      .ui-step-icon {
+        position: absolute;
+        top: $title-font-size / 2 + $title-font-size / 4;
+        width: $title-font-size / 2;
+        height: $title-font-size / 2;
+        font-size: 0;
+        background-color: $gray-5;
+      }
+
+      .ui-step-content {
+        margin-left: $title-font-size;
+      }
+
+      &.ui-step-process, &.ui-step-finish {
+        .ui-step-icon {
+          background-color: $primary;
+        }
+      }
+
+      &.ui-step-error {
+        .ui-step-icon {
+          background-color: $danger;
+        }
+      }
+
+      &.ui-step-clickable:hover {
+        .ui-step-icon {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+
   &.ui-steps-vertical {
     .ui-step-description {
       padding-bottom: $sub-font-size;
@@ -393,6 +457,13 @@
     .ui-step-icon:not(:last-child)::after {
       top: $title-font-size * 2.25;
     }
+
+    &.ui-steps-type-dot {
+      .ui-step-icon:not(:last-child)::after {
+        top: $title-font-size;
+      }
+    }
+
   }
 
   &.ui-steps-horizontal {

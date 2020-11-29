@@ -12,7 +12,7 @@ export interface TabsProps {
     style?: React.CSSProperties;
 }
 
-interface TabsCompoundedComponent extends React.FC<TabsProps> {
+type TabsCompoundedComponent = React.FC<TabsProps> & {
     Tab: React.FC<TabProps>
 }
 

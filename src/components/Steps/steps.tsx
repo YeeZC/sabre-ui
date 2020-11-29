@@ -6,6 +6,7 @@ import {useRenderChildren} from "../../hooks";
 
 export type StepStatus = 'default' | 'process' | 'finish' | 'error';
 export type StepSize = 'default' | 'small';
+export type StepsType = 'default' | 'dot' | 'nav';
 
 export interface StepsProps {
     className?: string;
@@ -15,9 +16,10 @@ export interface StepsProps {
     size?: StepSize;
     status?: StepStatus;
     onChange?: (current: number) => void;
+    type?: StepsType;
 }
 
-interface StepsCompoundedComponent extends React.FC<StepsProps> {
+type StepsCompoundedComponent = React.FC<StepsProps> & {
     Step: React.FC<StepProps>
 }
 
@@ -35,12 +37,29 @@ export const StepsContext = createContext<StepsContextInf>({
 const {Provider} = StepsContext;
 
 export const Steps: StepsCompoundedComponent = (props) => {
-    const {className, direction, onChange} = props;
+    const {className, onChange} = props;
     const lastError = useRef<boolean>(false)
 
     const initial = props.initial || 0;
     const current = props.current || 0;
+    const direction: Direction = props.direction === "vertical" ? props.direction : "horizontal";
     const size = props.size === "small" ? props.size : 'default';
+
+    const selectType = (): StepsType => {
+        const {type} = props;
+        if (direction === "vertical") {
+            if (type !== "dot") {
+                return "default";
+            }
+            return "dot";
+        }
+        if (type === "dot" || type === 'nav') {
+            return type;
+        }
+        return "default";
+    }
+
+    const type = selectType();
 
 
     const handleChange = (current?: number) => {
@@ -54,9 +73,11 @@ export const Steps: StepsCompoundedComponent = (props) => {
         clickable: !!onChange
     }
 
+
     const classes = classNames('ui-steps', className, {
         [`ui-steps-${direction}`]: direction,
-        [`ui-steps-${size}`]: size
+        [`ui-steps-${size}`]: size,
+        [`ui-steps-type-${type}`]: type
     });
 
     const children = useRenderChildren<StepProps>(props.children, 'Step');
@@ -99,6 +120,7 @@ Steps.defaultProps = {
     direction: "horizontal",
     status: "process",
     size: "default",
+    type: "default",
     current: 0,
     initial: 0
 }

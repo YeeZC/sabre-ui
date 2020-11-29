@@ -32,7 +32,7 @@ export const SelectContext = createContext<SelectContextInf>({})
 
 const Provider = SelectContext.Provider;
 
-interface SelectCompoundedComponent extends React.FC<SelectProps> {
+type SelectCompoundedComponent = React.FC<SelectProps> & {
     Option: React.FC<OptionProps>
 }
 

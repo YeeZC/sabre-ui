@@ -19,7 +19,7 @@ export declare interface ButtonProps {
 
 export type ButtonShape = 'circle' | 'square'
 
-interface CompoundedComponent extends React.FC<ButtonProps> {
+type CompoundedComponent = React.FC<ButtonProps> & {
     Group: typeof Group;
 }
 

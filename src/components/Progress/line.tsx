@@ -39,7 +39,7 @@ export const Line: React.FC<ProgressProps> = (props) => {
     }
 
     let style: React.CSSProperties = {
-        width: `${value}%`
+        width: `${value}%`,
     };
 
     if (typeof strokeColor === "string") {

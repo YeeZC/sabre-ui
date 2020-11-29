@@ -3,8 +3,7 @@ import Icon from "../Icon";
 import notice, {NotificationProps} from "./notice";
 
 type RenderFunc = (props: NotificationProps) => void;
-
-interface NotificationApi {
+export interface NotificationApi {
     open: RenderFunc;
     info: RenderFunc;
     success: RenderFunc;
