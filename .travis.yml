@@ -10,8 +10,8 @@ cache:
     - node_modules
 env:
   - CI=true
-  scripts:
-    - yarn build-storybook
+scripts:
+  - yarn build-storybook
 deploy:
   provider: pages
   skip_cleanup: true
