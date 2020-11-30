@@ -1,15 +1,15 @@
 language: node_js
 node_js:
-  - "stable"
+  - 15
+cache: npm
 env:
   - CI=true
-scripts:
+script:
   - npm run build-storybook
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $github_token
-  keep_history: false
   local_dir: storybook-static
   on:
-    branch: master
+    branch: main
