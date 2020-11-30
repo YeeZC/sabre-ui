@@ -4,8 +4,11 @@ node_js:
 cache: npm
 env:
   - CI=true
+before_install:
+  - npm config set registry http://registry.npm.taobao.org/
 script:
   - npm run build-storybook
+  - npm config set registry https://registry.npmjs.org/
 deploy:
   provider: pages
   skip_cleanup: true
