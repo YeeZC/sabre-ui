@@ -1,7 +1,7 @@
 import React, {Attributes, createContext, FunctionComponentElement, useState} from "react";
 import classNames from "classnames";
 import {BaseFormItemProps, SizeType} from "../../data";
-import {RadioProps} from "./radio";
+import {RadioProps} from "./base";
 
 export type ButtonStyle = 'outline' | 'filled';
 

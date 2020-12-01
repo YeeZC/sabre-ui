@@ -3,8 +3,8 @@ import {Meta, Story} from "@storybook/react";
 import {action} from "@storybook/addon-actions";
 
 import Radio from './index'
-import {RadioProps} from "./radio";
 import Space from "../Space";
+import {RadioProps} from "./base";
 
 const meta: Meta = {
     title: 'Radio',

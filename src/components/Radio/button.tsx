@@ -1,6 +1,5 @@
 import React from "react";
-import {RadioProps} from "./radio";
-import {Base} from "./base";
+import {Base, RadioProps} from "./base";
 
 export const Button: React.FC<RadioProps> = (props) => {
     return (<Base {...props} prefixCls={'ui-radio-button'}/>)
