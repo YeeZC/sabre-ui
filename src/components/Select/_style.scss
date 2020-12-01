@@ -1,164 +1,116 @@
-@mixin select-size($input-height, $paddingY, $paddingX, $font-size, $border-radius) {
-  //height: $input-height;
-  min-height: $input-height;
-  border-radius: $border-radius;
-  font-size: $font-size;
-
-  .ui-select-prefix {
-    margin-right: $paddingY;
-    margin-left: $paddingY;
-  }
-
-  .ui-select-clear {
-    right: $paddingX;
-  }
-
-  .ui-select-down {
-    right: $paddingX;
+.ui-select-wrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  border: $border-width solid $border-color;
+  border-radius: .25rem;
+  padding: .1rem .2rem;
+  &:hover {
+    cursor: pointer;
+    border-color: $primary;
+    .disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+      border-color: $border-color;
+    }
   }
 }
 
-.ui-select-wrapper {
-  display: inline-flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  white-space: nowrap;
-  ul {
-    position: relative;
-    padding-left: 0;
-    list-style: none;
-    box-shadow: $submenu-box-shadow;
-    border-radius: 0 0 .25rem .25rem;
-    li {
-      display: inherit;
-      flex-direction: row;
-      padding: $input-padding-y $input-padding-x;
-      cursor: pointer;
-      width: 100%;
-      &:hover {
-        background-color: lighten($primary, 40%);
-      }
+.ui-select-prefix {
+  padding: 0 .25rem;
+}
 
-      &::after {
-        position: absolute;
-        right: $input-padding-x;
-        font-family: "ui-icon", serif !important;
-        font-style: normal;
-        color: $primary;
-        opacity: 0;
-        content: "\e7fd";
-        transition: opacity .24s ease-in-out .1s;
-      }
-
-      &.active {
-        background-color: lighten($primary, 30%);
-        &::after {
-          opacity: 1;
-        }
-      }
-    }
-  }
+.ui-selected-item {
+  background-color: $gray-1;
+  padding: .1rem .2rem;
+  border-radius: .25rem;
 }
 
 .ui-select {
   position: relative;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: left;
-  border-color: $border-color;
-  border-width: 1px;
-  border-style: solid;
-  font-family: $input-font-family;
-  cursor: pointer;
-  @include select-size($input-height-base, $input-padding-y-sm, $input-padding-x-sm,
-          $input-font-size, $input-border-radius);
-  padding-right: 2rem;
-  &:hover, &.hover,&:focus,&.focus {
-    border-color: $primary;
-    .ui-select-clear {
-      opacity: 1
+  width: 100%;
+}
+
+.ui-select-default {
+  min-width: 8rem;
+  min-height: 2rem;
+  font-size: $font-size-base * .875;
+  //line-height: $line-height-base;
+  .ui-selected-item {
+    line-height: $line-height-base * .875;
+    .ui-icon-cross {
+      margin-left: .25rem;
+    }
+    &:not(:first-child) {
+      margin-left: .25rem;
+    }
+  }
+}
+
+.ui-select-small {
+  min-width: 6rem;
+  min-height: 1.75rem;
+  font-size: $font-size-sm * .875;
+  //line-height: $line-height-sm;
+  .ui-selected-item {
+    line-height: $line-height-sm * .875;
+    .ui-icon-cross {
+      margin-left: .125rem;
+    }
+    &:not(:first-child) {
+      margin-left: .125rem;
+    }
+  }
+}
+
+.ui-select-large {
+  min-width: 10rem;
+  min-height: 2rem;
+  font-size: $font-size-lg * .875;
+  //line-height: $line-height-lg;
+  .ui-selected-item {
+    line-height: $line-height-lg * .875;
+    .ui-icon-cross {
+      margin-left: .25rem;
+    }
+    &:not(:first-child) {
+      margin-left: .25rem;
+    }
+  }
+}
+
+.ui-select-dropdown {
+  list-style: none;
+  padding-left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  top: calc(100% + .2rem);
+  left: 0;
+  overflow: auto;
+  background-color: white;
+  box-shadow: $submenu-box-shadow;;
+  .ui-option {
+    padding: .25rem .5rem;
+    cursor: pointer;
+    &:hover {
+      background-color: lighten($primary, 40%);
     }
 
-    .ui-select-down {
-      &:not(.active) {
-        opacity: 0
+    &.active {
+      background-color: lighten($primary, 35%);
+      &::after {
+        position: absolute;
+        right: .25rem;
+        font-family: "ui-icon", serif;
+        content: "\e7fd";
+        color: $primary;
       }
     }
-
-  }
-  &:focus,&.focus {
-    outline: none;
-    box-shadow: $input-focus-box-shadow;
-  }
-  .ui-select-clear {
-    max-height: $input-height-base;
-  }
-
-  &.disabled,&[disabled] {
-    background-color: $gray-1;
-    cursor: not-allowed;
-    &:hover, &.hover,&:focus,&.focus {
-      border-color: $border-color;
-    }
-    > * {
-      pointer-events: none;
-    }
   }
 }
-
-.ui-select-down {
-  position: absolute;
-  background: transparent;
-  opacity: 1;
-  transition: opacity .24s linear .1s;
-}
-
-.ui-select-clear {
-  color: $gray-5;
-  position: absolute;
-  background: transparent;
-  opacity: 0;
-  transition: opacity .24s linear .1s;
-  z-index: 2;
-  &:hover {
-    color: $gray-6;
-    transition: color .24s linear .1s;
-  }
-}
-
-.ui-select-item {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  background-color: #f5f5f5;
-  border: 1px solid #f0f0f0;
-  padding: 2px 4px;
-  font-size: .875rem;
-  margin: 2px;
-
-  .ui-select-close {
-    font-size: 12px;
-    margin-left: 4px;
-    color: inherit;
-    z-index: 1;
-    &:hover {
-      color: $gray-6;
-      transition: color .24s linear .1s;
-    }
-  }
-
-  &.search {
-    border: none;
-    background-color: transparent;
-    outline: none;
-
-    &:empty::before {
-      color: $gray-2;
-      content: attr(placeholder);
-    }
-  }
-}
-

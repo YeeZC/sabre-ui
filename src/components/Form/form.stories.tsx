@@ -14,12 +14,13 @@ export default meta;
 export const Template: Story<FormProps> = (props) => {
     return (
         <Form {...props}>
-            <Form.Item name={"abc"} label={"类型"}>
-                <Input.TextArea/>
-            </Form.Item>
             <Form.Item name={"name"} label={"名称"} tooltip={"help"}>
                 <Input/>
             </Form.Item>
+            <Form.Item name={"abc"} label={"类型"}>
+                <Select/>
+            </Form.Item>
+
 
             <Form.Item name={"abc"} label={"类型"}>
                 <Input.Password/>

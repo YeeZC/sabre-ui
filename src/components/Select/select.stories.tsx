@@ -20,8 +20,8 @@ export const DefaultInput: Story<SelectProps> = (props) => {
                 disabled={props.disabled}
                 prefix={<Icon type={"user"}/>}
         >
-            <Select.Option label={'hello333333333333333'} value={'hello'}/>
-            <Select.Option label={'child2222222'} value={'child'}/>
+            <Select.Option label={'hello'} value={'hello'}/>
+            <Select.Option label={'child'} value={'child'}/>
         </Select>
         </div>
     )

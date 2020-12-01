@@ -1,11 +1,19 @@
-import React, {createContext, FunctionComponentElement, ReactNode, useEffect, useRef, useState} from "react";
+import React, {
+    createContext,
+    FunctionComponentElement,
+    ReactElement,
+    ReactNode,
+    useEffect,
+    useRef,
+    useState
+} from "react";
 import classNames from "classnames";
 import {Option, OptionProps} from "./option";
 import {BaseFormItemProps, SizeType} from "../../data";
-import Icon from "../Icon";
 import animation from "../Animation";
-import {useClickOutSide, useRenderChildren} from "../../hooks";
-import {Empty} from "../Empty/empty";
+import {useClickOutSide} from "../../hooks";
+import {Empty} from "../../index";
+import Icon from "../Icon";
 
 export interface SelectProps extends BaseFormItemProps {
     prefix?: ReactNode;
@@ -38,31 +46,23 @@ type SelectCompoundedComponent = React.FC<SelectProps> & {
 export const Select: SelectCompoundedComponent = (props) => {
     const {className, size, disabled, prefix, multiSelect, onChange, renderItem, style} = props;
     const {defaultValue, options, filterOption} = props;
-    const [focus, setFocus] = useState(false);
     const [show, setShow] = useState(false);
 
-    const children = useRenderChildren(props.children, Option.displayName);
-    const makeDefaultSelected = () => {
+    const chooseDefault = () => {
         if (defaultValue) {
+            const filter = Array.isArray(defaultValue) ? defaultValue : [defaultValue];
             if (options) {
-                return options.filter(item => {
-                    if (Array.isArray(defaultValue)) {
-                        return defaultValue.includes(item.value);
-                    } else {
-                        return defaultValue === item.value;
-                    }
-                })
+                return options.filter(item => filter.includes(item.value));
             } else {
-                const result: OptionProps[] = [];
-                React.Children.map(children, (child, index) => {
+                const result:OptionProps[] = [];
+                React.Children.forEach(props.children, (child, index) => {
                     const element = child as FunctionComponentElement<OptionProps & { active?: boolean }>;
-                    const item = element.props;
-                    if (Array.isArray(defaultValue)) {
-                        if (defaultValue.includes(item.value)) {
-                            result.push(item)
+                    if (element && element.type.displayName === 'Option'
+                        && handleFilter(keyword.current, element.props)) {
+
+                        if (filter.includes(element.props.value)) {
+                            result.push(element.props);
                         }
-                    } else if (defaultValue === item.value) {
-                        result.push(item)
                     }
                 });
                 return result;
@@ -71,132 +71,125 @@ export const Select: SelectCompoundedComponent = (props) => {
         return [];
     }
 
-    const [selected, setSelected] = useState<OptionProps[]>(makeDefaultSelected());
-    const [keyword, setKeyword] = useState<string>('');
-    const ref = useRef<HTMLDivElement>();
-    const handleChange = (v: any[]) => {
-        if (onChange) {
-            onChange(v);
-        }
-    }
-
-    const innerFilter = (keyword: string, prop: OptionProps) => {
-        if (filterOption) {
-            return filterOption(keyword, prop);
-        }
-        return prop.label.includes(keyword);
-    }
-
-    const renderOption = () => {
-        let result;
-        let length = 0;
-        if (options) {
-            result = options.filter(item => {
-                return innerFilter(keyword, item)
-            }).map((item, index) => {
-                return <Option key={index} {...item} active={selected.filter(i => i.value === item.value).length > 0}/>
-            })
-            length = result.length;
-        } else {
-            result = React.Children.map(children, (child, index) => {
-                const element = child as FunctionComponentElement<OptionProps & { active?: boolean }>;
-                const {value} = element.props;
-                if (innerFilter(keyword, element.props)) {
-                    const active = selected.filter(item => item.value === value).length > 0;
-                    return React.cloneElement(element, {
-                        active
-                    })
-                }
-            })
-            length = React.Children.count(result);
-        }
-        if (length === 0) {
-            return <Empty style={{padding: '1rem 2rem'}}/>
-        }
-        return result;
-    }
-
-    useClickOutSide<HTMLDivElement>(ref, () => {
-        setShow(false);
-        setFocus(false)
-    })
+    const [selected, setSelected] = useState<OptionProps[]>(chooseDefault());
+    const keyword = useRef<string>('')
+    const selectWrapper = useRef<HTMLDivElement>()
 
     const classes = classNames('ui-select', className, {
         [`ui-select-${size}`]: size,
-        'focus': focus,
         'disabled': disabled
-    });
-    useEffect(() => {
-        if (!multiSelect && keyword.length <= 0) {
-            setSelected([])
-        }
-        if (props.onSearch) {
-            props.onSearch(keyword);
-        }
-    }, [keyword])
+    })
 
     useEffect(() => {
-        handleChange(selected)
+        if (onChange) {
+            onChange(selected.map(item => item.value))
+        }
     }, [selected])
 
+    useClickOutSide(selectWrapper, () => {
+        setShow(false);
+    })
+
     const context: SelectContextInf = {
-        onSelect: (value?: OptionProps) => {
-            if (value) {
-                if (multiSelect && !selected.includes(value)) {
+        renderItem,
+        onSelect: value => {
+            if (!!value && selected.filter(item =>
+                item.label === value.label).length === 0) {
+                if (!!multiSelect) {
                     const result = [];
-                    selected.forEach(item => result.push(item))
+                    selected.forEach(item => result.push(item));
                     result.push(value);
-                    setSelected(result)
-                    setKeyword('')
-                } else if (!multiSelect) {
+                    setSelected(result);
+                } else {
                     setSelected([value])
                 }
             }
             setShow(false)
-        },
-        renderItem
+        }
     }
 
+    const handleFilter = (keyword: string, option: OptionProps) => {
+        if (filterOption) {
+            return filterOption(keyword, option);
+        }
+        return option.label.includes(keyword);
+    }
 
+    const handleActive = (value: any) => {
+        return selected.map(item => item.value).includes(value);
+    }
+
+    const renderOption = () => {
+        let result: ReactElement[] = [];
+        if (options) {
+            result = options.filter(item => handleFilter(keyword.current, item))
+                .map((item, idx) => {
+                    return <Option {...item} key={idx} active={handleActive(item.value)}/>
+                })
+        } else {
+            React.Children.forEach(props.children, (child, index) => {
+                const element = child as FunctionComponentElement<OptionProps & { active?: boolean }>;
+                if (element && element.type.displayName === 'Option'
+                    && handleFilter(keyword.current, element.props)) {
+                    result.push(React.cloneElement(element, {
+                        key: index,
+                        active: handleActive(element.props.value)
+                    }))
+                }
+            });
+        }
+        if (result.length === 0) {
+            return <li className={'empty'}><Empty style={{padding: '1rem 2rem'}}/></li>
+        }
+
+        return result;
+    }
+
+    const renderSelected = () => {
+        if (!!multiSelect) {
+            return selected.map((item, idx) => {
+                return <span className={'ui-selected-item'} key={idx}>
+                    {item.label}
+                    <span className={'ui-icon ui-icon-cross'} onClick={() => {
+                        const result: OptionProps[] = [];
+                        selected.forEach(i => {
+                            if (i.value !== item.value) {
+                                result.push(i);
+                            }
+                        })
+                        setSelected(result);
+                    }}/>
+                </span>
+            })
+        } else if (selected.length > 0){
+            return selected[0].label;
+        }
+        return '';
+    }
 
     return (
-        <div className={'ui-select-wrapper'} ref={(r) => {
-            if (r) {
-                ref.current = r;
+        <div className={'ui-select-wrapper'} ref={ref => {
+            if (ref) {
+                selectWrapper.current = ref;
             }
-        }} style={style}>
-            <div className={classes} onClick={() => {
-                if (!disabled) {
-                    setShow(true)
-                }
-            }}>
-                {prefix ? <span className={'ui-select-prefix'}>{prefix}</span> : ''}
-                {multiSelect ? selected.map((item, index) => {
-                    return <span key={index} className={'ui-select-item'}>
-                        <span>
-                            {item.label}
-                            <Icon type={'cross'} className={'ui-select-close'} onClick={() => {
-                                setSelected(selected.filter(i => i !== item))
-                            }}/>
-                        </span>
-                    </span>
-                }) : ''}
-                {selected.length > 0 ? <Icon type={'close-filled'} className={'ui-select-clear'} onClick={() => {
-                    setSelected([])
-                }}/> : ''}
-                <span className={classNames('ui-select-down', {
-                    'active': selected.length <= 0
-                })}><Icon type={'arrow-down'}/></span>
+        }} onClick={(e) => {
+            e.preventDefault();
+            setShow(true)
+        }}>
+            {prefix ? <span className={'ui-select-prefix'}>{prefix}</span> : ''}
+            <div className={classes} style={style}>
+                {renderSelected()}
             </div>
-            {animation.animate(
-                <ul>
-                    <Provider value={context}>
-                        {renderOption()}
-                    </Provider>
-                </ul>, {
-                    timeout: 300,
-                    show: show
-                })}
+            <span className={'ui-icon ui-icon-arrow-down'}/>
+            {animation.animate(<ul className={'ui-select-dropdown'}>
+                <Provider value={context}>
+                    {renderOption()}
+                </Provider>
+            </ul>, {
+                show,
+                timeout: 300
+            })
+            }
         </div>
     )
 }
