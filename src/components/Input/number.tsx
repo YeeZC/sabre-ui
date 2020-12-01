@@ -70,6 +70,7 @@ export const Num: React.FC<NumberProps> = (props) => {
               disabled={disabled}
               onFocus={props.onFocus}
               onBlur={props.onBlur}
+              style={props.style}
               focus={focus}>
             <input type={'text'}
                    disabled={disabled}

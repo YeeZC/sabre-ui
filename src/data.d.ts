@@ -1,3 +1,5 @@
+import React from "react";
+
 export type StatusType = 'info' | 'success' | 'warn' | 'error';
 export type ButtonType = 'default' | 'primary' | 'success' | 'warn' | 'link';
 export type SizeType = 'default' | 'small' | 'large';
@@ -6,3 +8,8 @@ export type Theme = 'primary' | 'success' | 'danger' | 'info' | 'warn' | 'second
 export type Placement = 'top' | 'left' | 'right' | 'bottom';
 
 export type VoidCall = () => void;
+
+export interface BaseFormItemProps {
+    name?: string;
+    style?: React.CSSProperties;
+}

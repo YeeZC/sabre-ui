@@ -1,15 +1,8 @@
 import React from "react";
 import {Group, GroupProps} from "./group";
 import {Button} from "./button";
-import {Base} from "./base";
+import {Base, RadioProps} from "./base";
 
-export interface RadioProps {
-    name?: string;
-    checked?: boolean;
-    disabled?: boolean;
-    defaultChecked?: boolean;
-    value: any
-}
 
 export interface RadioCompounded extends React.FC<RadioProps> {
     Button: React.FC<RadioProps>;

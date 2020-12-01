@@ -1,6 +1,6 @@
 import React, {Attributes, createContext, FunctionComponentElement, useState} from "react";
 import classNames from "classnames";
-import {SizeType} from "../../data";
+import {BaseFormItemProps, SizeType} from "../../data";
 import {RadioProps} from "./radio";
 
 export type ButtonStyle = 'outline' | 'filled';
@@ -12,11 +12,10 @@ interface GroupContextInf {
 
 export const GroupContext = createContext<GroupContextInf>({});
 
-export interface GroupProps {
+export interface GroupProps extends BaseFormItemProps  {
     buttonStyle?: ButtonStyle;
     defaultValue?: any;
     disabled?: boolean;
-    name?: string;
     size?: SizeType;
     value?: any;
     onChange?: (value: any) => void

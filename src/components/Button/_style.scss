@@ -30,6 +30,9 @@
       @include btn-dashed($danger);
     }
   }
+  &button {
+    outline: none;
+  }
 }
 
 .ui-btn-size-large {

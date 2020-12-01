@@ -1,8 +1,7 @@
 import {ReactNode} from "react";
-import {SizeType} from "../../data";
+import {BaseFormItemProps, SizeType} from "../../data";
 
-export interface InputPropsBase {
-    name?: string;
+export interface InputPropsBase extends BaseFormItemProps  {
     placeholder?: string;
     size?: SizeType;
     value?: string;

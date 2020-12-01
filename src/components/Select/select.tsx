@@ -1,13 +1,13 @@
 import React, {createContext, FunctionComponentElement, ReactNode, useEffect, useRef, useState} from "react";
 import classNames from "classnames";
 import {Option, OptionProps} from "./option";
-import {SizeType} from "../../data";
+import {BaseFormItemProps, SizeType} from "../../data";
 import Icon from "../Icon";
 import animation from "../Animation";
 import {useClickOutSide, useRenderChildren} from "../../hooks";
 import {Empty} from "../Empty/empty";
 
-export interface SelectProps {
+export interface SelectProps extends BaseFormItemProps {
     prefix?: ReactNode;
     className?: string;
     size?: SizeType;
@@ -20,7 +20,6 @@ export interface SelectProps {
     placeholder?: string;
     filterOption?: (keyword: string, prop: OptionProps) => boolean;
     onSearch?: (keyword: string) => void;
-    style?: React.CSSProperties;
 }
 
 interface SelectContextInf {
@@ -75,7 +74,6 @@ export const Select: SelectCompoundedComponent = (props) => {
     const [selected, setSelected] = useState<OptionProps[]>(makeDefaultSelected());
     const [keyword, setKeyword] = useState<string>('');
     const ref = useRef<HTMLDivElement>();
-    const editorRef = useRef<HTMLSpanElement>()
     const handleChange = (v: any[]) => {
         if (onChange) {
             onChange(v);
@@ -122,13 +120,6 @@ export const Select: SelectCompoundedComponent = (props) => {
         setShow(false);
         setFocus(false)
     })
-    useEffect(() => {
-        if (focus && editorRef.current) {
-            editorRef.current.focus()
-        } else if (editorRef.current) {
-            editorRef.current.blur();
-        }
-    }, [focus])
 
     const classes = classNames('ui-select', className, {
         [`ui-select-${size}`]: size,
@@ -157,14 +148,8 @@ export const Select: SelectCompoundedComponent = (props) => {
                     result.push(value);
                     setSelected(result)
                     setKeyword('')
-                    if (editorRef.current) {
-                        editorRef.current.innerText = ''
-                    }
                 } else if (!multiSelect) {
                     setSelected([value])
-                    if (editorRef.current) {
-                        editorRef.current.innerText = value.label
-                    }
                 }
             }
             setShow(false)
@@ -183,13 +168,6 @@ export const Select: SelectCompoundedComponent = (props) => {
             <div className={classes} onClick={() => {
                 if (!disabled) {
                     setShow(true)
-                    if (focus) {
-                        if (editorRef.current) {
-                            editorRef.current.focus()
-                        }
-                    } else {
-                        setFocus(true);
-                    }
                 }
             }}>
                 {prefix ? <span className={'ui-select-prefix'}>{prefix}</span> : ''}
@@ -203,23 +181,8 @@ export const Select: SelectCompoundedComponent = (props) => {
                         </span>
                     </span>
                 }) : ''}
-                <span placeholder={props.placeholder}
-                      className={'ui-select-item search'}
-                      ref={(r) => {
-                          if (r) {
-                              editorRef.current = r;
-                          }
-                      }}
-                      contentEditable={"true"}
-                      onKeyUp={e => {
-                          const element = e.target as HTMLSpanElement;
-                          setKeyword(element.innerText);
-                      }}/>
                 {selected.length > 0 ? <Icon type={'close-filled'} className={'ui-select-clear'} onClick={() => {
                     setSelected([])
-                    if (editorRef.current) {
-                        editorRef.current.innerText = ''
-                    }
                 }}/> : ''}
                 <span className={classNames('ui-select-down', {
                     'active': selected.length <= 0

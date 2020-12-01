@@ -1,0 +1,54 @@
+.ui-form-item {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  .ui-form-item-label {
+    display: inline-block;
+    line-height: $line-height-base;
+    .ui-tooltip {
+      margin-left: .5rem;
+    }
+    .ui-icon-help {
+      cursor: pointer;
+    }
+  }
+
+  .ui-form-item-wrapper {
+    width: 100%;
+  }
+}
+
+.ui-form {
+  display: flex;
+  flex-direction: column;
+  &.ui-form-horizontal, &.ui-form-vertical {
+    .ui-form-item:not(:first-child) {
+      margin-top: .5rem;
+    }
+  }
+
+  &.ui-form-inline {
+    display: inline-block;
+    flex-direction: row;
+    .ui-form-item {
+      display: inline-block;
+      flex-direction: row;
+      margin-left: .25rem;
+      align-items: center;
+      .ui-form-item-label {
+        margin-right: .25rem;
+      }
+    }
+  }
+}
+
+.ui-form-item-vertical {
+  align-items: start;
+  .ui-form-item-label {
+    margin-bottom: .25rem;
+  }
+}
+
+.ui-form-item-horizontal {
+  flex-direction: row;
+}

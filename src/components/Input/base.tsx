@@ -3,7 +3,7 @@ import classNames from "classnames";
 import {InputPropsBase} from "./common";
 
 export const Base: React.FC<InputPropsBase & {focus?: boolean}> = (props) => {
-    const {size, className, prefix, children, focus, disabled, onBlur, onFocus} = props;
+    const {size, className, prefix, children, focus, disabled, onBlur, onFocus, style} = props;
     useEffect(() => {
         if (focus&&onFocus) {
             onFocus();
@@ -17,7 +17,7 @@ export const Base: React.FC<InputPropsBase & {focus?: boolean}> = (props) => {
             [`ui-input-${size}`]: size,
             'focus': focus,
             'disabled': disabled
-        })}>
+        })} style={style}>
         {prefix ? <span className={'ui-input-prefix'}>{prefix}</span> : ''}
         {children}
     </div>)

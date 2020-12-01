@@ -27,6 +27,7 @@ export const Password: React.FC<InputPropsBase> = (props) => {
               prefix={prefix}
               onFocus={props.onFocus}
               onBlur={props.onBlur}
+              style={props.style}
               focus={focus}>
             <input type={show ? 'text' : 'password'}
                    disabled={disabled}

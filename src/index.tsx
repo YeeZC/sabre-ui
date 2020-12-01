@@ -6,6 +6,7 @@ import Card from './components/Card';
 import Checkbox from './components/Checkbox';
 import Divider from './components/Divider';
 import Empty from './components/Empty';
+import Form from './components/Form';
 import Icon from './components/Icon';
 import Input from './components/Input';
 import Menu from './components/Menu';
@@ -31,6 +32,7 @@ export {
     Checkbox,
     Divider,
     Empty,
+    Form,
     Icon,
     Input,
     Menu,

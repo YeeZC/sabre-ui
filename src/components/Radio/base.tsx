@@ -1,9 +1,9 @@
 import React, {useContext, useEffect, useState} from "react";
 import classNames from "classnames";
 import {GroupContext} from "./group";
+import {BaseFormItemProps} from "../../data";
 
-export interface RadioProps {
-    name?: string;
+export interface RadioProps extends BaseFormItemProps {
     checked?: boolean;
     disabled?: boolean;
     defaultChecked?: boolean;
