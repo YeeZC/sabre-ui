@@ -16,7 +16,46 @@
   }
 
   .ui-upload-list {
+    z-index: 100;
+    min-width: 200px;
     list-style: none;
     padding-left: 0;
+    margin-top: .5rem;
+  }
+
+  .ui-upload-list-item {
+    padding: .25rem;
+
+    &:hover {
+      background-color: $gray-2;
+
+      .ui-upload-list-item-close {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+  }
+
+  .ui-upload-list-item-title {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+
+    .ui-upload-list-item-prefix {
+      margin-right: .25rem;
+    }
+  }
+
+  .ui-upload-list-item-close {
+    &::before {
+      opacity: 0;
+      position: absolute;
+      right: .25rem;
+      transition: opacity .24s linear .1s;
+    }
   }
 }

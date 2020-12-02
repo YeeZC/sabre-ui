@@ -7,6 +7,7 @@ import {Theme} from "../../data";
 
 export const CircleProgress: React.FC<ProgressProps> = (props) => {
     const {
+        className,
         strokeColor,
         strokeLinecap,
         strokeSize,
@@ -47,7 +48,7 @@ export const CircleProgress: React.FC<ProgressProps> = (props) => {
         return `${percent}%`
     }
 
-    const classes = classNames('ui-progress')
+    const classes = classNames('ui-progress', className)
 
     return (
         <div style={{width: size, height: size}} className={classes}>
@@ -61,8 +62,8 @@ export const CircleProgress: React.FC<ProgressProps> = (props) => {
                 strokeLinecap={strokeLinecap}
             />
             {showInfo ? <span className={classNames('ui-progress-circle-text', {
-                    'ui-progress-circle-text-sm': size <= 100,
-                    'ui-progress-circle-text-lg': size > 200,
+                    'ui-progress-circle-text-sm': typeof size === 'number' && size <= 100,
+                    'ui-progress-circle-text-lg': typeof size === 'number' && size > 200,
                     [`ui-progress-text-${status}`]: status && status !== "active"
                 })}>
                 {renderText()}

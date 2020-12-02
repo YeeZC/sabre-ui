@@ -6,6 +6,7 @@ import Icon from "../Icon";
 
 export const Line: React.FC<ProgressProps> = (props) => {
     const {
+        className,
         strokeColor,
         strokeLinecap,
         strokeSize,
@@ -55,7 +56,7 @@ export const Line: React.FC<ProgressProps> = (props) => {
         }
     }
 
-    return (<div className={classNames("ui-progress", "ui-progress-line")} style={{width: size}}>
+    return (<div className={classNames("ui-progress", "ui-progress-line", className)} style={{width: size}}>
         <div className={classNames('ui-progress-outer', {
             'ui-progress-status-active': status === "active" && value < 100
         })} style={{

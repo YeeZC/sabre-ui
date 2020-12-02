@@ -7,7 +7,7 @@ import Row from "../Row";
 
 const iconTypes = ["1688", "alipay", "alipay-font",
     "amazon", "applets", "arrow-down", "arrow-left",
-    "arrow-right", "arrow-up", "balance", "bell",
+    "arrow-right", "arrow-up", "attachment", "balance", "bell",
     "bell-off", "benefits", "calculator", "cart",
     "cart-empty", "caution", "caution-filled",
     "check", "check-filled", "chrome", "close",
@@ -26,7 +26,7 @@ const iconTypes = ["1688", "alipay", "alipay-font",
     "page-left", "page-right", "partner", "phone", "phone-off",
     "play", "record", "refresh", "region", "reload", "renew",
     "search", "setting", "share", "show-less", "show-more",
-    "sina", "skype", "spin", "stackflow", "star", "star-filled",
+    "sina", "skype", "spinner", "stackflow", "star", "star-filled",
     "sub-account", "sync", "taobao", "taobao-font", "time",
     "twitter", "unlock", "up-to-top", "upload", "user", "view",
     "view-off", "wechat", "youtube", "zhihu"]

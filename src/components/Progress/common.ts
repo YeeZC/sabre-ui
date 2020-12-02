@@ -10,13 +10,14 @@ export interface ProgressStrokeColor {
 }
 
 export interface ProgressProps {
+    className?: string;
     strokeColor?: string | ProgressStrokeColor;
     strokeLinecap?: StrokeLinecap;
     strokeSize?: number;
     showInfo?: boolean;
     format?: (percent: number) => ReactNode;
     status?: Theme | 'active'
-    size: number;
+    size?: number | string;
     percent: number;
 }
 
