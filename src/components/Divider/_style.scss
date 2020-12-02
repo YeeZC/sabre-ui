@@ -13,13 +13,17 @@
   border-top-color: $gray-3;;
   border-top-style: solid;
   border-top-width: 1px;
+
   &.ui-divider-dashed {
     border-top-style: dashed;
   }
+
   &.ui-divider-text-plan {
     font-weight: $font-weight-base;
   }
+
   @include divider-margin($divider-margin);
+
   &.ui-divider-horizontal {
     display: flex;
     clear: both;
@@ -34,7 +38,7 @@
     vertical-align: middle;
     min-height: 100%;
     border-top: none;
-    border-left: 1px solid rgba(0,0,0,.06);
+    border-left: 1px solid rgba(0, 0, 0, .06);
   }
 }
 

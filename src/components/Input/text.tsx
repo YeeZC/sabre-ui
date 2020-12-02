@@ -32,24 +32,24 @@ export const Text: React.FC<InputPropsBase> = (props) => {
                   onBlur={props.onBlur}
                   style={props.style}
                   focus={focus}>
-            <input type={'text'}
-                   disabled={disabled}
-                   name={name}
-                   ref={(r) => {
-                       if (r) {
-                           inputRef.current = r;
-                       }
-                   }}
-                   placeholder={placeholder}
-                   onFocus={() => setFocus(true)}
-                   onBlur={() => setFocus(false)}
-                   onChange={event => {
-                       setValue(event.target.value);
-                       if (onChange) {
-                           onChange(event.target.value)
-                       }
-                   }}/>
-        </Base>)
+        <input type={'text'}
+               disabled={disabled}
+               name={name}
+               ref={(r) => {
+                   if (r) {
+                       inputRef.current = r;
+                   }
+               }}
+               placeholder={placeholder}
+               onFocus={() => setFocus(true)}
+               onBlur={() => setFocus(false)}
+               onChange={event => {
+                   setValue(event.target.value);
+                   if (onChange) {
+                       onChange(event.target.value)
+                   }
+               }}/>
+    </Base>)
 }
 
 Text.displayName = 'Input.Text';

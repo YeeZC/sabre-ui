@@ -27,7 +27,7 @@ export const CircleProgress: React.FC<ProgressProps> = (props) => {
         }
     } else if (percent === 100) {
         color = colorMap.get('success')
-    }else {
+    } else {
         const convert = strokeColor as ProgressStrokeColor;
         if (convert) {
             color = {
@@ -50,21 +50,21 @@ export const CircleProgress: React.FC<ProgressProps> = (props) => {
     const classes = classNames('ui-progress')
 
     return (
-        <div style={{width:size, height: size}} className={classes}>
+        <div style={{width: size, height: size}} className={classes}>
             <Circle
-                style={{width:size, height: size}}
+                style={{width: size, height: size}}
                 prefixCls={'ui-progress'}
                 percent={percent}
-                    strokeColor={color}
-                    strokeWidth={strokeSize}
-                    trailWidth={strokeSize}
-                    strokeLinecap={strokeLinecap}
+                strokeColor={color}
+                strokeWidth={strokeSize}
+                trailWidth={strokeSize}
+                strokeLinecap={strokeLinecap}
             />
             {showInfo ? <span className={classNames('ui-progress-circle-text', {
-                'ui-progress-circle-text-sm': size <= 100,
-                'ui-progress-circle-text-lg': size > 200,
-                [`ui-progress-text-${status}`]: status && status !== "active"
-            })}>
+                    'ui-progress-circle-text-sm': size <= 100,
+                    'ui-progress-circle-text-lg': size > 200,
+                    [`ui-progress-text-${status}`]: status && status !== "active"
+                })}>
                 {renderText()}
             </span>
                 :

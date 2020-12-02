@@ -82,7 +82,8 @@ export const Message: React.FC<MessageProps> = (props) => {
             }
         }
     }, [])
-    return (<span className="ui-msg-item"><Icon {...selectIcon(type)}/><i className="ui-msg-item-content">{text}</i></span>)
+    return (
+        <span className="ui-msg-item"><Icon {...selectIcon(type)}/><i className="ui-msg-item-content">{text}</i></span>)
 }
 
 Message.defaultProps = {

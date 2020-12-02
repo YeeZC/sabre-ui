@@ -13,7 +13,6 @@ import {BaseFormItemProps, SizeType} from "../../data";
 import animation from "../Animation";
 import {useClickOutSide} from "../../hooks";
 import {Empty} from "../../index";
-import Icon from "../Icon";
 
 export interface SelectProps extends BaseFormItemProps {
     prefix?: ReactNode;
@@ -54,7 +53,7 @@ export const Select: SelectCompoundedComponent = (props) => {
             if (options) {
                 return options.filter(item => filter.includes(item.value));
             } else {
-                const result:OptionProps[] = [];
+                const result: OptionProps[] = [];
                 React.Children.forEach(props.children, (child, index) => {
                     const element = child as FunctionComponentElement<OptionProps & { active?: boolean }>;
                     if (element && element.type.displayName === 'Option'
@@ -161,7 +160,7 @@ export const Select: SelectCompoundedComponent = (props) => {
                     }}/>
                 </span>
             })
-        } else if (selected.length > 0){
+        } else if (selected.length > 0) {
             return selected[0].label;
         }
         return '';
@@ -175,9 +174,9 @@ export const Select: SelectCompoundedComponent = (props) => {
         }} onClick={(e) => {
             e.preventDefault();
             setShow(true)
-        }}>
+        }} style={style}>
             {prefix ? <span className={'ui-select-prefix'}>{prefix}</span> : ''}
-            <div className={classes} style={style}>
+            <div className={classes}>
                 {renderSelected()}
             </div>
             <span className={'ui-icon ui-icon-arrow-down'}/>

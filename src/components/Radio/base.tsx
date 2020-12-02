@@ -10,7 +10,7 @@ export interface RadioProps extends BaseFormItemProps {
     value: any
 }
 
-export const Base: React.FC<RadioProps & {prefixCls: string}> = (props) => {
+export const Base: React.FC<RadioProps & { prefixCls: string }> = (props) => {
     const {disabled, defaultChecked, value, children, name, prefixCls} = props;
     const context = useContext(GroupContext);
     const [checked, setChecked] = useState(defaultChecked || props.checked)
@@ -48,7 +48,8 @@ export const Base: React.FC<RadioProps & {prefixCls: string}> = (props) => {
         }}>
             <span className={classes}>
                 <input className={`${prefixCls}-input`} name={name} type={'radio'} disabled={disabled} value={value}
-                       checked={checked} onChange={() => {}}/>
+                       checked={checked} onChange={() => {
+                }}/>
                 <span className={`${prefixCls}-inner`}/>
             </span>
             <span>{children}</span>

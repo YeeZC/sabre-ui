@@ -12,15 +12,7 @@
 }
 
 @mixin btn-gp-style($border-radius) {
-  &.ui-btn-gp-last {
-    border-left: none;
-    border-radius: 0 $border-radius $border-radius 0;
-
-    &.ui-btn-dashed {
-      border-left: none;
-    }
-  }
-  &.ui-btn-gp-first {
+  &:first-child {
     border-right: none;
     border-radius: $border-radius 0 0 $border-radius;
 
@@ -28,7 +20,17 @@
       border-right: $btn-border-width dashed;
     }
   }
-  &.ui-btn-gp-mid {
+
+  &:last-child {
+    border-left: none;
+    border-radius: 0 $border-radius $border-radius 0;
+
+    &.ui-btn-dashed {
+      border-left: none;
+    }
+  }
+
+  &:not(:first-child):not(:last-child) {
     border-left: none;
     border-right: none;
     border-radius: 0;
@@ -195,7 +197,7 @@
   $origin,
   $scaleStart: scaleX(0),
   $scaleEnd: scaleX(1),
-  ) {
+) {
   .#{$prefix}-fade-appear,
   .#{$prefix}-fade-enter {
     opacity: 0;
@@ -252,10 +254,12 @@
     font-weight: $headings-font-weight;
     line-height: $headings-line-height;
     color: $headings-color;
+
     .ui-card-title {
       padding: $padding-title 0;
       min-width: 50%;
     }
+
     .ui-card-extra {
       padding: $padding-title 0;
       text-align: right;
@@ -286,6 +290,7 @@
       white-space: nowrap;
       text-align: center;
       border-top: none;
+
       &::before, &::after {
         position: relative;
         top: 50%;
@@ -297,26 +302,32 @@
         transform: translateY(50%);
         content: "";
       }
+
       .ui-divider-inner-text {
         padding: 0 1rem;
       }
+
       &.ui-divider-dashed {
         &::before, &::after {
           border-top-style: dashed;
         }
       }
+
       &.ui-divider-text-left {
         &::after {
           width: 95%;
         }
+
         &::before {
           width: 5%;
         }
       }
+
       &.ui-divider-text-right {
         &::after {
           width: 5%;
         }
+
         &::before {
           width: 95%;
         }
@@ -354,12 +365,15 @@
 @mixin steps-size($title-font-size, $sub-font-size) {
   .ui-step {
     vertical-align: top;
+
     .ui-step-content {
       margin-left: $title-font-size / 2;
+
       .ui-step-title {
         position: relative;
         font-size: $title-font-size;
         line-height: $title-font-size * 2;
+
         .ui-step-sub-title {
           margin-left: $title-font-size / 2;
         }
@@ -368,6 +382,7 @@
           top: $title-font-size;
         }
       }
+
       .ui-step-sub-title, .ui-step-description {
         font-size: $sub-font-size;
       }
@@ -392,9 +407,11 @@
       display: inline-flex;
       justify-content: center;
       overflow: visible;
+
       &:last-child {
         flex: 1;
       }
+
       &:not(:last-child) {
         &::after {
           font-family: "ui-icon", serif;
@@ -416,6 +433,7 @@
 
     .ui-step {
       vertical-align: top;
+
       .ui-step-icon {
         position: absolute;
         top: $title-font-size / 2 + $title-font-size / 4;

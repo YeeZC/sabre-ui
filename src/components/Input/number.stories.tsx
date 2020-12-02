@@ -12,8 +12,8 @@ export default meta;
 
 export const DefaultInput: Story<NumberProps> = (props) => {
     return (
-            <Input.Number {...props}/>
-        )
+        <Input.Number {...props}/>
+    )
 }
 
 DefaultInput.storyName = "Input.Number"

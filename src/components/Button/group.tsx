@@ -1,28 +1,31 @@
 import React from "react";
-import classnames from "classnames";
 import {ButtonProps} from "./button";
+import {SizeType} from "../../data";
 
-export const Group: React.FC<{}> = ({children, ...rest}) => {
+export interface GroupProps {
+    size?: SizeType | 'mini'
+}
 
-    const nodes = React.Children.toArray(children).filter(child => {
-        const btn = child as React.FunctionComponentElement<ButtonProps>;
-        if (btn && btn.type.displayName === "Button") {
-            return btn;
-        }
-    });
-
-    const length = nodes.length;
-    return (<span className={'ui-btn-gp'}>{nodes.map((child, idx) => {
+export const Group: React.FC<GroupProps> = ({children, ...rest}) => {
+    return (<span className={'ui-btn-gp'}>{React.Children.map(children, (child, idx) => {
         const element = child as React.FunctionComponentElement<ButtonProps>
-        const {className} = element.props;
-        return React.cloneElement(element, {
-            className: classnames(className, {
-                'ui-btn-gp-first': idx === 0,
-                'ui-btn-gp-last': idx === length-1,
-                'ui-btn-gp-mid': idx >0 && idx < length - 1
-            })
-        })
+        if (element && element.type.displayName === 'Button') {
+            const {size} = element.props;
+            const props = {
+                ...element.props,
+                key: idx
+            }
+            if (size !== rest.size) {
+                props.size = rest.size;
+            }
+
+            return React.cloneElement(element, props);
+        }
+
     })}</span>)
 }
 
-Group.displayName = "BtnGroup"
+Group.displayName = "BtnGroup";
+Group.defaultProps = {
+    size: "default"
+}

@@ -3,7 +3,7 @@ import classNames from "classnames";
 import {CheckboxGroupProps, Group, GroupContext} from "./group";
 import {BaseFormItemProps} from "../../data";
 
-export interface CheckboxProps extends BaseFormItemProps  {
+export interface CheckboxProps extends BaseFormItemProps {
     checked?: boolean;
     disabled?: boolean;
     defaultChecked?: boolean;
@@ -49,10 +49,9 @@ export const Checkbox: CheckboxCompounded = (props) => {
 
     useEffect(() => {
         if (context.value && !disabled) {
-            setChecked(context.value.includes(value) )
+            setChecked(context.value.includes(value))
         }
     }, [context.value])
-
 
 
     const wrapper = classNames(`ui-checkbox-wrapper`, {

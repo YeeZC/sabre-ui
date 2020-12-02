@@ -10,7 +10,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const Template:Story<SpaceProps> = (props) => {
+export const Template: Story<SpaceProps> = (props) => {
 
     return (<Space {...props}>
         <Button type={"primary"}>First</Button>

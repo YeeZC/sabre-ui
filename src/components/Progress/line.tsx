@@ -44,9 +44,9 @@ export const Line: React.FC<ProgressProps> = (props) => {
 
     if (typeof strokeColor === "string") {
         style.backgroundColor = strokeColor;
-    } else if(value === 100) {
+    } else if (value === 100) {
         style.backgroundColor = colorMap.get('success');
-    }else {
+    } else {
         const color = strokeColor as ProgressStrokeColor;
         if (color) {
             style.backgroundImage = `linear-gradient(to right, ${color.from} , ${color.to})`

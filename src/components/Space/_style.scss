@@ -1,9 +1,11 @@
 .ui-space {
   display: inline-flex;
   flex-wrap: wrap;
+
   &.ui-space-horizontal {
     flex-direction: row;
   }
+
   &.ui-space-vertical {
     flex-direction: column;
   }

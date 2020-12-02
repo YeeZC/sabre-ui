@@ -17,7 +17,7 @@
       z-index: -1;
       content: "";
       background-color: inherit;
-      transform:rotate(45deg);
+      transform: rotate(45deg);
       position: absolute;
     }
   }
@@ -27,6 +27,7 @@
   .ui-tooltip-content {
     bottom: calc(100% + .5rem);
     left: 0;
+
     &::after {
       width: .5rem;
       height: .5rem;
@@ -54,6 +55,7 @@
   .ui-tooltip-content {
     top: calc(50% - 1rem);
     left: calc(100% + .5rem);
+
     &::before {
       width: .5rem;
       height: .5rem;
@@ -67,6 +69,7 @@
   .ui-tooltip-content {
     top: calc(50% - 1rem);
     right: calc(100% + .5rem);
+
     &::after {
       width: .5rem;
       height: .5rem;

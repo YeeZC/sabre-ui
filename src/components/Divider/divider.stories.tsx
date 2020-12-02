@@ -16,8 +16,8 @@ export const Template: Story<DividerProps> = (props) => {
     return (<div>
         {props.type === "vertical" ?
             <div><span>A</span>
-            <Divider {...props}/>
-            <span>B</span></div>
+                <Divider {...props}/>
+                <span>B</span></div>
             :
             [<Divider {...props}/>,
                 <Divider {...props}>DividerText</Divider>]}

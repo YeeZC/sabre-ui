@@ -6,25 +6,31 @@
   list-style: none;
   border-bottom: $menu-border-width solid $menu-border-color;
   box-shadow: $menu-box-shadow;
-  >.ui-menu-item {
+
+  > .ui-menu-item {
     padding: $menu-item-padding-y $menu-item-padding-x;
     cursor: pointer;
     transition: $menu-transition;
+
     &:hover, &:focus {
       text-decoration: none;
     }
+
     &.ui-menu-item-disabled {
       color: $menu-item-disabled-color;
       pointer-events: none;
       cursor: default;
     }
+
     &.ui-menu-item-active, &:hover {
       color: $menu-item-active-color;
       border-bottom: $menu-item-active-border-width solid $menu-item-active-color;
     }
   }
+
   .ui-menu-submenu-item {
     position: relative;
+
     .ui-menu-submenu-title {
       display: flex;
       align-items: center;
@@ -37,15 +43,18 @@
   list-style: none;
   padding-left: 0;
   white-space: nowrap;
+
   .ui-menu-item {
     padding: $menu-item-padding-y $menu-item-padding-x;
     transition: $menu-transition;
     color: $body-color;
+
     &.ui-menu-item-disabled {
       color: $menu-item-disabled-color;
       pointer-events: none;
       cursor: default;
     }
+
     &.ui-menu-item-active, &:hover {
       color: $menu-item-active-color !important;
     }
@@ -59,8 +68,10 @@
   height: 100%;
   min-width: 200px;
   box-shadow: none;
-  >.ui-menu-item {
+
+  > .ui-menu-item {
     border-left: $menu-item-active-border-width solid transparent;
+
     &.ui-menu-item-active, &:hover {
       border-left: $menu-item-active-border-width solid $menu-item-active-color;
       border-bottom: none;
@@ -70,7 +81,8 @@
 
 .ui-menu-horizontal {
   width: 100%;
-  >.ui-menu-item {
+
+  > .ui-menu-item {
     border-bottom: $menu-item-active-border-width solid transparent;
   }
 
@@ -85,9 +97,10 @@
       transform: rotate(0deg);
       transition: transform .2s linear .2s;
     }
+
     &:hover {
       .ui-icon {
-          transform: rotate(180deg);
+        transform: rotate(180deg);
       }
     }
   }

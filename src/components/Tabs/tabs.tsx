@@ -1,4 +1,4 @@
-import React, {createContext, FunctionComponentElement, PropsWithChildren, useState} from "react";
+import React, {FunctionComponentElement, useState} from "react";
 import classNames from "classnames";
 import {Tab, TabProps} from "./tab";
 
@@ -17,13 +17,13 @@ type TabsCompoundedComponent = React.FC<TabsProps> & {
 }
 
 export const Tabs: TabsCompoundedComponent = ({
-                                           current,
-                                           type,
-                                           className,
-                                           onSelect,
-                                           children,
-                                           style
-                                       }) => {
+                                                  current,
+                                                  type,
+                                                  className,
+                                                  onSelect,
+                                                  children,
+                                                  style
+                                              }) => {
     const classes = classNames('ui-tabs', className, {
         [`ui-tabs-${type}`]: type
     })

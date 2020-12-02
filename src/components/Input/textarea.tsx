@@ -3,7 +3,7 @@ import classNames from "classnames";
 import {InputPropsBase} from "./common";
 import {Base} from "./base";
 
-export interface TextAreaProps extends Omit<InputPropsBase, 'prefix'>{
+export interface TextAreaProps extends Omit<InputPropsBase, 'prefix'> {
     autoSize?: boolean | number
 }
 
@@ -39,16 +39,16 @@ export const TextArea: React.FC<TextAreaProps> = (props) => {
                     inputRef.current = r
                 }
             }}
-              placeholder={placeholder} name={name}
-              onFocus={() => setFocus(true)}
-              onBlur={() => setFocus(false)}
-              rows={rows}
-              onChange={event => {
-                  setValue(event.target.value);
-                  if (onChange) {
-                      onChange(event.target.value)
-                  }
-              }}/>
+            placeholder={placeholder} name={name}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
+            rows={rows}
+            onChange={event => {
+                setValue(event.target.value);
+                if (onChange) {
+                    onChange(event.target.value)
+                }
+            }}/>
     </Base>
 }
 

@@ -11,25 +11,30 @@
   vertical-align: middle;
   background-image: none;
   border: $btn-border-width solid transparent;
-  @include button-size($btn-min-height, $btn-padding-y,  $btn-padding-x,  $btn-font-size,  $border-radius);
+  @include button-size($btn-min-height, $btn-padding-y, $btn-padding-x, $btn-font-size, $border-radius);
   box-shadow: $btn-box-shadow;
   cursor: pointer;
   transition: $btn-transition;
+
   &.ui-btn-disabled,
   &[disabled] {
     cursor: not-allowed;
     opacity: $btn-disabled-opacity;
     box-shadow: none;
+
     > * {
       pointer-events: none;
     }
   }
+
   &.ui-btn-danger {
     @include button-style($danger, $danger, $white);
+
     &.ui-btn-dashed {
       @include btn-dashed($danger);
     }
   }
+
   &button {
     outline: none;
   }
@@ -37,20 +42,21 @@
 
 .ui-btn-size-large {
   @include button-size($btn-min-height-lg, $btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-border-radius-lg);
-  @include btn-gp-style($btn-border-radius-lg);
   &.ui-btn-circle {
     @include btn-circle($btn-min-height-lg)
   }
+
   .icon {
     font-size: $btn-font-size-lg;
   }
 }
+
 .ui-btn-size-small {
   @include button-size($btn-min-height-sm, $btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
-  @include btn-gp-style($btn-border-radius-sm);
   &.ui-btn-circle {
     @include btn-circle($btn-min-height-sm)
   }
+
   .icon {
     font-size: $btn-font-size-sm;
   }
@@ -58,10 +64,10 @@
 
 .ui-btn-size-mini {
   @include button-size($btn-min-height-mini, $btn-padding-y-mini, $btn-padding-x-mini, $btn-font-size-mini, $btn-border-radius-mini);
-  @include btn-gp-style($btn-border-radius-mini);
   &.ui-btn-circle {
     @include btn-circle($btn-min-height-mini)
   }
+
   .icon {
     font-size: $btn-font-size-mini;
   }
@@ -69,16 +75,18 @@
 
 .ui-btn-size-default {
   @include button-size($btn-min-height, $btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
-  @include btn-gp-style($btn-border-radius);
   &.ui-btn-circle {
     @include btn-circle($btn-min-height)
   }
+
   .icon {
     font-size: $btn-font-size;
   }
 }
+
 .ui-btn-default {
   @include button-style($white, $body-color, $body-color, $white, $primary, $primary);
+
   &.ui-btn-dashed {
     @include btn-dashed($body-color);
   }
@@ -86,6 +94,7 @@
 
 .ui-btn-primary {
   @include button-style($primary, $primary, $white);
+
   &.ui-btn-dashed {
     @include btn-dashed($primary);
   }
@@ -93,6 +102,7 @@
 
 .ui-btn-danger {
   @include button-style($danger, $danger, $white);
+
   &.ui-btn-dashed {
     @include btn-dashed($danger);
   }
@@ -100,6 +110,7 @@
 
 .ui-btn-warn {
   @include button-style($warn, $warn, $white);
+
   &.ui-btn-dashed {
     @include btn-dashed($warn);
   }
@@ -107,6 +118,7 @@
 
 .ui-btn-success {
   @include button-style($success, $success, $white);
+
   &.ui-btn-dashed {
     @include btn-dashed($success);
   }
@@ -118,27 +130,41 @@
   color: $btn-link-color;
   text-decoration: $link-decoration;
   box-shadow: none;
+
   &:hover {
     color: $btn-link-hover-color;
     text-decoration: $link-hover-decoration;
   }
+
   &:focus,
   &.focus {
     text-decoration: $link-hover-decoration;
     box-shadow: none;
   }
+
   &:disabled,
   &.ui-btn-disabled {
     color: $btn-link-disabled-color;
     pointer-events: none;
   }
-  &.ui-btn-gp-last {
-    border: none;
-  }
-  &.ui-btn-gp-first {
-    border: none;
-  }
-  &.ui-btn-gp-mid {
-    border: none;
+}
+
+.ui-btn-gp {
+  .ui-btn:not(.ui-btn-link) {
+    &.ui-btn-size-default {
+      @include btn-gp-style($btn-border-radius);
+    }
+
+    &.ui-btn-size-mini {
+      @include btn-gp-style($btn-border-radius-mini);
+    }
+
+    &.ui-btn-size-small {
+      @include btn-gp-style($btn-border-radius-sm);
+    }
+
+    &.ui-btn-size-large {
+      @include btn-gp-style($btn-border-radius-lg);
+    }
   }
 }

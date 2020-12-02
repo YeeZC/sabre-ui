@@ -31,7 +31,8 @@ interface StepsContextInf {
 
 export const StepsContext = createContext<StepsContextInf>({
     clickable: false,
-    onChange: () => {}
+    onChange: () => {
+    }
 })
 
 const {Provider} = StepsContext;
@@ -84,34 +85,34 @@ export const Steps: StepsCompoundedComponent = (props) => {
 
     return (
         <div className={classes}>
-                {React.Children.map(children, (child, index) => {
-                    const element = child as FunctionComponentElement<StepProps>;
-                    const {status} = element.props;
-                    const key = initial + index;
-                    const newProps = {
-                        ...element.props,
-                        key
+            {React.Children.map(children, (child, index) => {
+                const element = child as FunctionComponentElement<StepProps>;
+                const {status} = element.props;
+                const key = initial + index;
+                const newProps = {
+                    ...element.props,
+                    key
+                }
+                if (lastError.current) {
+                    newProps.disabled = true
+                }
+                lastError.current = status === "error";
+                if (key < current) {
+                    if (status !== 'error') {
+                        newProps.status = 'finish';
                     }
-                    if (lastError.current) {
-                        newProps.disabled = true
-                    }
-                    lastError.current = status === "error";
-                    if (key < current) {
-                        if (status !== 'error') {
-                            newProps.status = 'finish';
-                        }
-                    } else if (key === current && status === "default") {
-                        newProps.status = props.status;
-                    } else if (key > current) {
-                        newProps.status = 'default'
-                    }
-                    const item = React.cloneElement(element, newProps);
-                    return (
-                        <Provider value={{...context, current: index + 1}}>
-                            {item}
-                        </Provider>
-                    )
-                })}
+                } else if (key === current && status === "default") {
+                    newProps.status = props.status;
+                } else if (key > current) {
+                    newProps.status = 'default'
+                }
+                const item = React.cloneElement(element, newProps);
+                return (
+                    <Provider value={{...context, current: index + 1}}>
+                        {item}
+                    </Provider>
+                )
+            })}
         </div>
     )
 }

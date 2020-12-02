@@ -8,12 +8,12 @@ export interface SpaceProps {
     style?: React.CSSProperties
 }
 
-const Space:React.FC<SpaceProps> = ({direction,size, children, ...rest}) => {
+const Space: React.FC<SpaceProps> = ({direction, size, children, ...rest}) => {
     const classes = classNames('ui-space', {
         [`ui-space-${direction}`]: direction,
         [`ui-space-${size}`]: typeof size === "string"
     })
-    let style:React.CSSProperties = {};
+    let style: React.CSSProperties = {};
     if (typeof size === "number") {
         switch (direction) {
             case "around": {

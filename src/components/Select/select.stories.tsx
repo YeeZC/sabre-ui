@@ -15,14 +15,14 @@ export default meta;
 export const DefaultInput: Story<SelectProps> = (props) => {
     return (
         <div style={{width: 300}}>
-        <Select onChange={action('onChange')}
-                multiSelect={props.multiSelect}
-                disabled={props.disabled}
-                prefix={<Icon type={"user"}/>}
-        >
-            <Select.Option label={'hello'} value={'hello'}/>
-            <Select.Option label={'child'} value={'child'}/>
-        </Select>
+            <Select onChange={action('onChange')}
+                    multiSelect={props.multiSelect}
+                    disabled={props.disabled}
+                    prefix={<Icon type={"user"}/>}
+            >
+                <Select.Option label={'hello'} value={'hello'}/>
+                <Select.Option label={'child'} value={'child'}/>
+            </Select>
         </div>
     )
 }

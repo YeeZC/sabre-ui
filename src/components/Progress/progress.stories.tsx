@@ -10,7 +10,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const Template:Story<ProgressProps> = (props) => {
+export const Template: Story<ProgressProps> = (props) => {
     return (<Progress {...props} size={300}/>)
 }
 

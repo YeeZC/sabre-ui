@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Story, Meta } from '@storybook/react/types-6-0';
+import {Meta, Story} from '@storybook/react/types-6-0';
 import AutoComplete from "./index";
 import {AutoCompleteProps, Data} from "./auto";
 
 
-const meta:Meta = {
+const meta: Meta = {
     title: 'AutoComplete',
     component: AutoComplete,
 }
@@ -20,7 +20,7 @@ export const Template: Story<AutoCompleteProps> = (props) => {
         {
             label: 'bbbb',
             value: 'bbbb'
-        },{
+        }, {
             label: 'ccca',
             value: 'ccca'
         }]

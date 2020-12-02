@@ -1,7 +1,7 @@
 .ui-radio, .ui-radio-wrapper, .ui-radio-button, .ui-radio-button-wrapper {
   box-sizing: border-box;
   padding: 0;
-  color: rgba(0,0,0,.85);
+  color: rgba(0, 0, 0, .85);
   font-size: .875rem;
   font-variant: tabular-nums;
   line-height: 1.5715;
@@ -13,19 +13,24 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
   input {
     box-sizing: border-box;
     padding: 0;
   }
+
   &.disabled {
     cursor: not-allowed;
     color: $gray-5;
-    >* {
+
+    > * {
       pointer-events: none;
     }
+
     .ui-radio-inner {
       background-color: lighten($gray-5, 25%);
     }
+
     .ui-radio-button-inner {
       background-color: lighten($gray-5, 25%);
     }
@@ -44,6 +49,7 @@
   align-items: center;
   justify-content: center;
   margin: 0;
+
   &.disabled {
     background-color: lighten($gray-5, 25%);
   }
@@ -66,9 +72,11 @@
   z-index: 1;
   cursor: pointer;
   opacity: 0;
+
   &[disabled] {
     cursor: not-allowed;
-    >* {
+
+    > * {
       pointer-events: none;
     }
   }
@@ -86,6 +94,7 @@
   .ui-radio-button-wrapper:first-child {
     border-radius: .25rem 0 0 .25rem;
   }
+
   .ui-radio-button-wrapper:not(:first-child) {
     border-left-color: transparent;
     border-radius: 0;
@@ -106,6 +115,7 @@
   .ui-radio-button-wrapper-checked {
     border-color: $primary;
     color: $primary;
+
     &.ui-radio-button-wrapper:not(:first-child) {
       border-left-color: $primary;
     }
@@ -149,7 +159,7 @@
     border-radius: .5rem;
     transform: scale(0);
     opacity: 0;
-    transition: all .3s cubic-bezier(.78,.14,.15,.86);
+    transition: all .3s cubic-bezier(.78, .14, .15, .86);
     content: " ";
   }
 }
@@ -170,6 +180,7 @@
     animation-fill-mode: both;
     content: "";
   }
+
   .ui-radio-inner {
     &::after {
       opacity: 1;
@@ -178,7 +189,7 @@
   }
 }
 
-span.ui-radio+* {
+span.ui-radio + * {
   padding-right: .5rem;
   padding-left: .5rem;
 }

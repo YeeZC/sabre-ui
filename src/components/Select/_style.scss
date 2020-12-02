@@ -7,9 +7,11 @@
   border: $border-width solid $border-color;
   border-radius: .25rem;
   padding: .1rem .2rem;
+
   &:hover {
     cursor: pointer;
     border-color: $primary;
+
     .disabled {
       cursor: not-allowed;
       pointer-events: none;
@@ -43,9 +45,11 @@
   //line-height: $line-height-base;
   .ui-selected-item {
     line-height: $line-height-base * .875;
+
     .ui-icon-cross {
       margin-left: .25rem;
     }
+
     &:not(:first-child) {
       margin-left: .25rem;
     }
@@ -59,9 +63,11 @@
   //line-height: $line-height-sm;
   .ui-selected-item {
     line-height: $line-height-sm * .875;
+
     .ui-icon-cross {
       margin-left: .125rem;
     }
+
     &:not(:first-child) {
       margin-left: .125rem;
     }
@@ -75,9 +81,11 @@
   //line-height: $line-height-lg;
   .ui-selected-item {
     line-height: $line-height-lg * .875;
+
     .ui-icon-cross {
       margin-left: .25rem;
     }
+
     &:not(:first-child) {
       margin-left: .25rem;
     }
@@ -95,15 +103,18 @@
   overflow: auto;
   background-color: white;
   box-shadow: $submenu-box-shadow;;
+
   .ui-option {
     padding: .25rem .5rem;
     cursor: pointer;
+
     &:hover {
       background-color: lighten($primary, 40%);
     }
 
     &.active {
       background-color: lighten($primary, 35%);
+
       &::after {
         position: absolute;
         right: .25rem;

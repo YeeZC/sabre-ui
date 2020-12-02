@@ -12,10 +12,10 @@ export type Data<T = {}> = T & {
     value: any
 }
 
-export interface AutoCompleteProps extends Omit<InputPropsBase, 'onChange' | 'prefix' | 'defaultValue' | 'value' | 'name'>{
+export interface AutoCompleteProps extends Omit<InputPropsBase, 'onChange' | 'prefix' | 'defaultValue' | 'value' | 'name'> {
     fetch: (keyword: string) => Promise<Data<any>[]>;
-    renderItem?: (item:Data<any>) => ReactNode;
-    onChange?: (item:Data<any>) => void;
+    renderItem?: (item: Data<any>) => ReactNode;
+    onChange?: (item: Data<any>) => void;
 }
 
 export const AutoComplete: React.FC<AutoCompleteProps> = (props) => {
@@ -28,7 +28,7 @@ export const AutoComplete: React.FC<AutoCompleteProps> = (props) => {
     const [loading, setLoading] = useState(false);
     const debounce = useDebounce(keyword, 200);
 
-    const handleItem = (item:Data<any>) => {
+    const handleItem = (item: Data<any>) => {
         if (renderItem) {
             return renderItem(item);
         }
@@ -67,21 +67,22 @@ export const AutoComplete: React.FC<AutoCompleteProps> = (props) => {
                 {loading ?
                     <li className={'loading'}><Icon type={'sync'} spinning/></li>
                     : data.length > 0 ? data.map((item, index) => (
-                    <li key={index} onClick={() => {
-                        setValue(item);
-                        setShow(false)
-                    if (onChange) {
-                        onChange(item)
-                    }}}>
-                        {handleItem(item)}
-                    </li>
-                )) :
-                <li className={'empty'}><Empty style={{padding: '1rem 2rem'}}/></li>
+                            <li key={index} onClick={() => {
+                                setValue(item);
+                                setShow(false)
+                                if (onChange) {
+                                    onChange(item)
+                                }
+                            }}>
+                                {handleItem(item)}
+                            </li>
+                        )) :
+                        <li className={'empty'}><Empty style={{padding: '1rem 2rem'}}/></li>
                 }
             </ul>, {
-            show,
-            timeout: 300,
-        })}
+                show,
+                timeout: 300,
+            })}
     </div>)
 }
 

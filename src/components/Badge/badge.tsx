@@ -2,7 +2,6 @@ import React, {ReactNode} from "react";
 import {StatusType} from "../../data";
 import classNames from "classnames";
 import {testColor} from "../../utils";
-import animation from "../Animation";
 import {CSSTransition} from "react-transition-group";
 
 export interface BadgeProps {

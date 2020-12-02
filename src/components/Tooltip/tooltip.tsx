@@ -1,4 +1,4 @@
-import React, {ReactNode, useEffect, useRef, useState} from "react";
+import React, {ReactNode, useState} from "react";
 import classNames from "classnames";
 import {Placement} from "../../data";
 import animation, {AnimationType} from "../Animation";
@@ -18,7 +18,7 @@ export const Tooltip: React.FC<TooltipProps> = (props) => {
         [`ui-tooltip-${placement}`]: placement
     })
 
-    const zoom:AnimationType = classNames({
+    const zoom: AnimationType = classNames({
         'zoom-in-top': placement === "bottom",
         'zoom-in-bottom': placement === "top",
         'zoom-in-left': placement === "right",
@@ -26,15 +26,15 @@ export const Tooltip: React.FC<TooltipProps> = (props) => {
     }) as AnimationType;
 
     const style = testColor(color) ? {
-            backgroundColor: color
-        }: {}
+        backgroundColor: color
+    } : {}
 
     let timer: any;
     return (<div className={classes} onMouseEnter={(e) => {
         if (timer) {
             clearTimeout(timer)
         }
-        timer = setTimeout(()=> {
+        timer = setTimeout(() => {
             setShow(true)
         }, 100)
 

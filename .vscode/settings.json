@@ -1,4 +1,4 @@
 {
-    "editor.snippetSuggestions": "bottom",
-    "editor.suggest.snippetsPreventQuickSuggestions": false
+  "editor.snippetSuggestions": "bottom",
+  "editor.suggest.snippetsPreventQuickSuggestions": false
 }

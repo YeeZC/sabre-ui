@@ -2,6 +2,7 @@ import React, {ReactElement, ReactNode} from "react";
 import {CSSTransition} from "react-transition-group";
 
 export type AnimationType = 'zoom-in-top' | 'zoom-in-bottom' | 'zoom-in-left' | 'zoom-in-right';
+
 export interface AnimationApi {
     animate: (node: ReactNode, props: AnimationProps) => ReactElement;
 }
@@ -22,7 +23,8 @@ export const Animation: React.FC<AnimationProps> = ({
                                                         type,
                                                         children,
                                                         wrapper,
-                                                        ...rest}) => {
+                                                        ...rest
+                                                    }) => {
     let element = children;
     if (wrapper) {
         element = <span>{children}</span>

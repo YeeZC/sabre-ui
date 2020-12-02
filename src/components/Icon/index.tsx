@@ -13,13 +13,15 @@ export declare interface IconProps {
     style?: React.CSSProperties;
 }
 
-const Icon: React.FC<IconProps> = ({type,
+const Icon: React.FC<IconProps> = ({
+                                       type,
                                        theme,
                                        className,
                                        size,
                                        spinning,
                                        onClick,
-                                       ...rest}) => {
+                                       ...rest
+                                   }) => {
     const classes = classname('ui-icon', className, {
         [`ui-icon-${type}`]: type,
         [`ui-icon-theme-${theme}`]: !!theme,

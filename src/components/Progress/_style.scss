@@ -73,10 +73,12 @@
   line-height: $line-height-base;
   white-space: normal;
   text-align: center;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
+
   &.ui-progress-circle-text-lg {
     font-size: $h2-font-size;
   }
+
   &.ui-progress-circle-text-sm {
     font-size: $h4-font-size;
   }

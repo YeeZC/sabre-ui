@@ -22,7 +22,6 @@ export const Step: React.FC<StepProps> = (props) => {
     });
 
 
-
     const renderIcon = () => {
         switch (status) {
             case "error":

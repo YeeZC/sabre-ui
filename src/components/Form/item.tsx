@@ -2,7 +2,6 @@ import React, {FunctionComponentElement, useContext} from "react";
 import classNames from "classnames";
 import Tooltip from "../Tooltip";
 import {BaseFormItemProps} from "../../data";
-import {Row} from "../Row/row";
 import {FormContext} from "./form";
 
 export interface ItemProps {
@@ -32,11 +31,11 @@ export const Item: React.FC<ItemProps> = (props) => {
     return (
         <div className={classes}>
             <span className={'ui-form-item-label'} style={layout === "inline" ? {} : {
-                width: `${(context.labelCol || 24)/24.0 * 100}%`
+                width: `${(context.labelCol || 24) / 24.0 * 100}%`
             }}>
                 {label}
                 {!!tooltip ?
-                    <Tooltip placement={layout === "vertical"? "right" : "top"} tip={tooltip}>
+                    <Tooltip placement={layout === "vertical" ? "right" : "top"} tip={tooltip}>
                         <span className={'ui-icon ui-icon-help'}/>
                     </Tooltip> : ''}
             </span>
@@ -44,7 +43,7 @@ export const Item: React.FC<ItemProps> = (props) => {
                 {React.cloneElement(element, {
                     name,
                     style: layout === "inline" ? {} : {
-                        width: `${(context.wrapperCol || 24)/24.0 * 100}%`
+                        width: `${(context.wrapperCol || 24) / 24.0 * 100}%`
                     }
                 })}
             </span>

@@ -1,0 +1,22 @@
+.ui-upload {
+  display: inline-block;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+
+    > * {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  .ui-upload-list {
+    list-style: none;
+    padding-left: 0;
+  }
+}

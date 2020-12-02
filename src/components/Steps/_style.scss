@@ -16,6 +16,7 @@
   &.ui-steps-vertical {
     flex-direction: column;
     height: 100%;
+
     .ui-step {
       display: block;
       flex: 1 0 auto;
@@ -48,8 +49,10 @@
   &.ui-steps-horizontal {
     flex-direction: row;
     width: 100%;
+
     .ui-step {
       white-space: nowrap;
+
       &:not(:last-child) {
         .ui-step-title {
           &::after {
@@ -67,12 +70,15 @@
 
   &.ui-steps-type-nav {
     border-bottom: $border-width solid $border-color;
+
     .ui-step {
       padding-bottom: .5rem;
       border-bottom: $border-width * 2 solid transparent;
+
       &.ui-step-clickable:hover, &.ui-step-process {
         border-bottom-color: $primary;
       }
+
       &:not(:last-child) {
         .ui-step-title::after {
           display: none;
@@ -101,6 +107,7 @@
   .ui-step-sub-title {
     color: $gray-5;
   }
+
   .ui-step-description {
     color: $body-color;
   }
@@ -116,6 +123,7 @@
 
   &.ui-step-error {
     color: $danger;
+
     .ui-step-icon {
       border-color: $danger;
     }
@@ -131,6 +139,7 @@
 
   &.ui-step-default {
     color: $gray-5;
+
     .ui-step-icon {
       border-color: $gray-5;
     }
@@ -158,11 +167,14 @@
 
   &.ui-step-clickable {
     cursor: pointer;
+
     &:hover {
       color: $primary;
+
       .ui-step-description, .ui-step-sub-title {
         color: $primary;
       }
+
       .ui-step-icon {
         border-color: $primary;
       }

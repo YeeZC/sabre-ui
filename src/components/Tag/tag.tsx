@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Icon from "../Icon";
 import {Theme} from "../../data";
 
-export interface TagProps  {
+export interface TagProps {
     className?: string;
     text: string;
     icon?: ReactNode;
@@ -12,7 +12,7 @@ export interface TagProps  {
     onClose?: MouseEventHandler
 }
 
-export const Tag:React.FC<TagProps> = (props) => {
+export const Tag: React.FC<TagProps> = (props) => {
     const {text, icon, color, closable, onClose, className} = props;
     const [closed, setClosed] = useState(false);
     const useTheme = () => {
@@ -37,10 +37,10 @@ export const Tag:React.FC<TagProps> = (props) => {
         'ui-tag-closed': closable && closed
     })
 
-    let style:React.CSSProperties = {}
+    let style: React.CSSProperties = {}
 
     useEffect(() => {
-        console.log('closed', text , closed)
+        console.log('closed', text, closed)
     }, [closed])
 
     if (!theme && color) {
@@ -68,9 +68,9 @@ export const Tag:React.FC<TagProps> = (props) => {
     }
 
     return (<span className={classes} style={style}>
-        {icon? <span className={'ui-tag-icon'}>{icon}</span> : ''}
+        {icon ? <span className={'ui-tag-icon'}>{icon}</span> : ''}
         <span className={'ui-tag-text'}>{text}</span>
-        {closable? <span className={'ui-tag-close'} onClick={handleClosed}><Icon type={'cross'}/> </span>: ''}
+        {closable ? <span className={'ui-tag-close'} onClick={handleClosed}><Icon type={'cross'}/> </span> : ''}
     </span>)
 }
 

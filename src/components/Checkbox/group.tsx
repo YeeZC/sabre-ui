@@ -1,9 +1,9 @@
-import React, {Attributes, createContext, FunctionComponentElement, useEffect, useState} from "react";
+import React, {Attributes, createContext, FunctionComponentElement, useState} from "react";
 import classNames from "classnames";
 import {BaseFormItemProps, SizeType} from "../../data";
 import {CheckboxProps} from "./checkbox";
 
-export interface CheckboxGroupProps extends BaseFormItemProps  {
+export interface CheckboxGroupProps extends BaseFormItemProps {
     defaultValue?: any[];
     disabled?: boolean;
     size?: SizeType;

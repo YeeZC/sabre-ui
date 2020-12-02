@@ -6,13 +6,13 @@ import {RadioProps} from "./base";
 export type ButtonStyle = 'outline' | 'filled';
 
 interface GroupContextInf {
-    onChange?: ( value?: any) => void;
+    onChange?: (value?: any) => void;
     value?: any
 }
 
 export const GroupContext = createContext<GroupContextInf>({});
 
-export interface GroupProps extends BaseFormItemProps  {
+export interface GroupProps extends BaseFormItemProps {
     buttonStyle?: ButtonStyle;
     defaultValue?: any;
     disabled?: boolean;

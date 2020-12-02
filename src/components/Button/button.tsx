@@ -1,7 +1,7 @@
 import classnames from "classnames";
-import React from "react";
+import React, {MouseEventHandler} from "react";
 import {ButtonType, SizeType} from "../../data";
-import { Group } from "./group";
+import {Group} from "./group";
 
 export declare interface ButtonProps {
     type?: ButtonType;
@@ -13,7 +13,7 @@ export declare interface ButtonProps {
     disabled?: boolean;
     icon?: React.ReactNode;
     dashed?: boolean;
-    onClick?: () => void;
+    onClick?: MouseEventHandler;
     style?: React.CSSProperties;
 }
 
@@ -24,7 +24,20 @@ type CompoundedComponent = React.FC<ButtonProps> & {
 }
 
 export const Button: CompoundedComponent = (props) => {
-    const {type, icon, className, danger, formType, dashed, size, shape, disabled, children, onClick, ...restProps} = props;
+    const {
+        type,
+        icon,
+        className,
+        danger,
+        formType,
+        dashed,
+        size,
+        shape,
+        disabled,
+        children,
+        onClick,
+        ...restProps
+    } = props;
     const classes = classnames('ui-btn', className, {
         [`ui-btn-${type}`]: type,
         [`ui-btn-size-${size}`]: size,
@@ -33,11 +46,11 @@ export const Button: CompoundedComponent = (props) => {
         'ui-btn-disabled': disabled,
         'ui-btn-dashed': dashed
     })
-    const onClickFunc = disabled ? (e: React.MouseEvent) => {} : (e: React.MouseEvent) => {
+    const onClickFunc = disabled ? (e: React.MouseEvent) => {
+    } : (e: React.MouseEvent) => {
         if (onClick) {
-            onClick();
+            onClick(e);
         }
-        e.stopPropagation();
     };
     switch (formType) {
         case "reset":
@@ -48,11 +61,12 @@ export const Button: CompoundedComponent = (props) => {
                             onClick={onClickFunc}
                             {...restProps}>
                 {icon ? <span>{icon}&nbsp;</span> :
-                    <span/>}{children}</button> )
+                    <span/>}{children}</button>)
         default: {
 
-            return (<span className={classes} onClick={onClickFunc} {...restProps}><span>{icon ? <span>{icon}&nbsp;</span> :
-                <span/>}{children}</span></span>)
+            return (
+                <span className={classes} onClick={onClickFunc} {...restProps}><span>{icon ? <span>{icon}&nbsp;</span> :
+                    <span/>}{children}</span></span>)
         }
     }
 }

@@ -16,7 +16,7 @@ export interface DividerProps {
      */
     plan?: boolean;
     /** Text 位置*/
-    placement?: 'left' |'center'| 'right';
+    placement?: 'left' | 'center' | 'right';
 }
 
 /**
@@ -52,7 +52,7 @@ export const Divider: React.FC<DividerProps> = (props) => {
     }
 
     return (<div className={classes} style={handleStyle()}>
-        {children && type==="horizontal" ? <span className={'ui-divider-inner-text'}>{children}</span> : ''}
+        {children && type === "horizontal" ? <span className={'ui-divider-inner-text'}>{children}</span> : ''}
     </div>)
 }
 

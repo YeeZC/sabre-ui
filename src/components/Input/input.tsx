@@ -12,7 +12,7 @@ type InputCompoundedComponent = React.FC<InputPropsBase> & {
     Number: React.FC<NumberProps>;
     TextArea: React.FC<TextAreaProps>
 }
-export const Input:InputCompoundedComponent = (props) => {
+export const Input: InputCompoundedComponent = (props) => {
     return <Text {...props}/>
 }
 

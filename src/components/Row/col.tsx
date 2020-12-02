@@ -21,7 +21,7 @@ export const Col: React.FC<ColProps> = ({span, className, style, children}) => {
 
     return (<div className={classes} style={style}>
         {children}
-    </div> )
+    </div>)
 }
 
 Col.displayName = 'Col';

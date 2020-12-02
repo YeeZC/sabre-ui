@@ -1,3 +1,3 @@
-import { Result } from "./result";
+import {Result} from "./result";
 
 export default Result;

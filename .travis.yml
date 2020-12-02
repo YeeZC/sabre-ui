@@ -14,4 +14,4 @@ deploy:
   github_token: $github_token
   local_dir: storybook-static
   on:
-    branch: main
+    tags: true #发布  tag版 时才进行发包

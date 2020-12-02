@@ -18,7 +18,8 @@ export interface CardProps {
 
 
 export const Card: React.FC<CardProps> = (props) => {
-    const {className,
+    const {
+        className,
         style,
         border,
         loading,
@@ -29,7 +30,8 @@ export const Card: React.FC<CardProps> = (props) => {
         size,
         hoverable,
         onClick,
-        actions} = props;
+        actions
+    } = props;
     const classes = classNames('ui-card', className, {
         'ui-card-border': !!border,
         'ui-card-hoverable': !!hoverable,
@@ -39,10 +41,10 @@ export const Card: React.FC<CardProps> = (props) => {
     const renderTitle = () => {
         if (title) {
             return (<div className={'ui-card-header'}>
-                        <div className="ui-card-title">{title}</div>
-                    {extra ? <div className={'ui-card-extra'}>
-                            {extra}
-                    </div>:''}
+                <div className="ui-card-title">{title}</div>
+                {extra ? <div className={'ui-card-extra'}>
+                    {extra}
+                </div> : ''}
             </div>)
         }
     }

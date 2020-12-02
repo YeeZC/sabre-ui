@@ -5,7 +5,7 @@ import {TagProps} from "./tag";
 import Space from "../Space";
 
 const meta: Meta = {
-    title:'Tag',
+    title: 'Tag',
     component: Tag
 }
 

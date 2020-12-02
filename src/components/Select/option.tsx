@@ -1,4 +1,4 @@
-import React, {ReactElement, ReactNode, useContext} from "react";
+import React, {useContext} from "react";
 import {SelectContext} from "./select";
 import classNames from "classnames";
 
@@ -18,7 +18,8 @@ export const Option: React.FC<OptionProps & { active?: boolean }> = (props) => {
         <li className={classes} onClick={() => {
             if (context && context.onSelect) {
                 context.onSelect(props)
-            }}}>
+            }
+        }}>
             {context.renderItem ? context.renderItem({label, value}) : label}
         </li>
     )

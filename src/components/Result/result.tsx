@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
+import React, {ReactNode} from 'react';
 import classNames from 'classnames';
-import { StatusType } from '../../data';
+import {StatusType} from '../../data';
 import Icon from '../Icon';
 
 export type ResultStatus = StatusType | 404 | 403 | 500;
@@ -42,26 +42,26 @@ export const Result: React.FC<ResultProps> = (props) => {
         }
         if (title) {
             content.push(
-            <div className="ui-result-title">{
-                title
-            }</div>
+                <div className="ui-result-title">{
+                    title
+                }</div>
             )
         }
         if (subTitle) {
             content.push(
-            <div className="ui-result-sub-title">{subTitle}</div>
+                <div className="ui-result-sub-title">{subTitle}</div>
             )
         }
         if (extra) {
             content.push(
-            <div className="ui-result-extra">{
-                extra
-            }</div>
+                <div className="ui-result-extra">{
+                    extra
+                }</div>
             )
         }
         if (children) {
             content.push(
-            <div className="ui-result-content">{children}</div>
+                <div className="ui-result-content">{children}</div>
             )
         }
         return content;

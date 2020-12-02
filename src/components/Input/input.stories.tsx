@@ -18,7 +18,7 @@ export const DefaultInput: Story<InputPropsBase> = (props) => {
             <Input.Text {...props}/>
             <Input.Password {...props}/>
         </Space>
-        )
+    )
 }
 
 DefaultInput.storyName = "Input"

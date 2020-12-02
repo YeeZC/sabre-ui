@@ -1,8 +1,7 @@
-import { format } from 'path';
 import React from 'react';
 import {Meta, Story} from '@storybook/react'
 import Result from './index';
-import { ResultProps } from './result';
+import {ResultProps} from './result';
 
 const meta: Meta = {
     title: 'Result',

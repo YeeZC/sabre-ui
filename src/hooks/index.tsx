@@ -15,11 +15,11 @@ export function useRenderChildren<T>(children: ReactNode, name?: string, propsHa
     })
 }
 
-export function useClickOutSide<T extends HTMLElement>(ref: RefObject<T| undefined>
-    | MutableRefObject<T| undefined>, handle: Function) {
+export function useClickOutSide<T extends HTMLElement>(ref: RefObject<T | undefined>
+    | MutableRefObject<T | undefined>, handle: Function) {
     useEffect(() => {
         const listener = (event: MouseEvent) => {
-            if (!ref.current|| ref.current.contains(event.target as Node)) {
+            if (!ref.current || ref.current.contains(event.target as Node)) {
                 return
             }
             handle(event);
@@ -35,7 +35,7 @@ export function useClickOutSide<T extends HTMLElement>(ref: RefObject<T| undefin
 export function useDebounce<T>(value: T, delay = 300) {
     const [debounce, setDebounce] = useState<T>();
     useEffect(() => {
-        const handler = setTimeout(()=> {
+        const handler = setTimeout(() => {
             setDebounce(value)
         }, delay)
         return () => {
