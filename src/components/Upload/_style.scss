@@ -15,40 +15,27 @@
     }
   }
 
-  .ui-upload-list {
-    z-index: 100;
-    min-width: 200px;
-    list-style: none;
-    padding-left: 0;
-    margin-top: .5rem;
-  }
+}
 
-  .ui-upload-list-item {
-    padding: .25rem;
+.ui-upload-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: .5rem;
 
-    &:hover {
-      background-color: $gray-2;
+  &.disabled {
+    cursor: not-allowed;
+    background-color: $gray-1;
 
-      .ui-upload-list-item-close {
-        &::before {
-          opacity: 1;
-        }
-      }
-    }
-
-  }
-
-  .ui-upload-list-item-title {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    font-size: $font-size-sm;
-    line-height: $line-height-sm;
-
-    .ui-upload-list-item-prefix {
-      margin-right: .25rem;
+    > * {
+      cursor: not-allowed;
+      pointer-events: none;
     }
   }
+}
+
+.ui-upload-list-item {
+  padding: .25rem;
+  cursor: pointer;
 
   .ui-upload-list-item-close {
     &::before {
@@ -58,4 +45,37 @@
       transition: opacity .24s linear .1s;
     }
   }
+
+  &:hover {
+    background-color: $gray-2;
+
+    .ui-upload-list-item-close {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.ui-upload-list-item-error {
+    color: $danger;
+
+    .ui-upload-list-item-close {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
 }
+
+.ui-upload-list-item-title {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+
+  .ui-upload-list-item-prefix {
+    margin-right: .25rem;
+  }
+}
+

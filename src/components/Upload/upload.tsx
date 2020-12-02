@@ -191,29 +191,31 @@ export const Upload: UploadCompounded = (props) => {
 
     const renderUploadList = () => {
         if (!!showUploadList) {
-            return <List files={files} onRemove={handleRemove}/>
+            return <List files={files} onRemove={handleRemove} disabled={disabled}/>
         }
     }
 
     return (
-        <div className={classes} {...uploadClick}>
-            <input type={"file"} name={name} ref={ref => {
-                if (ref) {
-                    fileRef.current = ref;
-                }
-            }} accept={accept} multiple={multiple} onChange={(e) => {
-                const {files} = e.target;
-                Array.from(files || []).forEach(file => handleUpload(file));
-                if (fileRef.current) {
-                    fileRef.current.value = '';
-                }
-            }}/>
-            {innerClick ? React.cloneElement(element, {
-                onClick: handleClick,
-                disabled
-            }) : element}
+        <>
+            <div className={classes} {...uploadClick}>
+                <input type={"file"} name={name} ref={ref => {
+                    if (ref) {
+                        fileRef.current = ref;
+                    }
+                }} accept={accept} multiple={multiple} onChange={(e) => {
+                    const {files} = e.target;
+                    Array.from(files || []).forEach(file => handleUpload(file));
+                    if (fileRef.current) {
+                        fileRef.current.value = '';
+                    }
+                }}/>
+                {innerClick ? React.cloneElement(element, {
+                    onClick: handleClick,
+                    disabled
+                }) : element}
+            </div>
             {renderUploadList()}
-        </div>
+        </>
     )
 }
 

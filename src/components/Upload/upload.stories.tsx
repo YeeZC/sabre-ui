@@ -2,7 +2,6 @@ import React from "react";
 import Upload from '.';
 import {Meta, Story} from '@storybook/react';
 import {UploadProps} from "./upload";
-import {Button, Icon} from "../../index";
 
 const meta: Meta = {
     title: 'Upload',
@@ -32,7 +31,7 @@ export const Template: Story<UploadProps> = (props) => {
         name: 'a.txt',
         size: 1024,
         type: '',
-        status: 'success'
+        status: 'error'
     }, {
         key: 'b',
         name: 'b.txt',
@@ -41,8 +40,8 @@ export const Template: Story<UploadProps> = (props) => {
         status: 'progress',
         percent: 30
     }]}>
-        <Button icon={<Icon type={'upload'}/>}>上传</Button>
-        {/*上传*/}
+        {/*<Button icon={<Icon type={'upload'}/>}>上传</Button>*/}
+        上传
     </Upload>)
 }
 
