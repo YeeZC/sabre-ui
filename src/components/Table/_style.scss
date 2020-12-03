@@ -139,6 +139,7 @@
 
       &::before {
         content: "\e7ee";
+        animation: animation-fade-in .6s ease-in-out;
       }
     }
   }
@@ -160,6 +161,7 @@
 
       &::before {
         content: "\e7ed";
+        animation: animation-fade-in .6s ease-in-out;
       }
     }
   }
