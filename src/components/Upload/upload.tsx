@@ -66,7 +66,6 @@ export const Upload: UploadCompounded = (props) => {
     });
 
     const updateFiles = (file: UploadFile, obj: Partial<UploadFile>) => {
-        console.log('updateFiles', obj)
         setFiles(prevState => {
             return prevState.map(item => {
                 if (item.key === file.key) {
