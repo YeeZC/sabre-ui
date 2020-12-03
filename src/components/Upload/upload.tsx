@@ -1,4 +1,4 @@
-import React, {MouseEventHandler, ReactElement, useRef, useState} from "react";
+import React, {createContext, MouseEventHandler, MutableRefObject, ReactElement, useRef, useState} from "react";
 import classNames from "classnames";
 import {Drag, DragProps} from "./drag";
 import axios from 'axios';
@@ -39,11 +39,20 @@ export interface UploadProps {
     headers?: { [key: string]: any };
     withCredentials?: boolean;
     onRemove?: (file: UploadFile) => void;
+    style?: React.CSSProperties;
 }
 
 export type UploadCompounded = React.FC<UploadProps> & {
     Drag: React.FC<DragProps>
 }
+
+export interface UploadContextInf {
+    handleUpload?: (fileList: FileList | File[] | File) => void;
+    fileRef?: MutableRefObject<HTMLInputElement | undefined>
+}
+
+export const UploadContext = createContext<UploadContextInf>({})
+export const Provider = UploadContext.Provider;
 
 export const Upload: UploadCompounded = (props) => {
     const {name, children, accept, action, customRequest, disabled} = props;
@@ -197,7 +206,7 @@ export const Upload: UploadCompounded = (props) => {
 
     return (
         <>
-            <div className={classes} {...uploadClick}>
+            <div className={classes} {...uploadClick} style={props.style}>
                 <input type={"file"} name={name} ref={ref => {
                     if (ref) {
                         fileRef.current = ref;
@@ -209,10 +218,22 @@ export const Upload: UploadCompounded = (props) => {
                         fileRef.current.value = '';
                     }
                 }}/>
-                {innerClick ? React.cloneElement(element, {
-                    onClick: handleClick,
-                    disabled
-                }) : element}
+                <Provider value={{
+                    handleUpload: fileList => {
+                        if (Array.isArray(fileList)) {
+
+                        } else if (fileList instanceof FileList) {
+                            Array.from(fileList).forEach(file => handleUpload(file));
+                        } else {
+                            handleUpload(fileList)
+                        }
+                    }, fileRef
+                }}>
+                    {innerClick ? React.cloneElement(element, {
+                        onClick: handleClick,
+                        disabled
+                    }) : element}
+                </Provider>
             </div>
             {renderUploadList()}
         </>
