@@ -4,6 +4,7 @@ import {Meta, Story} from '@storybook/react';
 import {TableProps} from "./table";
 import {Button} from "../../index";
 import {Pagination, PaginationProps} from "./pagination";
+import {action} from "@storybook/addon-actions";
 
 const meta: Meta = {
     title: 'Table',
@@ -51,7 +52,7 @@ export const Template: Story<TableProps> = (props) => {
         b: 'world3',
         c: 'react3',
         d: 'hahahah3'
-    }]} pagination={{}}/>)
+    }]} pagination={{pages: [5], pageSize: 10, total: 100, onChange: action('onChange')}}/>)
 }
 
 Template.storyName = "Table";

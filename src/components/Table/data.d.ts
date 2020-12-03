@@ -18,6 +18,6 @@ export interface TableDataList<T = {}> {
 }
 
 export interface RequestParam {
-    current?: number;
-    pageSize?: number;
+    current: number;
+    pageSize: number;
 }
