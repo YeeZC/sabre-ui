@@ -50,38 +50,84 @@ export const Pagination: React.FC<PaginationProps> = (props) => {
             }
 
         }
-    }, [request.pageSize])
+    }, [request.pageSize]);
 
-    const renderPageItem = () => {
+    const click = (e: React.MouseEvent, current: number) => {
+        e.preventDefault();
+        const fix = current <= 0 ? 1 : current > length ? length : current;
+        if (request.current !== fix) {
+            setRequest({
+                ...request,
+                current: fix
+            })
+        }
+    }
+
+    const renderPageItem = (page: number) => {
+        return <li key={page}
+                   onClick={(e) => click(e, page)}
+                   className={classNames('ui-pagination-btn', {
+                       'active': request.current === page
+                   })}>{page}</li>
+    }
+
+    const renderNext5 = () => {
+        return <li key={-2} className={'ui-pagination-next5'} onClick={e => click(e, request.current + 5)}/>
+    }
+
+    const renderPrev5 = () => {
+        return <li key={-2} className={'ui-pagination-prev5'} onClick={e => click(e, request.current - 5)}/>
+    }
+
+    const left = () => {
         const result = [];
-        for (let i = 0; i < length; i++) {
-            result.push(
-                <li key={i}
-                    onClick={() => {
-                        if (request.current !== i + 1) {
-                            setRequest({
-                                ...request,
-                                current: i + 1
-                            })
-                        }
-                    }}
-                    className={classNames('ui-pagination-btn', {
-                        'active': request.current === i + 1
-                    })}>{i + 1}</li>
-            )
+        const {current} = request;
+        if (current - 5 >= 0) {
+            result.push(renderPageItem(1));
+            result.push(renderPrev5());
+            for (let i = current - 3; i < current && current <= length - 5; i++) {
+                result.push(renderPageItem(i + 1))
+            }
+        } else {
+            for (let i = 0; i < Math.min(length, 5); i++) {
+                result.push(renderPageItem(i + 1))
+            }
         }
         return result;
     }
+
+    const right = () => {
+        const result = [];
+        const {current} = request;
+        if (current + 5 <= length) {
+            for (let i = current; i < current + 2 && current >= 5; i++) {
+                result.push(renderPageItem(i + 1));
+            }
+            result.push(renderNext5());
+            result.push(renderPageItem(length));
+        } else {
+            for (let i = length - 5; i < length; i++) {
+                result.push(renderPageItem(i + 1))
+            }
+        }
+        return result;
+    }
+
+    const renderPageBtn = () => {
+        return [...left(), ...right()]
+    }
+
     return (
         <div className={'ui-pagination-wrapper'}>
             <ul className={'ui-pagination'}>
                 <li className={classNames('ui-pagination-btn', 'ui-pagination-prev', {
                     'disabled': request.current === 1
-                })}/>
-                {renderPageItem()}
+                })} onClick={e => click(e, request.current - 1)}/>
+                {left()}
+                {right()}
                 <li className={classNames('ui-pagination-btn', 'ui-pagination-next', {
                     'disabled': request.current === length
-                })}/>
+                })} onClick={e => click(e, request.current + 1)}/>
                 <li className={'ui-pagination-select'}>
                     <Select multiSelect={false} defaultValue={request.pageSize} options={options} onChange={(value => {
                         if (value[0]) {

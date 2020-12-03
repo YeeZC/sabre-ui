@@ -121,4 +121,46 @@
     font-family: "ui-icon", serif;
     content: "\e670";
   }
+
+  .ui-pagination-next5 {
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: .25rem;
+
+    &::before {
+      font-family: "ui-icon", serif;
+      content: "\e7fe";
+    }
+
+    &:hover {
+      color: lighten($primary, 10%);
+
+      &::before {
+        content: "\e7ee";
+      }
+    }
+  }
+
+  .ui-pagination-prev5 {
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: .25rem;
+
+    &::before {
+      font-family: "ui-icon", serif;
+      content: "\e7fe";
+    }
+
+    &:hover {
+      color: lighten($primary, 10%);
+
+      &::before {
+        content: "\e7ed";
+      }
+    }
+  }
 }

@@ -14,6 +14,7 @@ const meta: Meta = {
 export default meta;
 
 export const Template: Story<TableProps> = (props) => {
+
     return (<Table {...props} columns={
         [{
             title: 'A',

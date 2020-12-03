@@ -10,13 +10,6 @@ export interface Column<T = {}> {
     width?: number | string
 }
 
-export interface TableDataList<T = {}> {
-    total?: number;
-    current?: number;
-    pageSize?: number;
-    data: TableDataType<T>[]
-}
-
 export interface RequestParam {
     current: number;
     pageSize: number;
