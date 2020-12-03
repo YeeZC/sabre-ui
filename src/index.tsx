@@ -22,6 +22,7 @@ import Steps from './components/Steps';
 import Tabs from './components/Tabs';
 import Tag from './components/Tag';
 import Tooltip from './components/Tooltip';
+import Upload from './components/Upload';
 
 export {
     animation,
@@ -47,5 +48,6 @@ export {
     Steps,
     Tabs,
     Tag,
-    Tooltip
+    Tooltip,
+    Upload
 }

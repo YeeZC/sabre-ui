@@ -65,7 +65,7 @@ export const AutoComplete: React.FC<AutoCompleteProps> = (props) => {
         {animation.animate(
             <ul>
                 {loading ?
-                    <li className={'loading'}><Icon type={'sync'} spinning/></li>
+                    <li className={'loading'}><Icon type={'spinner'} spinning/></li>
                     : data.length > 0 ? data.map((item, index) => (
                             <li key={index} onClick={() => {
                                 setValue(item);
