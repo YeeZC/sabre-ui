@@ -35,7 +35,7 @@ export const Table: React.FC<TableProps> = (props) => {
             })
         }
         return (
-            <tr>
+            <tr className={'tr-empty'}>
                 <td colSpan={columns.length}>
                     <Empty/>
                 </td>

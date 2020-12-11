@@ -21,9 +21,10 @@
 
     tr {
       border-bottom: $border-width solid $border-color;
-
-      &:hover {
-        background-color: $gray-1;
+      &:not(.tr-empty) {
+        &:hover {
+          background-color: $gray-1;
+        }
       }
     }
   }

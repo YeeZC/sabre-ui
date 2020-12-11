@@ -60,11 +60,3 @@ export const Template: Story<TableProps> = (props) => {
 }
 
 Template.storyName = "Table";
-
-export const Page: Story<PaginationProps> = (props) => {
-    return (
-        <Pagination total={100} current={1} pageSize={10}/>
-    )
-}
-
-Page.storyName = "Pagination"
